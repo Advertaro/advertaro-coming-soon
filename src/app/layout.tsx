@@ -4,7 +4,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Advertaro — Coming Soon',
-  description: 'Advertaro is a software development studio from Colombo, Sri Lanka. Something thoughtful is on the way.',
+  description:
+    'Advertaro is a software development studio from Colombo, Sri Lanka. Something thoughtful is on the way.',
   generator: 'v0.app',
   icons: {
     icon: [
