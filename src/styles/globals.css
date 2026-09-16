@@ -309,6 +309,8 @@
   animation: slideIn 0.8s ease-out 0.4s both;
 }
 
+.morph-gradient,
+.morph-gradient span,
 .morph-gradient:not(:has([data-torph-item])),
 .morph-gradient [data-torph-item] {
   background-image: linear-gradient(to right, #ffd0a8 30%, #ffffff 50%, #b895ff 70%);
@@ -316,4 +318,5 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  display: inline-block;
 }

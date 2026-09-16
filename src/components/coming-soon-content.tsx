@@ -3,9 +3,9 @@
 import { getCalApi } from '@calcom/embed-react'
 import { ArrowUpRight, Check, Mail, Phone } from 'lucide-react'
 import { type FormEvent, useEffect, useState } from 'react'
-import { TextMorph } from 'torph/react'
 import { MeteorShower } from '@/components/meteor-shower'
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text'
+import { MorphingText } from '@/components/ui/morphing-text'
 import { WebGLShader } from '@/components/ui/web-gl-shader'
 import { cn } from '@/lib/utils'
 
@@ -46,14 +46,6 @@ const SOCIAL_LINKS = [
 export function ComingSoonContent() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [titleIndex, setTitleIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % TITLES.length)
-    }, 10_000)
-    return () => clearInterval(interval)
-  }, [])
 
   useEffect(() => {
     void (async () => {
@@ -122,18 +114,15 @@ export function ComingSoonContent() {
           </AnimatedGradientText>
         </div>
         <div className="relative flex w-full flex-col items-center justify-center">
-          <h1 className="slide-in relative z-10 flex min-h-[2.2em] max-w-4xl leading-tight flex-col items-center justify-center text-6xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
-            <TextMorph duration={600} ease="cubic-bezier(0.19, 1, 0.22, 1)">
-              {TITLES[titleIndex].line1}
-            </TextMorph>
-            <TextMorph
-              duration={600}
-              ease="cubic-bezier(0.19, 1, 0.22, 1)"
-              className="morph-gradient"
-            >
-              {TITLES[titleIndex].line2}
-            </TextMorph>
-          </h1>
+          <MorphingText
+            as="h1"
+            items={TITLES}
+            className="slide-in relative z-10 flex min-h-[2.3em] max-w-4xl leading-tight! items-center justify-center text-center font-heading text-6xl font-semibold tracking-[-0.06em] sm:text-7xl lg:text-8xl"
+            line1ClassName="text-white"
+            line2ClassName="morph-gradient"
+            morphTime={1.5}
+            cooldownTime={7.5}
+          />
         </div>
         <p className="slide-in-delayed mt-6 max-w-xl text-base leading-7 text-white/65 sm:text-lg">
           Unleashing creativity through bold visuals, seamless interfaces, and limitless

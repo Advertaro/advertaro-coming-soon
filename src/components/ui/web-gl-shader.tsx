@@ -1,8 +1,12 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { memo, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { cn } from '@/lib/utils'
+
+const DEFAULT_COLOR_1: [number, number, number] = [0.855, 0.271, 0.086] // #DA4516 (Advertaro Brand Orange)
+const DEFAULT_COLOR_2: [number, number, number] = [0.953, 0.455, 0.09] // #F37417 (Warm Amber Orange)
+const DEFAULT_COLOR_3: [number, number, number] = [0.486, 0.227, 0.929] // #7C3AED (Violet)
 
 export interface WebGLShaderProps {
   className?: string
@@ -24,17 +28,23 @@ export interface WebGLShaderProps {
   speed?: number
 }
 
-export function WebGLShader({
+export const WebGLShader = memo(function WebGLShader({
   className,
-  color1 = [0.855, 0.271, 0.086], // #DA4516 (Advertaro Brand Orange)
-  color2 = [0.953, 0.455, 0.09], // #F37417 (Warm Amber Orange)
-  color3 = [0.486, 0.227, 0.929], // #7C3AED (Violet)
+  color1 = DEFAULT_COLOR_1,
+  color2 = DEFAULT_COLOR_2,
+  color3 = DEFAULT_COLOR_3,
   xScale = 1.0,
   yScale = 0.5,
   distortion = 0.05,
   speed = 0.008,
 }: WebGLShaderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const speedRef = useRef(speed)
+  speedRef.current = speed
+
+  const propsRef = useRef({ color1, color2, color3, xScale, yScale, distortion })
+  propsRef.current = { color1, color2, color3, xScale, yScale, distortion }
+
   const sceneRef = useRef<{
     scene: THREE.Scene | null
     camera: THREE.OrthographicCamera | null
@@ -61,7 +71,7 @@ export function WebGLShader({
     animationId: null,
   })
 
-  // Keep uniforms up to date if props change
+  // Keep uniforms up to date if props change without restarting the WebGL scene
   useEffect(() => {
     if (!sceneRef.current.uniforms) return
     sceneRef.current.uniforms.xScale.value = xScale
@@ -72,6 +82,7 @@ export function WebGLShader({
     sceneRef.current.uniforms.color3.value = color3
   }, [color1, color2, color3, xScale, yScale, distortion])
 
+  // Initialize WebGL scene once on mount
   useEffect(() => {
     if (!canvasRef.current) return
 
@@ -125,12 +136,12 @@ export function WebGLShader({
       refs.uniforms = {
         resolution: { value: [window.innerWidth, window.innerHeight] },
         time: { value: 0.0 },
-        xScale: { value: xScale },
-        yScale: { value: yScale },
-        distortion: { value: distortion },
-        color1: { value: color1 },
-        color2: { value: color2 },
-        color3: { value: color3 },
+        xScale: { value: propsRef.current.xScale },
+        yScale: { value: propsRef.current.yScale },
+        distortion: { value: propsRef.current.distortion },
+        color1: { value: propsRef.current.color1 },
+        color2: { value: propsRef.current.color2 },
+        color3: { value: propsRef.current.color3 },
       }
 
       const position = [
@@ -156,7 +167,7 @@ export function WebGLShader({
     }
 
     const animate = () => {
-      if (refs.uniforms) refs.uniforms.time.value += speed
+      if (refs.uniforms) refs.uniforms.time.value += speedRef.current
       if (refs.renderer && refs.scene && refs.camera) {
         refs.renderer.render(refs.scene, refs.camera)
       }
@@ -187,7 +198,7 @@ export function WebGLShader({
       }
       refs.renderer?.dispose()
     }
-  }, [xScale, yScale, distortion, color1, color2, color3, speed])
+  }, [])
 
   return (
     <canvas
@@ -195,4 +206,4 @@ export function WebGLShader({
       className={cn('pointer-events-none fixed inset-0 block h-full w-full', className)}
     />
   )
-}
+})
