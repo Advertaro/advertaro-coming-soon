@@ -4,10 +4,13 @@ import '@/styles/globals.css'
 import { lilGrotesk, rethinkSans } from '@/styles/fonts'
 
 export const metadata: Metadata = {
-  title: 'Advertaro — Coming Soon',
+  metadataBase: new URL('https://advertaro.lk'),
+  title: {
+    default: 'Advertaro Creative Studio — Award-Winning Web Development & Digital Experiences',
+    template: '%s | Advertaro Creative Studio',
+  },
   description:
-    'Advertaro is a software development studio from Colombo, Sri Lanka. Something thoughtful is on the way.',
-  generator: 'v0.app',
+    'Advertaro (Private) Limited is an award-winning creative digital studio and software engineering firm based in Colombo, Sri Lanka. Best Web Developer Silver (2023) and Bronze (2022) winner at BestWeb.LK.',
   icons: {
     icon: [
       {

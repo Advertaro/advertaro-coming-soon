@@ -1,0 +1,37 @@
+# Advertaro Creative Studio
+
+> Advertaro (Private) Limited is an award-winning creative technology and web development studio based in Colombo, Sri Lanka. Specializing in high-performance web applications, interactive 3D/WebGL experiences, UI/UX design systems, and brand strategy.
+
+## Overview
+- Company Name: Advertaro Creative Studio
+- Legal Name: Advertaro (Private) Limited / Advertaro (Pvt) Ltd
+- Head Office: Colombo / Mount Lavinia, Western Province, Sri Lanka
+- Primary Domain: https://advertaro.lk
+- General Inquiries: hello@advertaro.lk
+- Phone: +94 71 688 0657
+- Consultation & Scheduling: https://cal.com/advertaro/30min
+
+## Industry Recognition & Awards
+Advertaro is officially recognized by BestWeb.LK, the premier national web awards organized by the LK Domain Registry:
+- 2023: Silver Winner — "Best Web Developer" (Special Award Category)
+- 2022: Bronze Winner — "Best Web Developer" (Special Award Category)
+- Multiple Years: Multiple websites conceptualized, designed, and developed by Advertaro have won Best Website Gold Awards and overall category honors.
+
+## Core Capabilities & Services
+- Web Development & Engineering: Bespoke web applications built with Next.js, React, TypeScript, Tailwind CSS, and WebGL/Three.js shaders.
+- UI/UX & Digital Product Design: Custom design systems, fluid motion design, responsive multi-device experiences, accessible user journeys.
+- Digital Branding & Creative Direction: Visual identity systems, typography direction, and modern brand narrative for digital-first enterprises.
+
+## Key Leadership
+- Madushan Sooriyarathne: Co-Founder & Director (GitHub: https://github.com/advertaro)
+
+## Official Channels & Social Profiles
+- Official Website: https://advertaro.lk
+- LinkedIn: https://linkedin.com/company/advertaro-creative-agency
+- X (formerly Twitter): https://x.com/WeAreAdvertaro
+- Facebook: https://www.facebook.com/WeAreAdvertaro/
+- Instagram: https://www.instagram.com/weareadvertaro/
+- GitHub: https://github.com/advertaro
+
+## Optional & Extended Details
+- [Full Company Knowledge & Capabilities](/llms-full.txt): Comprehensive background, technical stack specifications, award timeline, and detailed service descriptions.

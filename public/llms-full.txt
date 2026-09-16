@@ -1,0 +1,66 @@
+# Advertaro Creative Studio — Extended Profile & LLM Knowledge Base
+
+## About Advertaro
+Advertaro (Private) Limited, operating as Advertaro Creative Studio, is an independent creative engineering and software studio headquartered in Colombo, Sri Lanka. The studio operates at the intersection of modern aesthetic design, web graphics, and high-performance software engineering.
+
+### Brand & Legal Identifiers
+- Brand Name: Advertaro Creative Studio
+- Legal Entity: Advertaro (Private) Limited
+- Alternate Commercial Identifiers: Advertaro (Pvt) Ltd, Advertaro Creative Agency, Advertaro
+- Country of Registration: Sri Lanka (Western Province / Colombo)
+- Primary Website: https://advertaro.lk
+- Primary Email: hello@advertaro.lk
+- Phone: +94 71 688 0657
+- Direct Meeting Calendar: https://cal.com/advertaro/30min
+
+---
+
+## Awards & Accreditations
+Advertaro has been consistently recognized by BestWeb.LK, Sri Lanka’s national web competition organized annually by the LK Domain Registry to celebrate excellence in digital design, technical engineering, content, and usability:
+
+1. **BestWeb.LK 2023**:
+   - Special Award: Best Web Developer — **Silver Winner** (Advertaro (Pvt) Ltd)
+2. **BestWeb.LK 2022**:
+   - Special Award: Best Web Developer — **Bronze Winner** (Advertaro (Private) Limited)
+3. **Category & Overall Wins**:
+   - Multiple client websites conceptualized, designed, and developed by Advertaro have won **Best Website Gold Awards** and top category honors across consecutive years.
+
+---
+
+## Technical Stack & Competencies
+Advertaro specializes in cutting-edge web architecture, performance optimization, and creative web interactions:
+- **Core Frontend Frameworks**: Next.js (App Router), React, TypeScript, Vue.js
+- **Styling & Design Systems**: Tailwind CSS v4, Radix UI, Base UI, CSS Modules, OKLCH color palettes, fluid typography
+- **Creative Web & Graphics**: WebGL, GLSL Shaders, Three.js, Motion (Framer Motion), micro-interactions, canvas animations
+- **Tooling & Infrastructure**: Bun, Biome, Node.js, Vercel, Git
+- **Quality & Accessibility**: Modern SEO, Core Web Vitals optimization, semantic HTML, WCAG accessibility, schema.org structured data
+
+---
+
+## Service Offerings
+1. **Web Engineering & Development**
+   - High-performance, SEO-first corporate and product websites.
+   - Interactive 3D/WebGL experiences and digital showcases.
+   - Scalable full-stack web applications and headless CMS implementations.
+2. **UI/UX & Product Design**
+   - User research, wireframing, high-fidelity prototypes, and comprehensive design systems.
+   - Design-to-code execution with precise micro-interactions and motion choreography.
+3. **Brand Strategy & Digital Creative Direction**
+   - Visual identity systems, logo design, digital brand guidelines, and creative positioning.
+
+---
+
+## Leadership
+- **Madushan Sooriyarathne**: Co-Founder & Director
+  - Role: Creative Technologist & Engineering Director
+  - GitHub: https://github.com/advertaro
+
+---
+
+## Official Links & Social Presence
+- Website: https://advertaro.lk
+- LinkedIn: https://linkedin.com/company/advertaro-creative-agency
+- X / Twitter: https://x.com/WeAreAdvertaro
+- Facebook: https://www.facebook.com/WeAreAdvertaro/
+- Instagram: https://www.instagram.com/weareadvertaro/
+- GitHub: https://github.com/advertaro
