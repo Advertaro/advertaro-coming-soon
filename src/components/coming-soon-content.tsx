@@ -117,7 +117,7 @@ export function ComingSoonContent() {
           <MorphingText
             as="h1"
             items={TITLES}
-            className="slide-in relative z-10 flex min-h-[2.3em] max-w-4xl leading-tight! items-center justify-center text-center font-heading text-6xl font-semibold tracking-[-0.06em] sm:text-7xl lg:text-8xl"
+            className="slide-in relative z-10 flex min-h-[2.3em] max-w-4xl leading-tight! items-center justify-center text-center font-heading text-4xl font-semibold tracking-[-0.06em] sm:text-6xl lg:text-8xl"
             line1ClassName="text-white"
             line2ClassName="morph-gradient"
             morphTime={1.5}
