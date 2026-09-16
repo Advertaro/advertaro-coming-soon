@@ -1,12 +1,59 @@
 'use client'
 
 import { getCalApi } from '@calcom/embed-react'
-import { ArrowUpRight, Check, Globe, Mail, Phone } from 'lucide-react'
+import { ArrowUpRight, Check, Mail, Phone } from 'lucide-react'
 import { type FormEvent, useEffect, useState } from 'react'
+import { TextMorph } from 'torph/react'
+import { MeteorShower } from '@/components/meteor-shower'
+import { AnimatedGradientText } from '@/components/ui/animated-gradient-text'
+import { WebGLShader } from '@/components/ui/web-gl-shader'
+import { cn } from '@/lib/utils'
+
+const TITLES = [
+  { line1: "We're shaping", line2: "what's next." },
+  { line1: 'Crafting bold', line2: 'digital experiences.' },
+  { line1: 'Designing for', line2: "tomorrow's web." },
+  { line1: 'Engineering with', line2: 'limitless vision.' },
+]
+
+const SOCIAL_LINKS = [
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/company/advertaro-creative-agency',
+    icon: '/logos/linkedin-logo.svg',
+    ariaLabel: 'Advertaro on LinkedIn',
+  },
+  {
+    name: 'X',
+    href: 'https://x.com/WeAreAdvertaro',
+    icon: '/logos/x-icon.svg',
+    ariaLabel: 'Advertaro on X',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/WeAreAdvertaro/',
+    icon: '/logos/facebook-logo.svg',
+    ariaLabel: 'Advertaro on Facebook',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/weareadvertaro/',
+    icon: '/logos/instagram-logo.svg',
+    ariaLabel: 'Advertaro on Instagram',
+  },
+]
 
 export default function Page() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [titleIndex, setTitleIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % TITLES.length)
+    }, 10_000)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     void (async () => {
@@ -28,40 +75,69 @@ export default function Page() {
 
   return (
     <main className="relative flex min-h-screen flex-col overflow-hidden bg-[#050505] text-white">
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <div className="blob blob-orange absolute left-[4%] top-[14%] h-[25rem] w-[25rem] bg-[#DA4516]/65 blur-3xl lg:h-[38rem] lg:w-[38rem]" />
-        <div className="blob blob-brand absolute right-[4%] top-[22%] h-[28rem] w-[28rem] bg-gradient-to-br from-[#25133f]/90 via-[#5a2d7d]/65 to-[#f0a06c]/65 blur-3xl lg:h-[42rem] lg:w-[42rem]" />
-        <div className="blob blob-amber absolute bottom-[2%] left-[36%] h-[24rem] w-[24rem] bg-[#ed8c4a]/45 blur-3xl lg:h-[34rem] lg:w-[34rem]" />
-      </div>
-      <div className="glass-veil pointer-events-none absolute inset-0 z-10" aria-hidden="true" />
+      <WebGLShader className="pointer-events-none absolute inset-0 z-0 h-full w-full" />
+      <div
+        className="pointer-events-none backdrop-blur-lg bg-[oklch(0.1_0.0197_36/50%)] absolute inset-0 z-10"
+        aria-hidden="true"
+      />
       <div className="grain" aria-hidden="true" />
-      <header className="relative z-20 flex items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
-        <img src="/advertaro-logo.svg" alt="Advertaro" className="h-9 w-auto sm:h-11" />
+      <header className="relative z-20 flex w-[min(75rem,calc(100vw-2rem))] mx-auto items-center justify-between py-10 ">
+        <MeteorShower />
+        {/** biome-ignore lint/performance/noImgElement: Logo */}
+        <img src="/advertaro-logo.svg" alt="Advertaro" className="h-7 w-auto sm:h-8" />
         <button
           type="button"
           data-cal-namespace="30min"
           data-cal-link="advertaro/30min"
           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
-          className="glass-effect rounded-full px-4 py-2 text-xs font-medium text-white/80 transition hover:bg-white/15 sm:px-5 sm:text-sm"
+          className="group relative inline-flex cursor-pointer overflow-hidden rounded-full bg-white/15 p-px text-xs font-medium text-white/80 transition sm:text-sm"
         >
-          Let&apos;s talk <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" />
+          <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#DA4516_20%,#F37417_38%,#ffd0a8_48%,#b895ff_60%,#7c3aed_72%,transparent_88%)]" />
+          <span className="relative inline-flex h-full w-full items-center justify-center font-semibold text-base rounded-full bg-[oklch(0.2359_0.0123_16.94)] px-4 py-2 text-white/90 transition-colors duration-300 group-hover:bg-[#14121a] group-hover:text-white sm:px-5">
+            Let&apos;s talk <ArrowUpRight className="ml-1 inline h-3.5 w-3.5" />
+          </span>
         </button>
       </header>
       <section className="relative z-20 flex flex-1 flex-col items-center justify-center px-5 pb-16 pt-8 text-center sm:pb-24">
-        <div className="slide-in mb-7 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-white/80 backdrop-blur-md sm:mb-9">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#ff9b54] shadow-[0_0_12px_#ff9b54]" />
-          New chapter loading
-        </div>
-        <h1 className="slide-in max-w-4xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
-          We&apos;re shaping
-          <br />
-          <span className="bg-gradient-to-r from-[#ffd0a8] via-white to-[#b895ff] bg-clip-text text-transparent">
-            what&apos;s next.
+        <div className="group relative slide-in mb-7 inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-md shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] sm:mb-9">
+          <span
+            className={cn(
+              'animate-gradient absolute inset-0 block h-full w-full rounded-[inherit] bg-linear-to-r from-[#ffaa40]/50 via-white/50 to-[#ffaa40]/50 bg-size-[300%_100%] p-px',
+            )}
+            style={{
+              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMaskComposite: 'destination-out',
+              mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              maskComposite: 'subtract',
+              WebkitClipPath: 'padding-box',
+            }}
+          />
+          <span className="relative mr-0.5 flex h-2 w-2 items-center justify-center">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff9b54] opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#ff9b54] shadow-[0_0_12px_#ff9b54]" />
           </span>
-        </h1>
+          <hr className="mx-2.5 h-3.5 w-px shrink-0 border-none bg-white/20" />
+          <AnimatedGradientText className="text-xs font-medium uppercase tracking-[0.2em]">
+            New chapter is loading
+          </AnimatedGradientText>
+        </div>
+        <div className="relative flex w-full flex-col items-center justify-center">
+          <h1 className="slide-in relative z-10 flex min-h-[2.2em] max-w-4xl leading-tight flex-col items-center justify-center text-6xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
+            <TextMorph duration={600} ease="cubic-bezier(0.19, 1, 0.22, 1)">
+              {TITLES[titleIndex].line1}
+            </TextMorph>
+            <TextMorph
+              duration={600}
+              ease="cubic-bezier(0.19, 1, 0.22, 1)"
+              className="morph-gradient"
+            >
+              {TITLES[titleIndex].line2}
+            </TextMorph>
+          </h1>
+        </div>
         <p className="slide-in-delayed mt-6 max-w-xl text-base leading-7 text-white/65 sm:text-lg">
-          Advertaro is a software development studio from Colombo, Sri Lanka. Thoughtful digital
-          products are on their way.
+          Unleashing creativity through bold visuals, seamless interfaces, and limitless
+          possibilities.
         </p>
         <div className="slide-in-delayed-2 glass-effect mt-10 w-full max-w-xl rounded-[2rem] p-6 text-left shadow-2xl shadow-black/30 sm:mt-12 sm:p-8">
           {submitted ? (
@@ -105,41 +181,52 @@ export default function Page() {
             </>
           )}
         </div>
-        <nav aria-label="Social links" className="slide-in-delayed-2 mt-8 flex items-center gap-3">
-          <a
-            href="tel:+94716880657"
-            aria-label="Call Advertaro"
-            className="glass-effect rounded-full p-3 text-white/65 transition hover:text-white"
-          >
-            <Phone className="h-4 w-4" />
-          </a>
-          <a
-            href="#"
-            aria-label="Advertaro on LinkedIn"
-            className="glass-effect rounded-full p-3 text-white/65 transition hover:text-white"
-          >
-            <Mail className="h-4 w-4" />
-          </a>
-          <a
-            href="#"
-            aria-label="Advertaro on Instagram"
-            className="glass-effect rounded-full p-3 text-white/65 transition hover:text-white"
-          >
-            <Globe className="h-4 w-4" />
-          </a>
-        </nav>
+        <div className="flex flex-col items-center mt-10 gap-y-4">
+          <span className="uppercase tracking-widest font-light slide-in-delayed text-xs">
+            Contact us
+          </span>
+          <div className="slide-in-delayed-2 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="tel:+94716880657"
+              aria-label="Call Advertaro"
+              className="glass-effect flex items-center gap-x-2 rounded-full min-w-44 p-3 text-white/65 transition hover:text-white"
+            >
+              <Phone className="size-5" />
+              <span className="font-semibold text-sm">+94 71 688 0657</span>
+            </a>
+            <a
+              href="mailto:hello@advertaro.lk"
+              aria-label="Email Advertaro"
+              className="glass-effect rounded-full flex items-center gap-x-2  min-w-44 p-3 text-white/65 transition hover:text-white"
+            >
+              <Mail className="size-5" />
+              <span className="font-semibold text-sm">hello@advertaro.lk</span>
+            </a>
+          </div>
+          <nav aria-label="Social links" className="slide-in-delayed-2 flex items-center gap-3">
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.ariaLabel}
+                className="group glass-effect flex size-9 items-center justify-center rounded-full text-white/65 transition hover:text-white"
+              >
+                {/** biome-ignore lint/performance/noImgElement: Social icon */}
+                <img
+                  src={link.icon}
+                  alt=""
+                  aria-hidden="true"
+                  className="size-4 opacity-65 transition-opacity group-hover:opacity-100"
+                />
+              </a>
+            ))}
+          </nav>
+        </div>
       </section>
-      <footer className="relative z-20 flex flex-col items-center gap-2 px-6 py-6 text-center text-xs text-white/40 sm:flex-row sm:justify-between sm:px-10 lg:px-16">
-        <span>© 2026 Advertaro Studio</span>
-        <span>
-          <a href="tel:+94716880657" className="transition hover:text-white">
-            +94 71 688 0657
-          </a>
-          <span className="mx-2">·</span>
-          <a href="mailto:hello@advertaro.lk" className="transition hover:text-white">
-            hello@advertaro.lk
-          </a>
-        </span>
+      <footer className="relative z-20 flex items-center justify-center gap-2 px-6 py-6 text-center text-xs text-white/40 sm:flex-row sm:px-10 lg:px-16">
+        <span>© 2026 Advertaro Creative Studio</span>
       </footer>
     </main>
   )

@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import './globals.css'
+import '@/styles/globals.css'
+import { lilGrotesk, rethinkSans } from '@/styles/fonts'
 
 export const metadata: Metadata = {
   title: 'Advertaro — Coming Soon',
@@ -40,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className={`${rethinkSans.variable} ${lilGrotesk.variable}`}>
+      <body className={`${rethinkSans.className} antialiased w-full`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
