@@ -1,0 +1,4 @@
+{
+  "extends": "@advertaro/config/typescript/library",
+  "include": ["src"]
+}

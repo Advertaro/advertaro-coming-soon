@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@advertaro/ui/styles.css";
+@import "./sections.css";
+@import "./pages.css";
+
+@source "../../../../packages/ui/src";

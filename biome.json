@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["src/**/*", "*.json", "*.mjs"]
+    "includes": [
+      "apps/*/src/**/*",
+      "packages/*/src/**/*",
+      "**/*.json",
+      "apps/*/*.mjs",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/.turbo"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -51,5 +59,20 @@
         "organizeImports": "on"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDescendingSpecificity": "off"
+          },
+          "complexity": {
+            "noImportantStyles": "off"
+          }
+        }
+      }
+    }
+  ]
 }

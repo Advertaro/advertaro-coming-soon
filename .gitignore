@@ -7,10 +7,16 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Environment variables
+.env
 .env*.local
+
+# Paperclip runtime
+.paperclip-inbound/
 
 # Common ignores
 node_modules
 .next/
+.turbo/
+dist/
 *.tsbuildinfo
 .DS_Store

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "bunVersion": "1.4.x",
+  "installCommand": "cd ../.. && npx -y bun@1.4.0 install --frozen-lockfile",
+  "buildCommand": "cd ../.. && npx -y bun@1.4.0 x turbo build --filter=@advertaro/web"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@advertaro/content",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "biome lint ./src"
+  },
+  "devDependencies": {
+    "@advertaro/config": "workspace:*",
+    "typescript": "5.7.3"
+  }
+}
