@@ -1,0 +1,45 @@
+{
+  "videos": {
+    "mp4": {
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frames": 384,
+      "durationSeconds": 16,
+      "audioTracks": 0,
+      "bytes": 3506249,
+      "sha256": "b2d43e05faf237506bc301702b80d52c1935436d988ec3ffbab52dc90384a8e9",
+      "fullDecode": "passed",
+      "wrapLumaRmse": 8.5674,
+      "nearbyMaximumLumaRmse": 8.3307,
+      "nearbyMedianLumaRmse": 6.8963
+    },
+    "webm": {
+      "codec": "vp9",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "frames": 384,
+      "durationSeconds": 16,
+      "audioTracks": 0,
+      "bytes": 2840619,
+      "sha256": "187d94606593493c3dd582ed0c6000b590a359dc4301584e1eed8287347006ce",
+      "fullDecode": "passed",
+      "wrapLumaRmse": 8.3349,
+      "nearbyMaximumLumaRmse": 8.36,
+      "nearbyMedianLumaRmse": 7.0275
+    }
+  },
+  "checks": {
+    "requiredFilesAndBudgets": "passed",
+    "sourceCreditCoverage": "passed",
+    "posterFirstFrame": "passed",
+    "loopBoundaryMetric": "passed"
+  },
+  "poster": {
+    "bytes": 58599,
+    "matchesFirstMp4Frame": true,
+    "sha256": "76de6d3fff854a8fd6fcaeae17261e9950070a208bc9e81ae7e69bd3e66b3324"
+  }
+}
