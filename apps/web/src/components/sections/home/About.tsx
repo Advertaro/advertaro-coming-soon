@@ -8,7 +8,7 @@ const portraitTheme = { base: '#172334', glow: '#ff4d00', label: 'ADVERTARO // S
 export function About() {
   return (
     <>
-      <SectionHeaderBar id="about" num="05" label="ABOUT" timecode="00:05:00:00" />
+      <SectionHeaderBar id="about" num="05" label="ABOUT" />
       <section className="about-section">
         <div className="site-container">
           <div className="about-grid">

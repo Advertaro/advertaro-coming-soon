@@ -1,6 +1,6 @@
 export { CtaPill } from './CtaPill'
 export { cn } from './cn'
 export { Em, MonoLabel } from './MonoLabel'
-export { RulerTicks, SectionHeaderBar } from './SectionHeaderBar'
+export { SectionHeaderBar } from './SectionHeaderBar'
 export { type Stat, StatsGrid } from './StatsGrid'
 export { Tag } from './Tag'

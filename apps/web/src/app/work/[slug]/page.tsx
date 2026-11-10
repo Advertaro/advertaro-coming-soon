@@ -62,7 +62,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      <SectionHeaderBar num="01" label="OVERVIEW" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="OVERVIEW" />
       <section className="page-section">
         <div className="site-container overview-grid">
           <dl className="spec-table" data-reveal>
@@ -100,7 +100,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      <SectionHeaderBar num="02" label="THE RESULT" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="THE RESULT" />
       <section>
         <div className="metric-callouts" data-reveal="stagger">
           {study.results.map((metric) => (
@@ -116,7 +116,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      <SectionHeaderBar num="03" label="VISUALS" timecode="00:03:00:00" />
+      <SectionHeaderBar num="03" label="VISUALS" />
       <section className="page-section">
         <div className="site-container gallery-grid">
           {study.gallery.map((frame) => (
@@ -129,7 +129,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
       {study.quote && (
         <>
-          <SectionHeaderBar num="04" label="CLIENT" timecode="00:04:00:00" />
+          <SectionHeaderBar num="04" label="CLIENT" />
           <section className="site-container pull-quote" data-reveal>
             <blockquote>{study.quote.text}</blockquote>
             <MonoLabel bright>

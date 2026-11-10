@@ -5,12 +5,7 @@ import { BriefForm } from '@/components/sections/shared/BriefForm'
 export function Contact() {
   return (
     <>
-      <SectionHeaderBar
-        id="contact"
-        num="08"
-        label="START A PROJECT"
-        timecode="END OF REEL — 00:08:00:00"
-      />
+      <SectionHeaderBar id="contact" num="08" label="START A PROJECT" />
       <section className="booking-section">
         <div className="site-container">
           <div className="booking-grid">

@@ -10,8 +10,6 @@ type FilmStillProps = {
   mode?: StillMode
   width?: number
   height?: number
-  /** Hide the burnt-in caption. */
-  hideLabel?: boolean
   className?: string
 }
 
@@ -21,15 +19,14 @@ export function FilmStill({
   mode = 'landscape',
   width = 1280,
   height = 720,
-  hideLabel,
   className,
 }: FilmStillProps) {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     if (!ref.current) return
-    drawFilmStill(ref.current, theme.base, theme.glow, hideLabel ? '' : theme.label, mode)
-  }, [theme.base, theme.glow, theme.label, mode, hideLabel])
+    drawFilmStill(ref.current, theme.base, theme.glow, mode)
+  }, [theme.base, theme.glow, mode])
 
   return (
     // biome-ignore lint/a11y/noAriaHiddenOnFocusable: canvas is decorative and not focusable

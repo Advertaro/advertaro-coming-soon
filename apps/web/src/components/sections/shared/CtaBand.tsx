@@ -19,7 +19,7 @@ export function CtaBand({
 }: CtaBandProps) {
   return (
     <>
-      <SectionHeaderBar num={num} label="START A PROJECT" timecode="END OF REEL" />
+      <SectionHeaderBar num={num} label="START A PROJECT" />
       <section className="cta-band">
         <div className="site-container" data-reveal>
           <h2>{title}</h2>

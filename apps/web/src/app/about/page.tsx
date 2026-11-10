@@ -33,7 +33,7 @@ export default function AboutPage() {
         }
       />
 
-      <SectionHeaderBar num="01" label="THE STORY" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="THE STORY" />
       <section className="page-section">
         <div className="site-container split-grid">
           <h2 className="section-headline" data-reveal>
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
       <StatsGrid stats={studioStats} />
 
-      <SectionHeaderBar num="02" label="WHAT WE BELIEVE" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="WHAT WE BELIEVE" />
       <section className="page-section">
         <div className="site-container">
           <div className="beliefs-grid" data-reveal="stagger">
@@ -81,7 +81,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionHeaderBar num="03" label="THE TEAM" timecode="00:03:00:00" />
+      <SectionHeaderBar num="03" label="THE TEAM" />
       <section className="page-section">
         <div className="site-container">
           <div className="section-top" data-reveal>
@@ -113,7 +113,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionHeaderBar num="04" label="CLIENTS & INDUSTRIES" timecode="00:04:00:00" />
+      <SectionHeaderBar num="04" label="CLIENTS & INDUSTRIES" />
       <section className="page-section">
         <div className="site-container split-grid">
           <h2 className="section-headline" data-reveal>

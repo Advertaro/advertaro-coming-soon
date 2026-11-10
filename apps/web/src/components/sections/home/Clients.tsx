@@ -12,7 +12,7 @@ const clients = [
 export function Clients() {
   return (
     <>
-      <SectionHeaderBar num="02" label="TRUSTED BY" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="TRUSTED BY" />
       <section className="edited-for-section">
         <div className="site-container">
           <div className="edited-for-header" data-reveal>

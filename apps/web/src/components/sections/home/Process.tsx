@@ -6,7 +6,7 @@ import Link from 'next/link'
 export function Process({ num = '06' }: { num?: string }) {
   return (
     <>
-      <SectionHeaderBar id="process" num={num} label="PROCESS" timecode="00:06:00:00" />
+      <SectionHeaderBar id="process" num={num} label="PROCESS" />
       <section className="rates-section">
         <div className="site-container">
           <div className="rates-top" data-reveal>

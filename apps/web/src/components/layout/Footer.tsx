@@ -52,10 +52,10 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="section-header-bar">
+      <div className="section-header-bar footer-studio-meta">
         <div className="left-tag">+ EST. {site.founded}</div>
-        <div className="center-cross">+ COLOMBO</div>
-        <div className="right-tc">+ WORLDWIDE</div>
+        <div className="studio-location">+ COLOMBO</div>
+        <div className="studio-reach">+ WORLDWIDE</div>
       </div>
 
       <div className="footer-giant-word" aria-hidden="true">

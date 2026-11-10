@@ -59,7 +59,7 @@ export default async function PostPage({ params }: Props) {
           <div className="article-body">
             <aside className="author-card">
               <div className="author-avatar">
-                <FilmStill theme={post.theme} width={128} height={128} hideLabel />
+                <FilmStill theme={post.theme} width={128} height={128} />
               </div>
               <div>
                 <MonoLabel>WRITTEN BY</MonoLabel>
@@ -78,7 +78,7 @@ export default async function PostPage({ params }: Props) {
 
       {related.length > 0 && (
         <>
-          <SectionHeaderBar num="01" label="KEEP READING" timecode="00:01:00:00" />
+          <SectionHeaderBar num="01" label="KEEP READING" />
           <section className="page-section">
             <div className="site-container post-grid mt-0!">
               {related.map((p) => (

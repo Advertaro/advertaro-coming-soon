@@ -19,7 +19,7 @@ export function Reviews() {
 
   return (
     <>
-      <SectionHeaderBar num="07" label="CLIENT REVIEWS" timecode="00:07:00:00" />
+      <SectionHeaderBar num="07" label="CLIENT REVIEWS" />
       <section
         className="reviews-section"
         aria-roledescription="carousel"

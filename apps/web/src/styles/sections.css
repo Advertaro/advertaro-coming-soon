@@ -88,7 +88,6 @@
     overflow: hidden;
   }
 
-  .hero-media-wrap canvas,
   .hero-media-wrap img,
   .hero-media-wrap video {
     position: absolute;
@@ -100,81 +99,22 @@
 
   .hero-media-wrap img {
     z-index: 1;
-    filter: contrast(1.06) brightness(0.82);
   }
 
   .hero-media-wrap video {
     z-index: 2;
-    opacity: 0.72;
-    mix-blend-mode: screen;
+    opacity: 1;
   }
 
   .hero-vignette {
     position: absolute;
     inset: 0;
     z-index: 3;
+    /* Keep even small hero text readable over a pure-white video frame. */
     background:
-      radial-gradient(
-        circle at 52% 38%,
-        rgba(255, 77, 0, 0.12) 0%,
-        rgba(16, 36, 72, 0.28) 45%,
-        rgba(10, 10, 11, 0.92) 95%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(10, 10, 11, 0.65) 0%,
-        rgba(10, 10, 11, 0.18) 38%,
-        rgba(10, 10, 11, 0.55) 75%,
-        #0a0a0b 100%
-      );
-  }
-
-  /* Hero Top Timecode Ruler */
-  .hero-ruler {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 32px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
-    letter-spacing: 0.1em;
-  }
-
-  .rec-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 12px;
-    background: rgba(17, 18, 22, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    color: #ffffff;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-  }
-
-  .rec-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-orange);
-    box-shadow: 0 0 10px var(--accent-orange);
-    animation: blinkRec 1.2s infinite ease-in-out;
-  }
-
-  @keyframes blinkRec {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.25;
-    }
+      linear-gradient(rgba(10, 10, 11, 0.74), rgba(10, 10, 11, 0.74)),
+      radial-gradient(ellipse at 50% 35%, transparent 20%, #0a0a0b 100%),
+      linear-gradient(180deg, transparent 55%, #0a0a0b 100%);
   }
 
   /* Hero Main Grid */
@@ -182,70 +122,21 @@
     position: relative;
     z-index: 5;
     display: grid;
-    grid-template-columns: 260px 1fr 310px;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 64px;
     align-items: center;
-    padding: 40px 32px 20px;
+    padding: 80px 32px 56px;
     max-width: var(--max-w);
     width: 100%;
     margin: 0 auto;
     flex: 1;
   }
 
-  .hero-left-panel {
-    background: rgba(16, 17, 22, 0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 12px;
-    padding: 20px;
-  }
-
-  .hero-left-panel .panel-heading {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: var(--accent-orange);
-    margin-bottom: 14px;
-    display: block;
-  }
-
-  .hero-service-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .hero-service-list li {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.86);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .hero-service-list li span.idx {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-muted);
-  }
-
-  .hero-left-panel .est-tag {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--text-secondary);
-    letter-spacing: 0.08em;
-  }
-
-  /* Center Statement */
+  /* Studio statement */
   .hero-center {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 20px 12px;
+    text-align: left;
+    max-width: 880px;
+    padding: 20px 0;
   }
 
   .hero-eyebrow {
@@ -265,7 +156,7 @@
   }
 
   .hero-statement {
-    font-size: clamp(24px, 3.1vw, 42px);
+    font-size: clamp(28px, 3.5vw, 52px);
     font-weight: 500;
     line-height: 1.22;
     letter-spacing: -0.025em;
@@ -273,13 +164,12 @@
     text-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
   }
 
-  .hero-statement .serif-italic {
-    font-size: 1.08em;
+  .hero-statement .text-emphasis {
     color: #f3f4f6;
-    font-weight: 400;
+    font-weight: 700;
   }
 
-  /* Right Floating Card: Hey, I'm Noah */
+  /* Studio card */
   .hero-noah-card {
     background: rgba(18, 19, 24, 0.82);
     backdrop-filter: blur(16px);
@@ -332,50 +222,20 @@
     margin-top: 2px;
   }
 
-  .noah-reel-btn {
+  .studio-work-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    cursor: pointer;
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-  .noah-reel-btn:hover {
-    background: rgba(255, 77, 0, 0.15);
-    border-color: var(--accent-orange);
-  }
-
-  .noah-reel-btn .frame-code {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.1em;
-    color: var(--text-secondary);
-  }
-
-  .noah-reel-btn .play-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 13px;
     font-weight: 600;
     color: #ffffff;
+    transition: color 0.2s ease;
   }
 
-  .noah-reel-btn .play-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--accent-orange);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
+  .studio-work-link:hover {
+    color: #ff9568;
   }
 
   /* Giant Display Title at Hero Bottom */
@@ -1749,10 +1609,12 @@
   @media (max-width: 1024px) {
     .hero-body {
       grid-template-columns: 1fr;
+      gap: 24px;
       text-align: center;
     }
-    .hero-left-panel {
-      display: none;
+    .hero-center {
+      text-align: center;
+      margin: 0 auto;
     }
     .hero-noah-card {
       max-width: 360px;
@@ -1811,12 +1673,6 @@
     .navbar {
       padding: 14px 20px;
     }
-    .hero-ruler {
-      padding: 10px 20px;
-    }
-    .hero-ruler > span:nth-child(n + 4) {
-      display: none;
-    }
     .hero-body {
       padding: 32px 20px 12px;
     }
@@ -1853,10 +1709,9 @@
 }
 
 @layer components {
-  .particle-field {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    mix-blend-mode: screen;
+  .footer-studio-meta {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }

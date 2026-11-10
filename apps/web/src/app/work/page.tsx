@@ -25,7 +25,7 @@ export default function WorkPage() {
         intro="Brands, websites, apps and systems — each one built from scratch for a business that needed more than a template."
         meta={<Tag>{String(caseStudies.length).padStart(2, '0')} CASE STUDIES</Tag>}
       />
-      <SectionHeaderBar num="02" label="SELECTED WORK" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="SELECTED WORK" />
       <section className="page-section">
         <div className="site-container">
           <WorkIndex studies={caseStudies} />

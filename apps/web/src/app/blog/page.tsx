@@ -26,7 +26,7 @@ export default function BlogPage() {
           </>
         }
       />
-      <SectionHeaderBar num="01" label="LATEST" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="LATEST" />
       <section className="page-section">
         <div className="site-container">
           {featured && (

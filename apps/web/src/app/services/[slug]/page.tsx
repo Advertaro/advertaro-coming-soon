@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: Props) {
         meta={service.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
       />
 
-      <SectionHeaderBar num="01" label="IN PRACTICE" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="IN PRACTICE" />
       <section className="page-section">
         <div className="site-container split-grid">
           <div className="service-media-box" data-wipe>
@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <SectionHeaderBar num="02" label="SCOPE" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="SCOPE" />
       <section className="page-section">
         <div className="site-container split-grid">
           <div data-reveal>
@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: Props) {
 
       {related.length > 0 && (
         <>
-          <SectionHeaderBar num="03" label="RELEVANT WORK" timecode="00:03:00:00" />
+          <SectionHeaderBar num="03" label="RELEVANT WORK" />
           <section className="page-section">
             <div className="site-container work-grid">
               {related.map((study, i) => (
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
         </>
       )}
 
-      <SectionHeaderBar num={related.length > 0 ? '04' : '03'} label="FAQ" timecode="00:04:00:00" />
+      <SectionHeaderBar num={related.length > 0 ? '04' : '03'} label="FAQ" />
       <section className="page-section">
         <div className="site-container split-grid">
           <h2 className="section-headline" data-reveal>

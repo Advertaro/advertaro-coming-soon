@@ -27,7 +27,7 @@ export default function ServicesPage() {
         meta={<Tag>{String(services.length).padStart(2, '0')} DISCIPLINES</Tag>}
       />
 
-      <SectionHeaderBar num="01" label="DISCIPLINES" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="DISCIPLINES" />
       <section className="page-section">
         <div className="site-container">
           <div className="service-card-grid" data-reveal="stagger">
@@ -50,7 +50,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <SectionHeaderBar num="02" label="WHY BESPOKE" timecode="00:02:00:00" />
+      <SectionHeaderBar num="02" label="WHY BESPOKE" />
       <section className="page-section">
         <div className="site-container split-grid">
           <h2 className="section-headline" data-reveal>

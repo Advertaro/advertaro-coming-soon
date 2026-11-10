@@ -1,7 +1,7 @@
 /*
  * Inner pages — built from the landing page design DNA:
- * timecode strips, mono labels, giant tight-tracked display type with
- * serif-italic emphasis, 1px hairlines and dark card surfaces.
+ * section labels, mono labels, giant tight-tracked display type with
+ * weighted emphasis, 1px hairlines and dark card surfaces.
  */
 
 @layer components {
@@ -57,8 +57,8 @@
     max-width: 1100px;
   }
 
-  .page-hero-title .serif-italic {
-    font-weight: 400;
+  .page-hero-title .text-emphasis {
+    font-weight: 600;
     letter-spacing: -0.03em;
   }
 
@@ -238,8 +238,6 @@
   }
 
   .prose blockquote {
-    font-family: var(--font-serif);
-    font-style: italic;
     font-size: clamp(26px, 3vw, 36px);
     line-height: 1.25;
     color: var(--text-editorial);
@@ -338,8 +336,6 @@
   }
 
   .pull-quote blockquote {
-    font-family: var(--font-serif);
-    font-style: italic;
     font-size: clamp(30px, 4.2vw, 58px);
     line-height: 1.15;
     letter-spacing: -0.02em;
@@ -777,8 +773,6 @@
   }
 
   .client-wordmark.serif {
-    font-family: var(--font-serif);
-    font-style: italic;
     font-weight: 400;
     font-size: 24px;
     letter-spacing: -0.01em;

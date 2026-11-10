@@ -13,7 +13,7 @@ export function MonoLabel({ children, as: Tag = 'span', bright, className }: Mon
   return <Tag className={cn('mono-label', bright && 'text-white', className)}>{children}</Tag>
 }
 
-/** Serif-italic emphasis used inside display headlines. */
+/** Colour and weight emphasis used inside display headlines. */
 export function Em({ children, className }: { children: ReactNode; className?: string }) {
-  return <span className={cn('serif-italic', className)}>{children}</span>
+  return <span className={cn('text-emphasis', className)}>{children}</span>
 }

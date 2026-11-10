@@ -1,51 +1,20 @@
-import { services, site } from '@advertaro/content'
 import { Em } from '@advertaro/ui'
 import Link from 'next/link'
-import { HeroParticles } from '@/components/three/HeroParticles'
 import { FilmStill } from '@/components/ui/FilmStill'
-import { LiveTimecode } from '@/components/ui/LiveTimecode'
+import { HeroVideo } from '@/components/ui/HeroVideo'
 
-const heroTheme = { base: '#0f2547', glow: '#ff4d00', label: 'ADVERTARO // SHOWREEL MASTER 4K' }
 const avatarTheme = { base: '#1b2838', glow: '#ff4d00', label: '' }
 
 export function Hero() {
   return (
     <section className="hero">
       <div className="hero-media-wrap">
-        <FilmStill theme={heroTheme} width={1600} height={900} />
-        <HeroParticles />
+        <HeroVideo />
         <div className="hero-vignette" />
       </div>
 
-      {/* Top timecode strip */}
-      <div className="hero-ruler" aria-hidden="true">
-        <div className="rec-badge">
-          <span className="rec-dot" />
-          <LiveTimecode />
-        </div>
-        <span>00:00</span>
-        <span>+</span>
-        <span>01:00</span>
-        <span>+</span>
-        <span>02:00</span>
-      </div>
-
       <div className="hero-body">
-        {/* Left capabilities panel */}
-        <aside className="hero-left-panel" aria-label="Services" data-hero-in>
-          <span className="panel-heading">(01) — SERVICES</span>
-          <ul className="hero-service-list">
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link href={`/services/${service.slug}`}>{service.shortTitle}</Link>
-                <span className="idx">{service.index}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="est-tag">(EST. {site.founded} — COLOMBO, LK)</div>
-        </aside>
-
-        {/* Centre value proposition */}
+        {/* Studio value proposition */}
         <div className="hero-center">
           <div className="hero-eyebrow" data-hero-in>
             ADVERTARO STUDIO — COLOMBO &amp; REMOTE
@@ -60,7 +29,7 @@ export function Hero() {
         <aside className="hero-noah-card" aria-label="About Advertaro" data-hero-in>
           <div className="noah-card-top">
             <div className="noah-avatar-wrap">
-              <FilmStill theme={avatarTheme} width={240} height={240} hideLabel />
+              <FilmStill theme={avatarTheme} width={240} height={240} />
               <svg
                 viewBox="0 0 56 56"
                 className="media-fill p-3"
@@ -76,14 +45,9 @@ export function Hero() {
               <p>Brand · Web · Mobile · Systems</p>
             </div>
           </div>
-          <Link href="/work" className="noah-reel-btn">
-            <span className="frame-code">REEL {site.founded}—2026</span>
-            <span className="play-pill">
-              <span>See our work</span>
-              <span className="play-icon" aria-hidden="true">
-                ▶
-              </span>
-            </span>
+          <Link href="/work" className="studio-work-link">
+            <span>See our work</span>
+            <span aria-hidden="true">↗</span>
           </Link>
         </aside>
       </div>

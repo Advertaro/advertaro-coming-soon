@@ -21,7 +21,6 @@ export function drawFilmStill(
   canvas: HTMLCanvasElement,
   colorA: string,
   colorB: string,
-  labelText: string,
   mode: StillMode = 'landscape',
 ) {
   const ctx = canvas.getContext('2d') as RoundRectCtx | null
@@ -199,16 +198,5 @@ export function drawFilmStill(
     ctx.lineTo(w, h)
     ctx.closePath()
     ctx.fill()
-  }
-
-  // Frame guide border
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.07)'
-  ctx.lineWidth = 1
-  ctx.strokeRect(20, 20, w - 40, h - 40)
-
-  if (labelText) {
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.28)'
-    ctx.font = "500 12px 'JetBrains Mono', monospace"
-    ctx.fillText(labelText, 34, h - 32)
   }
 }

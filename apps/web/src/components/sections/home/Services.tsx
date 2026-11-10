@@ -6,7 +6,7 @@ import { FilmStill } from '@/components/ui/FilmStill'
 export function Services() {
   return (
     <>
-      <SectionHeaderBar id="services" num="04" label="SERVICES" timecode="00:04:00:00" />
+      <SectionHeaderBar id="services" num="04" label="SERVICES" />
       <section className="services-section">
         <div className="site-container">
           <h2 className="sr-only">Services</h2>

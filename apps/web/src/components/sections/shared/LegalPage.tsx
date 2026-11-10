@@ -17,7 +17,7 @@ export function LegalPage({
     <>
       <PageHero eyebrow="(—) — LEGAL" title={title} intro={`Last updated ${updated}.`} />
       <DraftBanner>Draft — to be reviewed by legal counsel before launch</DraftBanner>
-      <SectionHeaderBar label="DOCUMENT" timecode="00:00:00:00" />
+      <SectionHeaderBar label="DOCUMENT" />
       <section className="page-section">
         <div className="site-container">
           <div className="article-body prose">

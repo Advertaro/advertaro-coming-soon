@@ -23,7 +23,7 @@ export default function ContactPage() {
         }
         intro="We take on brand, web, app and systems projects for businesses that want them done properly. Send us a brief and you'll hear from a real person within one business day."
       />
-      <SectionHeaderBar num="01" label="THE BRIEF" timecode="00:01:00:00" />
+      <SectionHeaderBar num="01" label="THE BRIEF" />
       <section className="booking-section">
         <div className="site-container">
           <div className="booking-grid">

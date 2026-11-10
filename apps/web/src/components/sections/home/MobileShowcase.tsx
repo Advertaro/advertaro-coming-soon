@@ -35,7 +35,7 @@ const actions = [
 export function MobileShowcase() {
   return (
     <>
-      <SectionHeaderBar id="mobile" num="03" label="MOBILE FIRST" timecode="00:03:00:00" />
+      <SectionHeaderBar id="mobile" num="03" label="MOBILE FIRST" />
       <section className="reels-section">
         <div className="reels-watermark" aria-hidden="true">
           Mobile First
@@ -50,7 +50,7 @@ export function MobileShowcase() {
             {screens.map((screen) => (
               <figure className="reel-card-wrap" key={screen.client}>
                 <div className="reel-phone">
-                  <FilmStill theme={screen.theme} width={540} height={960} hideLabel />
+                  <FilmStill theme={screen.theme} width={540} height={960} />
                   <div className="reel-phone-shade" />
 
                   <div className="reel-ui-top">
