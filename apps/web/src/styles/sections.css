@@ -27,6 +27,7 @@
   }
 
   .brand-logo {
+    font-family: var(--font-display);
     font-size: 19px;
     font-weight: 800;
     letter-spacing: -0.03em;
@@ -248,7 +249,8 @@
   }
 
   .hero-giant-title {
-    font-size: clamp(64px, 14.5vw, 212px);
+    font-family: var(--font-display);
+    font-size: clamp(40px, 11vw, 212px);
     font-weight: 800;
     letter-spacing: -0.055em;
     line-height: 0.92;
@@ -437,6 +439,7 @@
   }
 
   .work-title-word {
+    font-family: var(--font-display);
     font-size: clamp(44px, 7vw, 96px);
     font-weight: 800;
     letter-spacing: -0.04em;
@@ -1391,7 +1394,8 @@
   }
 
   .footer-giant-word {
-    font-size: clamp(72px, 16vw, 238px);
+    font-family: var(--font-display);
+    font-size: clamp(72px, 13vw, 195px);
     font-weight: 800;
     letter-spacing: -0.055em;
     line-height: 0.88;
@@ -1703,7 +1707,7 @@
       align-items: flex-start;
     }
     .footer-giant-word {
-      font-size: 19vw;
+      font-size: 13vw;
     }
   }
 }

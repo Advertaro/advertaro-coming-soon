@@ -365,6 +365,7 @@
   }
 
   .next-project .title {
+    font-family: var(--font-display);
     font-size: clamp(44px, 8vw, 120px);
     font-weight: 800;
     letter-spacing: -0.05em;

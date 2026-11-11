@@ -1,10 +1,17 @@
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono, Questrial, Syne } from 'next/font/google'
 
-/* Grotesk sans for UI and display, mono for technical labels. */
-export const grotesk = Inter({
+/* Syne for titles, Questrial for body text, mono for technical labels. */
+export const syne = Syne({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-grotesk',
+  variable: '--font-syne',
+})
+
+export const questrial = Questrial({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-questrial',
 })
 
 export const jetbrainsMono = JetBrains_Mono({
