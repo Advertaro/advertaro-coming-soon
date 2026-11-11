@@ -1,0 +1,110 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" block-dangerous-commands",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^Bash$"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" protect-files",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^apply_patch$"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" scan-secrets",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^apply_patch$"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" warn-large-files",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^apply_patch$"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" format-on-save",
+            "timeout": 30
+          }
+        ],
+        "matcher": "^apply_patch$"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" lint-on-stop",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^apply_patch$"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" typecheck-on-stop",
+            "timeout": 5
+          }
+        ],
+        "matcher": "^apply_patch$"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" lint-on-stop",
+            "timeout": 120
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" typecheck-on-stop",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null) || root=; if [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; then root=$PWD; while [ \"$root\" != / ] && [ ! -f \"$root/.codex/hooks/agent-starter/run.sh\" ]; do root=$(dirname \"$root\"); done; fi; bash \"$root/.codex/hooks/agent-starter/run.sh\" session-start",
+            "timeout": 10
+          }
+        ],
+        "matcher": "^startup$"
+      }
+    ]
+  }
+}
