@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 const directLinkClass =
-  'flex items-center justify-between gap-4 rounded-xl border border-line bg-bg-card px-5 py-[18px] text-[16px] font-semibold transition-[border-color,background-color] duration-200 ease-[ease] hover:border-accent hover:bg-accent/8'
+  'flex items-center justify-between gap-4 rounded-xl border border-line bg-bg-card px-5 py-4.5 text-base/[inherit] font-semibold transition-[border-color,background-color] duration-200 ease-[ease] hover:border-accent hover:bg-accent/8'
 
 export default function ContactPage() {
   return (
@@ -31,14 +31,14 @@ export default function ContactPage() {
       <SectionHeaderBar num="01" label="THE BRIEF" />
       <Section className="pb-0">
         <Container>
-          <div className="grid grid-cols-1 gap-14 pb-[84px] lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="grid grid-cols-1 gap-14 pb-21 lg:grid-cols-[0.95fr_1.05fr]">
             <div data-reveal>
               <h2 className="mb-7 text-[length:clamp(36px,4.8vw,68px)] leading-[1.04] font-bold tracking-[-0.035em]">
                 Tell us what you're
                 <br />
                 <Em>building</Em>
               </h2>
-              <p className="max-w-[500px] text-[16px] leading-[1.6] text-ink-secondary">
+              <p className="max-w-125 text-base leading-[1.6] text-ink-secondary">
                 <strong className="font-semibold text-white">What happens next?</strong>
                 <br />
                 We read every brief, reply within one business day, and if it's a fit we set up a

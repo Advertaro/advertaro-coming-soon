@@ -11,8 +11,8 @@ const clients = [
 ] as const
 
 const wordmarkStyles = {
-  serif: 'text-[24px] font-normal tracking-[-0.01em]',
-  mono: 'font-sans text-[14px] font-semibold tracking-[0.08em] uppercase',
+  serif: 'text-2xl/[inherit] font-normal tracking-[-0.01em]',
+  mono: 'font-sans text-sm/[inherit] font-semibold tracking-[0.08em] uppercase',
   sans: '',
 }
 
@@ -20,10 +20,10 @@ export function Clients() {
   return (
     <>
       <SectionHeaderBar num="02" label="TRUSTED BY" />
-      <section className="bg-bg pt-[88px]">
+      <section className="bg-bg pt-22">
         <Container>
           <div className="mb-12 flex flex-wrap items-end justify-between gap-8" data-reveal>
-            <h2 className="max-w-[720px] text-[length:clamp(30px,4.2vw,56px)] leading-[1.08] font-semibold tracking-[-0.035em]">
+            <h2 className="max-w-180 text-[length:clamp(30px,4.2vw,56px)] leading-[1.08] font-semibold tracking-[-0.035em]">
               The brands that call when it <Em>has to be built properly, not templated</Em>
             </h2>
             <MonoLabel>CLIENTS — 2019–2026</MonoLabel>

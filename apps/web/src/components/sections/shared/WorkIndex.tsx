@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { WorkCard } from './WorkCard'
 
 const PILL_CLASS =
-  'cursor-pointer rounded-full border border-line bg-bg-input px-3.5 py-[9px] text-[13px] text-ink-secondary transition-all duration-200 ease-[ease] hover:border-accent hover:bg-accent/15 hover:text-white'
+  'cursor-pointer rounded-full border border-line bg-bg-input px-3.5 py-2.25 text-[13px] text-ink-secondary transition-all duration-200 ease-[ease] hover:border-accent hover:bg-accent/15 hover:text-white'
 
 /** Filterable case-study grid for /work. */
 export function WorkIndex({ studies }: { studies: CaseStudy[] }) {
@@ -37,7 +37,7 @@ export function WorkIndex({ studies }: { studies: CaseStudy[] }) {
             index={studies.indexOf(study)}
             reverse={i % 2 === 1}
             showOutcome
-            className={i === 0 && filter === 'all' ? 'col-span-full md:aspect-[16/7]' : undefined}
+            className={i === 0 && filter === 'all' ? 'col-span-full md:aspect-16/7' : undefined}
           />
         ))}
       </div>

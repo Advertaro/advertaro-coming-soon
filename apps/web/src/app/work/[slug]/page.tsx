@@ -63,7 +63,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <Section tight>
         <Container>
           <div
-            className="relative aspect-[21/9] overflow-hidden rounded-[14px] border border-line bg-bg-card"
+            className="relative aspect-21/9 overflow-hidden rounded-[14px] border border-line bg-bg-card"
             data-wipe
           >
             <FilmStill theme={study.theme} width={1600} height={686} />
@@ -83,7 +83,7 @@ export default async function CaseStudyPage({ params }: Props) {
               ['Year', study.year],
             ].map(([k, v]) => (
               <div
-                className="flex justify-between gap-6 border-b border-line py-3.5 text-[14px]"
+                className="flex justify-between gap-6 border-b border-line py-3.5 text-sm/[inherit]"
                 key={k}
               >
                 <dt className="shrink-0 font-sans text-[11.5px] tracking-[0.14em] text-ink-secondary uppercase">
@@ -128,11 +128,11 @@ export default async function CaseStudyPage({ params }: Props) {
               <span className="font-sans text-[11.5px] tracking-[0.12em] text-accent uppercase">
                 {metric.label}
               </span>
-              <span className="text-[length:clamp(56px,7vw,104px)] leading-[0.9] font-extrabold tracking-[-0.05em]">
+              <span className="text-[length:clamp(56px,7vw,104px)] leading-[0.9] font-extrabold tracking-tighter">
                 {metric.value}
               </span>
               {metric.description && (
-                <span className="text-[14px] text-ink-secondary">{metric.description}</span>
+                <span className="text-sm/[inherit] text-ink-secondary">{metric.description}</span>
               )}
             </div>
           ))}
@@ -147,7 +147,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <Container className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {study.gallery.map((frame) => (
             <div
-              className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-line bg-bg-card first:col-span-full md:first:aspect-[21/9]"
+              className="relative aspect-16/10 overflow-hidden rounded-[14px] border border-line bg-bg-card first:col-span-full md:first:aspect-21/9"
               key={frame.label}
               data-wipe
             >
@@ -161,7 +161,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <>
           <SectionHeaderBar num="04" label="CLIENT" />
           <Container as="section" className="px-0 py-14 text-center sm:px-0" data-reveal>
-            <blockquote className="mx-auto mb-7 max-w-[1040px] text-[length:clamp(30px,4.2vw,58px)] leading-[1.15] tracking-[-0.02em] text-white before:text-accent before:content-['“'] after:text-accent after:content-['”']">
+            <blockquote className="mx-auto mb-7 max-w-260 text-[length:clamp(30px,4.2vw,58px)] leading-[1.15] tracking-[-0.02em] text-white before:text-accent before:content-['“'] after:text-accent after:content-['”']">
               {study.quote.text}
             </blockquote>
             <MonoLabel bright>
@@ -179,7 +179,7 @@ export default async function CaseStudyPage({ params }: Props) {
           >
             <div>
               <MonoLabel>NEXT CASE STUDY →</MonoLabel>
-              <div className="mt-4 font-display text-[length:clamp(44px,8vw,120px)] leading-[0.92] font-extrabold tracking-[-0.05em] group-hover:text-accent">
+              <div className="mt-4 font-display text-[length:clamp(44px,8vw,120px)] leading-[0.92] font-extrabold tracking-tighter group-hover:text-accent">
                 {next.title}
               </div>
             </div>

@@ -13,7 +13,7 @@ export function Tag({ children, num, className }: TagProps) {
   return (
     <span
       className={cn(
-        'rounded-full border border-white/12 bg-bg-elevated/75 px-3 py-1.5 font-sans text-[11px] whitespace-nowrap uppercase tracking-[0.12em] text-white backdrop-blur-[8px]',
+        'rounded-full border border-white/12 bg-bg-elevated/75 px-3 py-1.5 font-sans text-[11px] whitespace-nowrap uppercase tracking-[0.12em] text-white backdrop-blur-sm',
         className,
       )}
     >

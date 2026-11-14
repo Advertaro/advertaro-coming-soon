@@ -22,7 +22,7 @@ export function CtaPill({
   return (
     <Link
       className={cn(
-        'group relative inline-flex cursor-pointer items-center gap-[9px] overflow-hidden whitespace-nowrap rounded-full px-[18px] py-2.5 text-[13px] font-semibold text-white transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px',
+        'group relative inline-flex cursor-pointer items-center gap-2.25 overflow-hidden whitespace-nowrap rounded-full px-4.5 py-2.5 text-[13px] font-semibold text-white transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px',
         isGhost
           ? 'border border-white/14 bg-white/6 hover:border-accent hover:bg-accent/15'
           : 'bg-accent shadow-glow hover:bg-accent-hover hover:shadow-glow-lg',
@@ -39,8 +39,8 @@ export function CtaPill({
         )}
         aria-hidden="true"
       />
-      <span className="inline-block h-[18px] overflow-hidden leading-[18px]">
-        <span className="flex flex-col transition-[translate] duration-[280ms] ease-roll group-hover:-translate-y-[18px] group-focus-visible:-translate-y-[18px]">
+      <span className="inline-block h-4.5 overflow-hidden leading-4.5">
+        <span className="flex flex-col transition-[translate] duration-280 ease-roll group-hover:-translate-y-4.5 group-focus-visible:-translate-y-4.5">
           <span>{label}</span>
           <span aria-hidden="true">{rollLabel ?? label}</span>
         </span>

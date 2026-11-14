@@ -31,7 +31,7 @@ export function Process({ num = '06' }: { num?: string }) {
               return (
                 <div
                   className={cn(
-                    'relative flex flex-col justify-between gap-7 rounded-[18px] border px-[22px] py-[26px] transition-[translate,border-color] duration-250 ease-[ease] hover:-translate-y-1 hover:border-line-strong sm:px-[30px] sm:py-[34px]',
+                    'relative flex flex-col justify-between gap-7 rounded-[18px] border px-5.5 py-6.5 transition-[translate,border-color] duration-250 ease-[ease] hover:-translate-y-1 hover:border-line-strong sm:px-7.5 sm:py-8.5',
                     featured
                       ? 'border-accent/55 bg-[linear-gradient(180deg,rgba(255,77,0,0.07)_0%,var(--color-bg-card)_45%)]'
                       : 'border-line bg-bg-card',
@@ -40,17 +40,17 @@ export function Process({ num = '06' }: { num?: string }) {
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="font-sans text-[12px] font-semibold text-accent">
+                      <span className="font-sans text-xs/[inherit] font-semibold text-accent">
                         {step.index}
                       </span>
-                      <span className="rounded-md border border-line bg-white/5 px-2.5 py-[5px] font-sans text-[10.5px] tracking-[0.1em] text-ink-secondary">
+                      <span className="rounded-md border border-line bg-white/5 px-2.5 py-1.25 font-sans text-[10.5px] tracking-widest text-ink-secondary">
                         {step.spec}
                       </span>
                     </div>
-                    <h3 className="mt-6 mb-2.5 text-[30px] font-bold tracking-[-0.03em]">
+                    <h3 className="mt-6 mb-2.5 text-3xl/[inherit] font-bold tracking-[-0.03em]">
                       {step.title}
                     </h3>
-                    <p className="text-[15px] leading-[1.5] text-ink-secondary">
+                    <p className="text-[15px] leading-normal text-ink-secondary">
                       {step.description}
                     </p>
                   </div>
@@ -66,7 +66,7 @@ export function Process({ num = '06' }: { num?: string }) {
                     <Link
                       href="/contact"
                       className={cn(
-                        'inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-3 font-sans text-[12px] font-semibold tracking-[0.1em] text-white transition-colors duration-200 ease-[ease] hover:border-accent hover:bg-accent',
+                        'inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-3 font-sans text-xs/[inherit] font-semibold tracking-widest text-white transition-colors duration-200 ease-[ease] hover:border-accent hover:bg-accent',
                         featured ? 'border-accent bg-accent' : 'border-white/14 bg-white/8',
                       )}
                     >

@@ -16,15 +16,15 @@ export function Hero() {
 
       <div className="relative z-5 mx-auto grid w-full max-w-site flex-1 grid-cols-1 items-center gap-6 px-5 pt-8 pb-3 text-center sm:px-8 sm:pt-20 sm:pb-14 lg:grid-cols-[minmax(0,1fr)_310px] lg:gap-16 lg:text-left">
         {/* Studio value proposition */}
-        <div className="mx-auto max-w-[880px] py-5 text-center lg:mx-0 lg:text-left">
+        <div className="mx-auto max-w-220 py-5 text-center lg:mx-0 lg:text-left">
           <div
-            className="mb-[18px] inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-sans text-[11px] tracking-[0.16em] text-white/72 uppercase"
+            className="mb-4.5 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-sans text-[11px] tracking-[0.16em] text-white/72 uppercase"
             data-hero-in
           >
             ADVERTARO STUDIO — COLOMBO &amp; REMOTE
           </div>
           <h1
-            className="text-[length:clamp(28px,3.5vw,52px)] leading-[1.22] font-medium tracking-[-0.025em] text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] [&_[data-emphasis]]:text-ink-bright"
+            className="text-[length:clamp(28px,3.5vw,52px)] leading-[1.22] font-medium tracking-tight text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] [&_[data-emphasis]]:text-ink-bright"
             data-hero-in
           >
             We build <Em>digital products worth showing</Em> — <Em>bespoke websites</Em>, mobile
@@ -34,7 +34,7 @@ export function Hero() {
 
         {/* Right studio card */}
         <aside
-          className="mx-auto flex w-full max-w-[360px] flex-col gap-3.5 rounded-2xl border border-white/12 bg-bg-elevated/82 p-4.5 text-left shadow-[0_24px_48px_rgba(0,0,0,0.55)] backdrop-blur-[16px] lg:mx-0 lg:w-auto lg:max-w-none"
+          className="mx-auto flex w-full max-w-90 flex-col gap-3.5 rounded-2xl border border-white/12 bg-bg-elevated/82 p-4.5 text-left shadow-[0_24px_48px_rgba(0,0,0,0.55)] backdrop-blur-lg lg:mx-0 lg:w-auto lg:max-w-none"
           aria-label="About Advertaro"
           data-hero-in
         >
@@ -51,7 +51,7 @@ export function Hero() {
               </svg>
             </div>
             <div>
-              <h3 className="text-[16px] font-bold tracking-[-0.02em] text-white">
+              <h3 className="text-base/[inherit] font-bold tracking-[-0.02em] text-white">
                 Hey, we're Advertaro
               </h3>
               <p className="mt-0.5 text-[12.5px] text-ink-secondary">
@@ -70,7 +70,7 @@ export function Hero() {
       </div>
 
       {/* Giant full-width wordmark */}
-      <div className="relative z-5 select-none px-6 pb-[26px] text-center" aria-hidden="true">
+      <div className="relative z-5 select-none px-6 pb-6.5 text-center" aria-hidden="true">
         <div className="inline-flex items-start font-display text-[length:clamp(40px,11vw,212px)] leading-[0.92] font-extrabold tracking-[-0.055em] text-white">
           Advertaro
           <sup className="mt-[0.12em] ml-1.5 text-[0.16em] font-bold tracking-normal text-accent">

@@ -36,7 +36,7 @@ export function Reviews() {
           >
             <div>
               <div className="mb-7 flex items-center justify-between">
-                <span className="font-sans text-[12px] tracking-[0.14em] text-accent">
+                <span className="font-sans text-xs/[inherit] tracking-[0.14em] text-accent">
                   {pad(index + 1)} / {pad(count)}
                 </span>
                 <div className="flex gap-2.5">
@@ -60,23 +60,23 @@ export function Reviews() {
               </div>
 
               <div aria-live="polite">
-                <blockquote className="mb-7 min-h-[138px] text-[length:clamp(24px,3vw,38px)] leading-[1.24] font-semibold tracking-[-0.025em]">
+                <blockquote className="mb-7 min-h-34.5 text-[length:clamp(24px,3vw,38px)] leading-[1.24] font-semibold tracking-tight">
                   “{item.text}”
                 </blockquote>
                 <div>
                   <div className="text-[15px] font-bold tracking-[0.04em] uppercase">
                     {item.authorName}
                   </div>
-                  <div className="mt-1 font-sans text-[11.5px] tracking-[0.1em] text-ink-secondary">
+                  <div className="mt-1 font-sans text-[11.5px] tracking-widest text-ink-secondary">
                     {item.authorTitle.toUpperCase()} — {item.authorCompany.toUpperCase()}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="relative flex aspect-[3/2] items-end overflow-hidden rounded-[14px] border border-line bg-bg-elevated p-[18px]">
+            <div className="relative flex aspect-3/2 items-end overflow-hidden rounded-[14px] border border-line bg-bg-elevated p-4.5">
               <FilmStill theme={item.theme} width={720} height={480} />
-              <div className="relative z-2 flex w-full items-center justify-between rounded-lg border border-white/12 bg-bg/78 px-3.5 py-2.5 font-sans text-[11px] text-ink-editorial backdrop-blur-[8px]">
+              <div className="relative z-2 flex w-full items-center justify-between rounded-lg border border-white/12 bg-bg/78 px-3.5 py-2.5 font-sans text-[11px] text-ink-editorial backdrop-blur-sm">
                 <span>{item.file}</span>
                 <span>LIVE · {item.authorCompany.toUpperCase()}</span>
               </div>

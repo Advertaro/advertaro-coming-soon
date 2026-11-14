@@ -37,7 +37,7 @@ export default function BlogPage() {
               className="grid grid-cols-1 items-stretch gap-10 rounded-[20px] border border-line bg-bg-card p-6 transition-[border-color] duration-250 ease-[ease] hover:border-accent/55 lg:grid-cols-[1.2fr_0.8fr]"
               data-reveal
             >
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line">
+              <div className="relative aspect-16/10 overflow-hidden rounded-xl border border-line">
                 <FilmStill theme={featured.theme} width={1280} height={800} />
               </div>
               <div className="flex flex-col justify-between gap-6 py-2 pr-2">
@@ -50,11 +50,11 @@ export default function BlogPage() {
                   <h2 className="text-[length:clamp(26px,3vw,40px)] leading-[1.1] font-bold tracking-[-0.03em]">
                     {featured.title}
                   </h2>
-                  <p className="mt-3.5 text-[16px] leading-[1.55] text-ink-secondary">
+                  <p className="mt-3.5 text-base leading-[1.55] text-ink-secondary">
                     {featured.excerpt}
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-[3px] font-sans text-[12px] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
+                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-0.75 font-sans text-xs/[inherit] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
                   Read the post →
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function BlogPage() {
                 className="flex flex-col gap-5 rounded-[18px] border border-line bg-bg-card p-5 transition-[border-color] duration-250 ease-[ease] hover:border-accent/55"
                 key={post.slug}
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line">
+                <div className="relative aspect-16/10 overflow-hidden rounded-xl border border-line">
                   <FilmStill theme={post.theme} width={1280} height={800} />
                 </div>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -75,7 +75,7 @@ export default function BlogPage() {
                   <MonoLabel>{formatDate(post.publishedAt)}</MonoLabel>
                   <MonoLabel>{post.readingTime} MIN READ</MonoLabel>
                 </div>
-                <h2 className="text-[24px] leading-[1.1] font-bold tracking-[-0.03em]">
+                <h2 className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">
                   {post.title}
                 </h2>
               </Link>

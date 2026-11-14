@@ -9,14 +9,14 @@ const LABEL_CLASS =
   'font-sans text-[11px] tracking-[0.14em] text-ink-secondary [&_span]:mr-1.5 [&_span]:text-accent'
 const FIELD_CLASS =
   'w-full rounded-[10px] border border-line bg-bg-input px-4 py-3.5 text-[14.5px] text-white transition-[border-color] duration-200 ease-[ease] focus:border-accent'
-const TEXTAREA_CLASS = cn(FIELD_CLASS, 'min-h-[110px] resize-y')
+const TEXTAREA_CLASS = cn(FIELD_CLASS, 'min-h-27.5 resize-y')
 const SELECT_CLASS = cn(
   FIELD_CLASS,
   'appearance-none bg-no-repeat pr-10 bg-[position:calc(100%_-_20px)_50%,calc(100%_-_15px)_50%] bg-[size:5px_5px] [&_option]:bg-bg-elevated',
   'bg-[linear-gradient(45deg,transparent_50%,var(--color-ink-secondary)_50%),linear-gradient(135deg,var(--color-ink-secondary)_50%,transparent_50%)]',
 )
 const PILL_CLASS =
-  'cursor-pointer rounded-full border border-line bg-bg-input px-3.5 py-[9px] text-[13px] text-ink-secondary transition-all duration-200 ease-[ease] hover:border-accent hover:bg-accent/15 hover:text-white'
+  'cursor-pointer rounded-full border border-line bg-bg-input px-3.5 py-2.25 text-[13px] text-ink-secondary transition-all duration-200 ease-[ease] hover:border-accent hover:bg-accent/15 hover:text-white'
 
 const projectTypes = [...services.map((s) => s.shortTitle), 'Something else']
 
@@ -157,7 +157,7 @@ export function BriefForm({ extended = false }: { extended?: boolean }) {
       </div>
 
       {/* Honeypot: hidden from people, irresistible to bots. */}
-      <div className="absolute -left-[10000px] size-px overflow-hidden" aria-hidden="true">
+      <div className="absolute -left-2500 size-px overflow-hidden" aria-hidden="true">
         <label htmlFor="brief-website">Website</label>
         <input id="brief-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
@@ -166,7 +166,7 @@ export function BriefForm({ extended = false }: { extended?: boolean }) {
         <button
           type="submit"
           className={cn(
-            'cursor-pointer rounded-full px-7 py-3.5 text-[14px] font-bold text-white transition-[background-color,translate] duration-200 ease-[ease] hover:-translate-y-px disabled:cursor-progress disabled:opacity-70',
+            'cursor-pointer rounded-full px-7 py-3.5 text-sm/[inherit] font-bold text-white transition-[background-color,translate] duration-200 ease-[ease] hover:-translate-y-px disabled:cursor-progress disabled:opacity-70',
             status.state === 'sent'
               ? 'bg-success hover:bg-success'
               : 'bg-accent shadow-[0_6px_24px] shadow-accent/35 hover:bg-accent-hover',
@@ -179,7 +179,7 @@ export function BriefForm({ extended = false }: { extended?: boolean }) {
               ? 'Brief received — reply within 1 business day ✓'
               : 'Send it →'}
         </button>
-        <span className="font-sans text-[12px] text-ink-secondary [&_a]:border-b [&_a]:border-accent [&_a]:pb-0.5 [&_a]:text-white">
+        <span className="font-sans text-xs/[inherit] text-ink-secondary [&_a]:border-b [&_a]:border-accent [&_a]:pb-0.5 [&_a]:text-white">
           or write: <a href={`mailto:${site.email}`}>{site.email}</a>
         </span>
       </div>

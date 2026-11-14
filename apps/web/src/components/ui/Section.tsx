@@ -8,7 +8,5 @@ type SectionProps = ComponentPropsWithoutRef<'section'> & {
 }
 
 export function Section({ as: Tag = 'section', tight, className, ...props }: SectionProps) {
-  return (
-    <Tag className={cn(tight ? 'pt-16 pb-[72px]' : 'pt-[88px] pb-[104px]', className)} {...props} />
-  )
+  return <Tag className={cn(tight ? 'pt-16 pb-18' : 'pt-22 pb-26', className)} {...props} />
 }

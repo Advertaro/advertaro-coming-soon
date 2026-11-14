@@ -24,7 +24,7 @@ export function About() {
               <dl className="mb-8 border-t border-line">
                 {credits.map((credit) => (
                   <div
-                    className="flex items-center justify-between border-b border-line py-3.5 text-[14px]"
+                    className="flex items-center justify-between border-b border-line py-3.5 text-sm/[inherit]"
                     key={credit.role}
                   >
                     <dt className="font-sans text-[11.5px] tracking-[0.14em] text-ink-secondary">
@@ -42,7 +42,7 @@ export function About() {
                 ))}
               </dl>
 
-              <p className="max-w-[500px] text-[16px] leading-[1.6] text-ink-secondary">
+              <p className="max-w-125 text-base leading-[1.6] text-ink-secondary">
                 <strong className="font-semibold text-white">
                   Same name on every credit. That's just how we work.
                 </strong>
@@ -75,12 +75,7 @@ export function About() {
                   <MonoLabel as="div">DESIGN &amp; ENGINEERING</MonoLabel>
                 </div>
                 <div className="relative flex items-center" aria-hidden="true">
-                  <svg
-                    aria-hidden="true"
-                    className="h-[52px] w-[140px]"
-                    viewBox="0 0 180 64"
-                    fill="none"
-                  >
+                  <svg aria-hidden="true" className="h-13 w-35" viewBox="0 0 180 64" fill="none">
                     <path
                       d="M16 48 C26 16, 34 14, 38 42 C42 22, 54 12, 62 36 C70 26, 82 24, 90 36 C100 22, 118 20, 128 34 C138 14, 152 10, 166 28"
                       stroke="#ffffff"

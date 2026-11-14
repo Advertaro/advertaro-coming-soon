@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: Props) {
             <SectionHeadline>
               Who it's <Em>for</Em>
             </SectionHeadline>
-            <p className="mt-8 max-w-[620px] text-[length:clamp(17px,1.6vw,21px)] leading-[1.5] text-ink-secondary">
+            <p className="mt-8 max-w-155 text-[length:clamp(17px,1.6vw,21px)] leading-normal text-ink-secondary">
               {service.whoFor}
             </p>
           </div>
@@ -76,7 +76,7 @@ export default async function ServicePage({ params }: Props) {
             <MonoLabel className="mb-4 block">WHAT'S INCLUDED</MonoLabel>
             <ul className="list-none border-t border-line">
               {service.included.map((item, i) => (
-                <li className="flex gap-5 border-b border-line py-4 text-[16px]" key={item}>
+                <li className="flex gap-5 border-b border-line py-4 text-base/[inherit]" key={item}>
                   <span className="pt-1 font-sans text-[11px] text-accent">
                     {String(i + 1).padStart(2, '0')}
                   </span>

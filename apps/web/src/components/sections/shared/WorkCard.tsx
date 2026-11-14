@@ -28,10 +28,10 @@ export function WorkCard({
     <Link
       href={`/work/${study.slug}`}
       className={cn(
-        'group relative flex max-h-[680px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-bg-card',
+        'group relative flex max-h-170 w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-bg-card',
         grid
-          ? 'aspect-[4/5] px-6 py-[22px] md:aspect-[4/3.4]'
-          : 'aspect-[4/5] p-5 sm:aspect-[16/9] sm:px-8 sm:py-7',
+          ? 'aspect-4/5 px-6 py-5.5 md:aspect-[4/3.4]'
+          : 'aspect-4/5 p-5 sm:aspect-video sm:px-8 sm:py-7',
         className,
       )}
       data-wipe
@@ -39,18 +39,18 @@ export function WorkCard({
       <div className="absolute inset-0 z-0 overflow-hidden">
         <FilmStill
           theme={study.theme}
-          className="transition-[scale] duration-[650ms] ease-out-expo group-hover:scale-[1.035]"
+          className="transition-[scale] duration-650 ease-out-expo group-hover:scale-[1.035]"
         />
       </div>
-      <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,11,0.72)_0%,rgba(10,10,11,0.18)_45%,rgba(10,10,11,0.86)_100%)]" />
+      <div className="absolute inset-0 z-1 bg-[linear-gradient(180deg,rgba(10,10,11,0.72)_0%,rgba(10,10,11,0.18)_45%,rgba(10,10,11,0.86)_100%)]" />
 
-      <div className="relative z-[3] flex items-center justify-between gap-4">
+      <div className="relative z-3 flex items-center justify-between gap-4">
         <Tag num={num}>{study.industry}</Tag>
         <Tag>{study.year}</Tag>
       </div>
 
       <div
-        className="relative z-[3] flex items-center justify-center overflow-hidden py-4"
+        className="relative z-3 flex items-center justify-center overflow-hidden py-4"
         aria-hidden="true"
       >
         <div
@@ -73,14 +73,14 @@ export function WorkCard({
         </div>
       </div>
 
-      <div className="relative z-[3] flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+      <div className="relative z-3 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h3 className="sr-only">{study.client}</h3>
-          <h4 className="text-[20px] font-bold tracking-[-0.02em] text-white">
+          <h4 className="text-xl/[inherit] font-bold tracking-[-0.02em] text-white">
             {study.deliverable}
           </h4>
           {showOutcome && (
-            <p className="mt-1.5 max-w-[420px] text-[14px] text-ink-editorial">{study.outcome}</p>
+            <p className="mt-1.5 max-w-105 text-sm/[inherit] text-ink-editorial">{study.outcome}</p>
           )}
         </div>
         <div className="flex flex-wrap items-center gap-3 [&>:not(:first-child)]:hidden sm:[&>:not(:first-child)]:block">

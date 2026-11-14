@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container'
 
 export function SelectedWork() {
   return (
-    <section id="work" className="pt-[72px] pb-24">
+    <section id="work" className="pt-18 pb-24">
       <Container>
         <h2 className="sr-only">Selected work</h2>
         <div className="flex flex-col gap-11">

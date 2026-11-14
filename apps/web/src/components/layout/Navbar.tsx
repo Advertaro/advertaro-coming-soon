@@ -31,16 +31,16 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 h-(--nav-height) top-0 z-100 flex items-center justify-between border-b  border-white/6 bg-[linear-gradient(180deg,rgba(10,10,11,0.88)_0%,rgba(10,10,11,0.45)_75%,transparent_100%)] px-5 py-3.5 backdrop-blur-[10px] sm:px-8 sm:py-[18px]">
+      <header className="fixed inset-x-0 h-(--nav-height) top-0 z-100 flex items-center justify-between border-b  border-white/6 bg-[linear-gradient(180deg,rgba(10,10,11,0.88)_0%,rgba(10,10,11,0.45)_75%,transparent_100%)] px-5 py-3.5 backdrop-blur-[10px] sm:px-8 sm:py-4.5">
         <Link
           href="/"
-          className="inline-flex items-start font-display text-[19px] font-extrabold tracking-[-0.03em] text-ink"
+          className="inline-flex items-start font-display text-[1.1875rem] font-extrabold tracking-[-0.03em] text-ink"
           aria-label="Advertaro — home"
         >
           Advertaro<sup className="ml-0.5 text-[10px] font-semibold text-ink-secondary">™</sup>
         </Link>
 
-        <nav className="hidden items-center gap-[34px] lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8.5 lg:flex" aria-label="Primary">
           {navigation.map((item) => (
             <Link
               key={item.href}
@@ -62,7 +62,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="group inline-flex size-10 flex-col items-center justify-center gap-[5px] rounded-full border border-white/14 bg-white/6 lg:hidden"
+          className="group inline-flex size-10 flex-col items-center justify-center gap-1.25 rounded-full border border-white/14 bg-white/6 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -77,7 +77,7 @@ export function Navbar() {
           <span
             className={cn(
               toggleBar,
-              'group-aria-expanded:-translate-y-[3.25px] group-aria-expanded:-rotate-45',
+              'group-aria-expanded:translate-y-[-3.25px] group-aria-expanded:-rotate-45',
             )}
           />
         </button>
@@ -100,7 +100,7 @@ export function Navbar() {
                 className="flex items-baseline justify-between border-b border-line py-4.5 text-[34px] font-bold tracking-[-0.03em]"
               >
                 {item.label}{' '}
-                <sup className="font-sans text-[11px] tracking-[0.1em] text-accent">
+                <sup className="font-sans text-[11px] tracking-widest text-accent">
                   ({item.index})
                 </sup>
               </Link>

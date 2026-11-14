@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body id="top">
         <a
           href="#main"
-          className="sr-only inline-flex items-center gap-[9px] rounded-full bg-accent text-[13px] font-semibold text-white shadow-glow transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px hover:bg-accent-hover hover:shadow-glow-lg focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[2000] focus:px-[18px] focus:py-2.5"
+          className="sr-only inline-flex items-center gap-2.25 rounded-full bg-accent text-[13px] font-semibold text-white shadow-glow transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px hover:bg-accent-hover hover:shadow-glow-lg focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-2000 focus:px-4.5 focus:py-2.5"
         >
           Skip to content
         </a>

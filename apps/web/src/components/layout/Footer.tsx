@@ -5,14 +5,14 @@ import { Container } from '@/components/ui/Container'
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg pt-[72px]">
+    <footer className="border-t border-line bg-bg pt-18">
       <Container>
         <div className="grid grid-cols-1 gap-12 pb-16 lg:grid-cols-[1.3fr_0.8fr_1fr]">
           <div>
             <span className="mb-4.5 block font-sans text-[11px] tracking-[0.14em] text-accent">
               (00) — STUDIO
             </span>
-            <p className="max-w-[380px] text-[18px] leading-[1.5] text-ink-editorial">
+            <p className="max-w-95 text-lg leading-normal text-ink-editorial">
               A <Em>from-scratch</Em> digital studio building brands, websites, apps and systems for{' '}
               <Em>businesses that know the difference</Em>.
             </p>
@@ -40,21 +40,21 @@ export function Footer() {
             <span className="mb-4.5 block font-sans text-[11px] tracking-[0.14em] text-accent">
               (02) — VISIT US
             </span>
-            <p className="mb-3 text-[16px] font-semibold text-white">{site.city}</p>
+            <p className="mb-3 text-base/[inherit] font-semibold text-white">{site.city}</p>
             <p className="mb-1.5 text-[14.5px] text-ink-secondary">
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
             <p className="mb-1.5 text-[14.5px] text-ink-secondary">
               <a href={site.phoneHref}>{site.phone}</a>
             </p>
-            <div className="mt-[18px] flex gap-3">
+            <div className="mt-4.5 flex gap-3">
               {site.socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-line px-3.5 py-[7px] font-sans text-[11px] text-ink-secondary transition-colors duration-200 ease-[ease] hover:border-accent hover:text-white"
+                  className="rounded-full border border-line px-3.5 py-1.75 font-sans text-[11px] text-ink-secondary transition-colors duration-200 ease-[ease] hover:border-accent hover:text-white"
                 >
                   {social.label}
                 </a>

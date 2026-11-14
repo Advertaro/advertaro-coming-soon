@@ -39,7 +39,7 @@ export function Services() {
                 <h3 className="mb-3.5 text-[length:clamp(26px,3vw,40px)] font-bold tracking-[-0.03em] text-white">
                   <Link href={`/services/${service.slug}`}>{service.title}</Link>
                 </h3>
-                <p className="mb-5 max-w-[480px] text-[16px] leading-[1.55] text-ink-secondary">
+                <p className="mb-5 max-w-120 text-base leading-[1.55] text-ink-secondary">
                   {service.summary}
                 </p>
                 <div className="font-sans text-[11px] tracking-[0.12em] text-ink-editorial uppercase">

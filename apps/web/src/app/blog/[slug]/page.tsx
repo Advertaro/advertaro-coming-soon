@@ -59,7 +59,7 @@ export default async function PostPage({ params }: Props) {
           <Prose className="mx-auto">
             <Blocks blocks={post.body} />
           </Prose>
-          <div className="mx-auto max-w-[720px]">
+          <div className="mx-auto max-w-180">
             <aside className="mt-14 flex items-center gap-5 rounded-2xl border border-line bg-bg-card p-6">
               <div className="relative size-16 shrink-0 overflow-hidden rounded-full border border-line-strong">
                 <FilmStill theme={post.theme} width={128} height={128} />
@@ -94,9 +94,7 @@ export default async function PostPage({ params }: Props) {
                     <Tag>{p.category}</Tag>
                     <MonoLabel>{p.readingTime} MIN READ</MonoLabel>
                   </div>
-                  <h2 className="text-[24px] leading-[1.1] font-bold tracking-[-0.03em]">
-                    {p.title}
-                  </h2>
+                  <h2 className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">{p.title}</h2>
                 </Link>
               ))}
             </Container>

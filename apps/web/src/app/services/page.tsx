@@ -41,14 +41,14 @@ export default function ServicesPage() {
             {services.map((service) => (
               <Link
                 href={`/services/${service.slug}`}
-                className="relative flex min-h-[300px] flex-col justify-between gap-7 rounded-[18px] border border-line bg-bg-card p-7 transition-[translate,border-color,background-color,background-image] duration-250 ease-[ease] hover:-translate-y-1 hover:border-accent/55 hover:bg-transparent hover:bg-[linear-gradient(180deg,rgba(255,77,0,0.07)_0%,var(--color-bg-card)_55%)]"
+                className="relative flex min-h-75 flex-col justify-between gap-7 rounded-[18px] border border-line bg-bg-card p-7 transition-[translate,border-color,background-color,background-image] duration-250 ease-[ease] hover:-translate-y-1 hover:border-accent/55 hover:bg-transparent hover:bg-[linear-gradient(180deg,rgba(255,77,0,0.07)_0%,var(--color-bg-card)_55%)]"
                 key={service.slug}
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-sans text-[12px] font-semibold text-accent">
+                  <span className="font-sans text-xs/[inherit] font-semibold text-accent">
                     {service.index}
                   </span>
-                  <span className="rounded-md border border-line bg-white/5 px-2.5 py-[5px] font-sans text-[10.5px] tracking-[0.1em] text-ink-secondary">
+                  <span className="rounded-md border border-line bg-white/5 px-2.5 py-1.25 font-sans text-[10.5px] tracking-widest text-ink-secondary">
                     {service.tags[0]}
                   </span>
                 </div>
@@ -56,11 +56,11 @@ export default function ServicesPage() {
                   <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.03em]">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-[15px] leading-[1.5] text-ink-secondary">
+                  <p className="mt-3 text-[15px] leading-normal text-ink-secondary">
                     {service.summary}
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-[3px] font-sans text-[12px] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
+                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-0.75 font-sans text-xs/[inherit] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
                   Explore →
                 </span>
               </Link>
