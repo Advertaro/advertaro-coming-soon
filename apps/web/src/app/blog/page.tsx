@@ -1,10 +1,12 @@
 import { sortedPosts } from '@advertaro/content'
-import { Em, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Em, MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
 import { PageHero } from '@/components/sections/shared/PageHero'
+import { Container } from '@/components/ui/Container'
 import { FilmStill } from '@/components/ui/FilmStill'
+import { Section } from '@/components/ui/Section'
 import { formatDate } from '@/lib/format'
 
 export const metadata: Metadata = {
@@ -27,44 +29,60 @@ export default function BlogPage() {
         }
       />
       <SectionHeaderBar num="01" label="LATEST" />
-      <section className="page-section">
-        <div className="site-container">
+      <Section>
+        <Container>
           {featured && (
-            <Link href={`/blog/${featured.slug}`} className="post-feature" data-reveal>
-              <div className="post-media">
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="grid grid-cols-1 items-stretch gap-10 rounded-[20px] border border-line bg-bg-card p-6 transition-[border-color] duration-250 ease-[ease] hover:border-accent/55 lg:grid-cols-[1.2fr_0.8fr]"
+              data-reveal
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line">
                 <FilmStill theme={featured.theme} width={1280} height={800} />
               </div>
-              <div className="post-feature-body">
-                <div className="post-meta">
+              <div className="flex flex-col justify-between gap-6 py-2 pr-2">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <Tag num="01">{featured.category}</Tag>
-                  <span className="mono-label">{formatDate(featured.publishedAt)}</span>
-                  <span className="mono-label">{featured.readingTime} MIN READ</span>
+                  <MonoLabel>{formatDate(featured.publishedAt)}</MonoLabel>
+                  <MonoLabel>{featured.readingTime} MIN READ</MonoLabel>
                 </div>
                 <div>
-                  <h2 className="post-title">{featured.title}</h2>
-                  <p className="post-excerpt">{featured.excerpt}</p>
+                  <h2 className="text-[length:clamp(26px,3vw,40px)] leading-[1.1] font-bold tracking-[-0.03em]">
+                    {featured.title}
+                  </h2>
+                  <p className="mt-3.5 text-[16px] leading-[1.55] text-ink-secondary">
+                    {featured.excerpt}
+                  </p>
                 </div>
-                <span className="arrow-link self-start">Read the post →</span>
+                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-[3px] font-sans text-[12px] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
+                  Read the post →
+                </span>
               </div>
             </Link>
           )}
-          <div className="post-grid" data-reveal="stagger">
+          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2" data-reveal="stagger">
             {rest.map((post, i) => (
-              <Link href={`/blog/${post.slug}`} className="post-card" key={post.slug}>
-                <div className="post-media">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="flex flex-col gap-5 rounded-[18px] border border-line bg-bg-card p-5 transition-[border-color] duration-250 ease-[ease] hover:border-accent/55"
+                key={post.slug}
+              >
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-line">
                   <FilmStill theme={post.theme} width={1280} height={800} />
                 </div>
-                <div className="post-meta">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                   <Tag num={String(i + 2).padStart(2, '0')}>{post.category}</Tag>
-                  <span className="mono-label">{formatDate(post.publishedAt)}</span>
-                  <span className="mono-label">{post.readingTime} MIN READ</span>
+                  <MonoLabel>{formatDate(post.publishedAt)}</MonoLabel>
+                  <MonoLabel>{post.readingTime} MIN READ</MonoLabel>
                 </div>
-                <h2 className="post-title">{post.title}</h2>
+                <h2 className="text-[24px] leading-[1.1] font-bold tracking-[-0.03em]">
+                  {post.title}
+                </h2>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
       <CtaBand num="02" />
     </>
   )

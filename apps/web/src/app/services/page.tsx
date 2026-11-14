@@ -5,6 +5,10 @@ import Link from 'next/link'
 import { Process } from '@/components/sections/home/Process'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
 import { PageHero } from '@/components/sections/shared/PageHero'
+import { Container } from '@/components/ui/Container'
+import { Prose } from '@/components/ui/Prose'
+import { Section } from '@/components/ui/Section'
+import { SectionHeadline } from '@/components/ui/SectionHeadline'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -28,35 +32,50 @@ export default function ServicesPage() {
       />
 
       <SectionHeaderBar num="01" label="DISCIPLINES" />
-      <section className="page-section">
-        <div className="site-container">
-          <div className="service-card-grid" data-reveal="stagger">
+      <Section>
+        <Container>
+          <div
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+            data-reveal="stagger"
+          >
             {services.map((service) => (
-              <Link href={`/services/${service.slug}`} className="service-card" key={service.slug}>
+              <Link
+                href={`/services/${service.slug}`}
+                className="relative flex min-h-[300px] flex-col justify-between gap-7 rounded-[18px] border border-line bg-bg-card p-7 transition-[translate,border-color,background-color,background-image] duration-250 ease-[ease] hover:-translate-y-1 hover:border-accent/55 hover:bg-transparent hover:bg-[linear-gradient(180deg,rgba(255,77,0,0.07)_0%,var(--color-bg-card)_55%)]"
+                key={service.slug}
+              >
                 <div className="flex items-center justify-between">
-                  <span className="rate-idx">{service.index}</span>
-                  <span className="rate-spec-badge">{service.tags[0]}</span>
+                  <span className="font-sans text-[12px] font-semibold text-accent">
+                    {service.index}
+                  </span>
+                  <span className="rounded-md border border-line bg-white/5 px-2.5 py-[5px] font-sans text-[10.5px] tracking-[0.1em] text-ink-secondary">
+                    {service.tags[0]}
+                  </span>
                 </div>
                 <div>
                   <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.03em]">
                     {service.title}
                   </h2>
-                  <p>{service.summary}</p>
+                  <p className="mt-3 text-[15px] leading-[1.5] text-ink-secondary">
+                    {service.summary}
+                  </p>
                 </div>
-                <span className="arrow-link self-start">Explore →</span>
+                <span className="inline-flex items-center gap-2 self-start border-b border-accent pb-[3px] font-sans text-[12px] tracking-[0.12em] text-white uppercase transition-colors duration-200 ease-[ease] hover:text-accent">
+                  Explore →
+                </span>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <SectionHeaderBar num="02" label="WHY BESPOKE" />
-      <section className="page-section">
-        <div className="site-container split-grid">
-          <h2 className="section-headline" data-reveal>
+      <Section>
+        <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeadline data-reveal>
             No templates. <Em>No WordPress.</Em> No cutting corners.
-          </h2>
-          <div className="prose" data-reveal>
+          </SectionHeadline>
+          <Prose data-reveal>
             <p>
               Templates are built to fit everyone, which means they fit no one particularly well.
               They also look like every other site built on the same theme.
@@ -67,9 +86,9 @@ export default function ServicesPage() {
               by buying the same theme. It is also faster, more secure and cheaper to live with over
               the life of the product.
             </p>
-          </div>
-        </div>
-      </section>
+          </Prose>
+        </Container>
+      </Section>
 
       <Process num="03" />
       <CtaBand num="04" />

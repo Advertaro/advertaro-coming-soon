@@ -1,10 +1,14 @@
 import { beliefs, site, studioStats, team } from '@advertaro/content'
-import { Em, MonoLabel, SectionHeaderBar, StatsGrid, Tag } from '@advertaro/ui'
+import { cn, Em, MonoLabel, SectionHeaderBar, StatsGrid, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import { Process } from '@/components/sections/home/Process'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
 import { PageHero } from '@/components/sections/shared/PageHero'
+import { Container } from '@/components/ui/Container'
 import { FilmStill } from '@/components/ui/FilmStill'
+import { Prose } from '@/components/ui/Prose'
+import { Section } from '@/components/ui/Section'
+import { SectionHeadline } from '@/components/ui/SectionHeadline'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -12,6 +16,9 @@ export const metadata: Metadata = {
     'Advertaro is a small team of designers, developers and strategists in Colombo, Sri Lanka, building bespoke digital products since 2019.',
   alternates: { canonical: '/about' },
 }
+
+const teamCardClass =
+  'group relative flex aspect-[4/4.6] flex-col justify-end overflow-hidden rounded-[18px] border border-line bg-bg-card p-[22px]'
 
 export default function AboutPage() {
   return (
@@ -34,12 +41,12 @@ export default function AboutPage() {
       />
 
       <SectionHeaderBar num="01" label="THE STORY" />
-      <section className="page-section">
-        <div className="site-container split-grid">
-          <h2 className="section-headline" data-reveal>
+      <Section>
+        <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeadline data-reveal>
             Tired of watching good businesses get <Em>mediocre digital work</Em>
-          </h2>
-          <div className="prose" data-reveal>
+          </SectionHeadline>
+          <Prose data-reveal>
             <p>
               Advertaro started as freelance work in 2018 and became a studio in {site.founded}. The
               reason was simple: we kept meeting excellent businesses — hotels, developers, makers —
@@ -60,66 +67,84 @@ export default function AboutPage() {
                 systems behind them — for clients in Sri Lanka and around the world.
               </strong>
             </p>
-          </div>
-        </div>
-      </section>
+          </Prose>
+        </Container>
+      </Section>
 
       <StatsGrid stats={studioStats} />
 
       <SectionHeaderBar num="02" label="WHAT WE BELIEVE" />
-      <section className="page-section">
-        <div className="site-container">
-          <div className="beliefs-grid" data-reveal="stagger">
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2" data-reveal="stagger">
             {beliefs.map((belief, i) => (
-              <div className="belief-card" key={belief.title}>
-                <span className="rate-idx">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{belief.title}</h3>
-                <p>{belief.text}</p>
+              <div
+                className="rounded-[18px] border border-line bg-bg-card p-[30px]"
+                key={belief.title}
+              >
+                <span className="font-sans text-[12px] font-semibold text-accent">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-[18px] mb-2.5 text-[24px] font-bold tracking-[-0.025em]">
+                  {belief.title}
+                </h3>
+                <p className="text-[15.5px] leading-[1.55] text-ink-secondary">{belief.text}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <SectionHeaderBar num="03" label="THE TEAM" />
-      <section className="page-section">
-        <div className="site-container">
-          <div className="section-top" data-reveal>
-            <h2 className="section-headline">
+      <Section>
+        <Container>
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6" data-reveal>
+            <SectionHeadline>
               The people <Em>on every credit</Em>
-            </h2>
+            </SectionHeadline>
             <MonoLabel>COLOMBO — {new Date().getFullYear()}</MonoLabel>
           </div>
-          <div className="team-grid" data-reveal="stagger">
+          <div
+            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+            data-reveal="stagger"
+          >
             {team.map((member) => (
-              <article className="team-card" key={member.name}>
+              <article className={teamCardClass} key={member.name}>
                 <FilmStill theme={member.theme} width={800} height={920} />
-                <div className="about-portrait-shade" />
-                <div className="team-card-info">
-                  <MonoLabel className="text-accent!">{member.role}</MonoLabel>
-                  <h3 className="mt-2">{member.name}</h3>
-                  <p>{member.bio}</p>
+                <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,11,0.5)_0%,transparent_40%,rgba(10,10,11,0.92)_100%)]" />
+                <div className="relative z-[2]">
+                  <MonoLabel className="text-accent">{member.role}</MonoLabel>
+                  <h3 className="mt-2 text-[20px] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
+                    {member.name}
+                  </h3>
+                  <p className="mt-2 text-[13.5px] leading-[1.45] text-ink-secondary">
+                    {member.bio}
+                  </p>
                 </div>
               </article>
             ))}
-            <article className="team-card placeholder">
+            <article className={cn(teamCardClass, 'justify-between border-dashed')}>
               <MonoLabel>(+) — STUDIO</MonoLabel>
-              <div className="team-card-info">
-                <h3>Designers, engineers &amp; strategists</h3>
-                <p>Full team profiles are on the way.</p>
+              <div className="relative z-[2]">
+                <h3 className="text-[20px] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
+                  Designers, engineers &amp; strategists
+                </h3>
+                <p className="mt-2 text-[13.5px] leading-[1.45] text-ink-secondary">
+                  Full team profiles are on the way.
+                </p>
               </div>
             </article>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <SectionHeaderBar num="04" label="CLIENTS & INDUSTRIES" />
-      <section className="page-section">
-        <div className="site-container split-grid">
-          <h2 className="section-headline" data-reveal>
+      <Section>
+        <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <SectionHeadline data-reveal>
             Built for <Em>hospitality, property</Em> and ambitious businesses
-          </h2>
-          <div className="prose" data-reveal>
+          </SectionHeadline>
+          <Prose data-reveal>
             <p>
               Most of our work is for boutique hotels and villas, real estate developers, and
               companies whose digital presence is the first impression that matters most. We also
@@ -131,9 +156,9 @@ export default function AboutPage() {
                 <li key={award}>{award}</li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
+          </Prose>
+        </Container>
+      </Section>
 
       <Process num="05" />
       <CtaBand num="06" />

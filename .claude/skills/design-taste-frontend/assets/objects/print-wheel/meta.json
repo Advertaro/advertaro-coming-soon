@@ -5,23 +5,14 @@
   "line": "A bicycle wheel. Click to spin it up.",
   "shows": "A road bicycle wheel: a black tread with tan sidewalls, an alloy rim with its valve, 24 spokes laced to a two-flange hub in the accent.",
   "product": "A wheel, a wheelset or a hub: the product of a maker of wheels or wheel parts. Never a whole bicycle: a wheel does not show a bike.",
-  "suits": [
-    "product",
-    "software"
-  ],
+  "suits": ["product", "software"],
   "for": "Wheels and wheel parts, cycling parts and service; on a software page, a card about motion, speed or a mechanism. A product page of site-kind other (a chair, a bike, a lamp, coffee) shows none: its photographs lead (MO-08); only a technical product (hardware) of that very kind may show it.",
   "never": "Never an object of another kind for a product, never on a place page or beside the client's own photographs, and never a print (halftone, engraving, dither, type) outside a software, tech, AI or games page. No caption under it: never call it a render, a drawing, an illustration, a model, a sample or made in code; the heading and text say what the product is. Its aria-label names the thing plainly (as label does).",
   "effect": "render",
   "motion": "Sways through three-quarter views and rolls slowly on its axle.",
   "hover": "The light follows the pointer and the wheel leans toward it.",
   "step": "Click or Enter: the wheel spins up (at most about 220 degrees a second); click again to let it run down.",
-  "effects": [
-    "render",
-    "halftone",
-    "engrave",
-    "dither",
-    "ascii"
-  ],
+  "effects": ["render", "halftone", "engrave", "dither", "ascii"],
   "use": {
     "html": "<div class=\"panel\" data-fx=\"grain-gradient\" data-fx-params='{\"speed\":0,\"grainMotion\":0}'><div data-print=\"print-wheel\" data-print-place=\"card\"></div></div>, then load assets/objects/_print-core/auto.js once (type=\"module\", after system.js). auto.js mounts every [data-print].",
     "js": "import obj from '<assets>/objects/print-wheel/object.js'; const ctrl = obj.mount(el, { place: 'card' });",

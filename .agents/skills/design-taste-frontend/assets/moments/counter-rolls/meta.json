@@ -2,17 +2,11 @@
   "id": "counter-rolls",
   "name": "Counter rolls",
   "kind": "text",
-  "fits": [
-    "statement"
-  ],
+  "fits": ["statement"],
   "trigger": "enter",
   "cost": "low",
   "webgl": 0,
-  "pages": [
-    "tech",
-    "gaming",
-    "software"
-  ],
+  "pages": ["tech", "gaming", "software"],
   "look": "The digits of two to four proof figures roll once like an odometer when the row comes on screen, the right-most digit turning most; the strips rest on the real figures before and after, so the row never reads as zeros.",
   "reduced": "The figures stand.",
   "phone": "The figures stand.",

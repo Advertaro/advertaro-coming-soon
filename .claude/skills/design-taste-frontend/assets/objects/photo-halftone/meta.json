@@ -3,20 +3,11 @@
   "name": "Halftone photograph",
   "kind": "photo",
   "shows": "A photograph printed whole as a one-ink halftone: round dots of the page's ink (or its accent, tint 1) on one 45 degree screen, on the page's surface as paper. Its own tone curve keeps a light photograph's near-whites as clean paper and its deepest shadows solid, with a dotted outline along the photograph's edges, so a pale object on a pale wall keeps its shape.",
-  "suits": [
-    "software",
-    "ai",
-    "design-tool",
-    "gaming"
-  ],
+  "suits": ["software", "ai", "design-tool", "gaming"],
   "bestWith": "One clear subject in clear light on a plain ground (a product, an object, a building); high-key photographs print clean. A busy mid-grey texture (knitwear, foliage) prints as an even checker: pick another photograph. Coarse on purpose: never for a face read small.",
   "takes": "The <img> inside the frame (its largest srcset size, its alt, its object-position as the subject's place), else src, else data-src: the client's own photograph, or one from scripts/photos.mjs that prints well (\"prints\": true), credited in the footer with photos.mjs credits --adapted <id>.",
   "where": "One crafted moment on a software, AI, design-tool or gaming page: the page's one photograph band or a feature tile about the picture. Never over the hero photograph or a section's main photograph, never on a cafe, guesthouse or local business page, never with a caption under it.",
-  "palettes": [
-    "light",
-    "dark",
-    "colour"
-  ],
+  "palettes": ["light", "dark", "colour"],
   "touch": "A tap shows the hover state at the finger for 1.6 s; lifting the finger does not end it (checked at 390). Nothing moves on its own.",
   "reducedMotion": "The same still print; hover still answers, without easing.",
   "fallback": "The photograph itself, greyed into the palette (multiplied into light paper, screened on dark): shown under the canvas before the first frame and while the canvas is released off screen, and kept when WebGL is missing, the shader fails to compile or link, the shader uses a GLSL ES reserved word (refused by photo-kit's lint, so CPU WebGL shows what a GPU would), or the photograph's host sends no CORS headers. Checked with a broken shader and with a reserved word: the still shows, never an empty frame. With no photograph at all: the effects' palette ground.",

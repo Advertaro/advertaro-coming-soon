@@ -2,9 +2,7 @@
   "id": "closing-lift",
   "name": "Closing lift",
   "kind": "transition",
-  "fits": [
-    "closing"
-  ],
+  "fits": ["closing"],
   "trigger": "scroll",
   "cost": "low",
   "webgl": 0,
@@ -19,10 +17,7 @@
     "photo": true,
     "words": "a closing line of 3 to 7 words, one line and one action"
   },
-  "avoidWith": [
-    "pinned-chapters",
-    "line-carries-colour"
-  ],
+  "avoidWith": ["pinned-chapters", "line-carries-colour"],
   "states": {
     "start": {
       "p": 0.08,

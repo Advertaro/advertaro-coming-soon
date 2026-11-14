@@ -35,7 +35,7 @@ export function FilmStill({
       width={width}
       height={height}
       aria-hidden="true"
-      className={cn('media-fill', className)}
+      className={cn('absolute inset-0 size-full object-cover', className)}
     />
   )
 }

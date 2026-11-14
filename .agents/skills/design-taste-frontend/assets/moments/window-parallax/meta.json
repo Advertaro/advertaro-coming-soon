@@ -2,9 +2,7 @@
   "id": "window-parallax",
   "name": "Window parallax",
   "kind": "scroll",
-  "fits": [
-    "section"
-  ],
+  "fits": ["section"],
   "trigger": "scroll",
   "cost": "low",
   "webgl": 0,
@@ -18,10 +16,7 @@
   "needs": {
     "photo": true
   },
-  "avoidWith": [
-    "picture-develops",
-    "liquid-hover"
-  ],
+  "avoidWith": ["picture-develops", "liquid-hover"],
   "states": {
     "start": {
       "view": 0.2,

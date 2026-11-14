@@ -27,9 +27,18 @@ export function HeroVideo() {
 
   return (
     <>
-      <Image src={poster} alt="" width={1920} height={1080} preload unoptimized />
+      <Image
+        src={poster}
+        alt=""
+        width={1920}
+        height={1080}
+        preload
+        unoptimized
+        className="absolute inset-0 z-1 size-full object-cover"
+      />
       {canAnimate && !failed && (
         <video
+          className="absolute inset-0 z-2 size-full object-cover"
           muted
           loop
           autoPlay

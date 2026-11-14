@@ -5,23 +5,14 @@
   "line": "A stack of playing cards. Click to fan them out.",
   "shows": "A loose stack of playing cards, the ace of diamonds face up (an A and a small pip in two corners), the backs with a white border and a fine diamond lattice in the accent.",
   "product": "A deck of playing cards or a card game: the product of a games or print maker.",
-  "suits": [
-    "software",
-    "product"
-  ],
+  "suits": ["software", "product"],
   "for": "Card and board games; on a games or software page, a card about play, a hand, a draw or a deal. A product page of site-kind other (a chair, a bike, a lamp, coffee) shows none: its photographs lead (MO-08); only a technical product (hardware) of that very kind may show it.",
   "never": "Never an object of another kind for a product, never on a place page or beside the client's own photographs, and never a print (halftone, engraving, dither, type) outside a software, tech, AI or games page. No caption under it: never call it a render, a drawing, an illustration, a model, a sample or made in code; the heading and text say what the product is. Its aria-label names the thing plainly (as label does).",
   "effect": "render",
   "motion": "At rest the cards lie in a loose spread and turn slowly on the table.",
   "hover": "The light follows the pointer and the stack leans toward it.",
   "step": "Click or Enter: the cards fan out wide; click again to gather them into the loose spread.",
-  "effects": [
-    "render",
-    "halftone",
-    "engrave",
-    "dither",
-    "ascii"
-  ],
+  "effects": ["render", "halftone", "engrave", "dither", "ascii"],
   "use": {
     "html": "<div class=\"panel\" data-fx=\"grain-gradient\" data-fx-params='{\"speed\":0,\"grainMotion\":0}'><div data-print=\"print-cards\" data-print-place=\"card\"></div></div>, then load assets/objects/_print-core/auto.js once (type=\"module\", after system.js). auto.js mounts every [data-print].",
     "js": "import obj from '<assets>/objects/print-cards/object.js'; const ctrl = obj.mount(el, { place: 'card' });",

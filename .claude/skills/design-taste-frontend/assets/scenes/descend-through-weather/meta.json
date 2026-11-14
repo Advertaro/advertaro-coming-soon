@@ -3,13 +3,8 @@
   "name": "Descend through the weather",
   "family": "camera-through-space",
   "look": "The first screen sinks through a cloud deck onto the place below: a full-bleed photograph from above the weather stands behind a flat band of the page's ground across the foot, which carries the name, one line and the action; two layers of cloud rise at different speeds and the band leaves as the cloud reaches it; a wall of mist fills the frame for a breath while one short line rises through it; then the frame clears from the bottom, under a ceiling of cloud, onto the second photograph, where a two-line statement rises on a band at the foot. The cloud is drawn once from layered noise in the page's own mist tint. No word sits straight on a photograph.",
-  "fits": [
-    "statement"
-  ],
-  "types": [
-    "tech",
-    "gaming"
-  ],
+  "fits": ["statement"],
+  "types": ["tech", "gaming"],
   "trigger": "scroll",
   "hold": 1,
   "restH": 2,
@@ -44,9 +39,5 @@
       "wait": 700
     }
   },
-  "avoidMoments": [
-    "headline-arrives",
-    "cursor-spotlight",
-    "window-parallax"
-  ]
+  "avoidMoments": ["headline-arrives", "cursor-spotlight", "window-parallax"]
 }

@@ -1,6 +1,38 @@
 @import "tailwindcss";
 @import "@advertaro/ui/styles.css";
-@import "./sections.css";
-@import "./pages.css";
 
 @source "../../../../packages/ui/src";
+
+:root {
+  --nav-height: 4.125rem;
+  --page-shell-padding: 1rem;
+  --header-height: 75vh;
+
+  @apply md:[--page-shell-padding:1.875rem];
+  @apply xl:[--page-shell-padding:4rem];
+  @apply 2xl:[--page-shell-padding:calc((100vw-80rem)/2)];
+  @apply 3xl:[--page-shell-padding:calc((100vw-98rem)/2)];
+
+  --content-section-row-gap: 1.2rem;
+  @apply lg:[--content-section-row-gap:2em];
+
+  --content-section-column-gap: 3rem;
+
+  --section-gap: 3.125rem;
+  @apply md:[--section-gap:4rem];
+  @apply lg:[--section-gap:7.5rem];
+}
+
+@theme {
+  /* grid layout & placement */
+  --grid-column-full: full-start / full-end;
+  --grid-column-content: content-start / content-end;
+  --grid-template-columns-shell: [full-start] var(--spacing-shell) [content-start] minmax(0, 1fr)
+    [content-end] var(--spacing-shell) [full-end];
+  --breakpoint-3xl: 120rem;
+
+  /* Spacing */
+  --spacing-shell: var(--page-shell-padding);
+  --spacing-section-row: var(--content-section-row-gap);
+  --spacing-section: var(--section-gap);
+}

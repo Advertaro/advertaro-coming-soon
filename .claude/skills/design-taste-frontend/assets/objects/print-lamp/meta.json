@@ -5,10 +5,7 @@
   "line": "A balanced-arm desk lamp. Click to switch it on.",
   "shows": "A balanced-arm desk lamp: a heavy stepped base with a turret, two pairs of rods, two coil springs hooked to a crossbar, knuckle joints with chrome caps, and a domed shade with a vent cowl and a rolled rim. Base and shade in a clear-coated enamel in the accent, graphite rods, chrome springs.",
   "product": "A desk or task lamp: the product of a lighting maker.",
-  "suits": [
-    "product",
-    "software"
-  ],
+  "suits": ["product", "software"],
   "for": "Lighting and furniture; on a software page, a card about focus, reading or working late. A product page of site-kind other (a chair, a bike, a lamp, coffee) shows none: its photographs lead (MO-08); only a technical product (hardware) of that very kind may show it.",
   "never": "Never an object of another kind for a product, never on a place page or beside the client's own photographs, and never a print (halftone, engraving, dither, type) outside a software, tech, AI or games page. No caption under it: never call it a render, a drawing, an illustration, a model, a sample or made in code; the heading and text say what the product is. Its aria-label names the thing plainly (as label does).",
   "effect": "render",
@@ -16,13 +13,7 @@
   "hover": "The light follows the pointer and the lamp leans toward it.",
   "step": "Click or Enter: it switches on: the bulb and the inside of the shade glow, and in the render a pool of warm light falls on the desk (on light paper the paper there turns warm); a print leaves the pool out. Click again to switch it off.",
   "note": "Switched on, it reads best on dark paper (light can be printed there).",
-  "effects": [
-    "render",
-    "halftone",
-    "engrave",
-    "dither",
-    "ascii"
-  ],
+  "effects": ["render", "halftone", "engrave", "dither", "ascii"],
   "use": {
     "html": "<div class=\"panel\" data-fx=\"grain-gradient\" data-fx-params='{\"speed\":0,\"grainMotion\":0}'><div data-print=\"print-lamp\" data-print-place=\"card\"></div></div>, then load assets/objects/_print-core/auto.js once (type=\"module\", after system.js). auto.js mounts every [data-print].",
     "js": "import obj from '<assets>/objects/print-lamp/object.js'; const ctrl = obj.mount(el, { place: 'card' });",

@@ -4,9 +4,7 @@
   "kind": "scene",
   "source": "3d-form",
   "shows": "A generic thing on a studio turntable with a degree scale, modelled in code (signed distance forms: a rangefinder camera, a wooden side chair, a cylindrical speaker or a glazed cup on its saucer) and printed in the page palette with an 8x8 ordered dither, one canvas pixel per dither cell. The camera is fitted to the form and the panel, so the platter is never cut.",
-  "suits": [
-    "software"
-  ],
+  "suits": ["software"],
   "for": "The one moment of a software, tech or games page, on a feature card about a kind of thing the product handles: cameras in a rental platform's inventory, a chair in a furniture marketplace, a speaker an audio app controls.",
   "never": "Never the client's own product and never on a product page (a maker of things shows its photographs or its object render, assets/objects/print-*). Never on a place, service or local-business page. No caption calling it a drawing, a model or a stand-in; the heading says what the card is about.",
   "effect": "dither",

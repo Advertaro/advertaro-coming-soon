@@ -4,9 +4,7 @@
   "kind": "scene",
   "source": "photo-sequence",
   "shows": "Two to six real photographs that belong together printed with an ordered dither in the page palette and played like a slow loop of film. Each cut is a dithered wipe on a slight diagonal with a one-cell accent line on its leading edge; a small pill counts the frames (or shows the captions given) on a segmented timeline.",
-  "suits": [
-    "software"
-  ],
+  "suits": ["software"],
   "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: two to six real photographs that belong together (a device from several sides, the stages of what the software makes, a game's scenes), never a random set.",
   "never": "Never on a place, service, product or local-business page (a cafe, a shop, a hotel, a studio people visit, a maker of things): those show their photographs plain, never dithered. Never mood pictures that only fill the frame. No caption that explains the effect; the photographs' credits go in the footer's one credit line.",
   "effect": "dither",

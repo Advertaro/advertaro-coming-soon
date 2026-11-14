@@ -1,53 +1,84 @@
 import { processSteps } from '@advertaro/content'
-import { Em, SectionHeaderBar } from '@advertaro/ui'
+import { cn, Em, MonoLabel, SectionHeaderBar } from '@advertaro/ui'
 import Link from 'next/link'
+import { Container } from '@/components/ui/Container'
+import { Section } from '@/components/ui/Section'
 
 /** The prototype's rate-card section, used for the engagement process. */
 export function Process({ num = '06' }: { num?: string }) {
   return (
     <>
       <SectionHeaderBar id="process" num={num} label="PROCESS" />
-      <section className="rates-section">
-        <div className="site-container">
-          <div className="rates-top" data-reveal>
-            <h2 className="rates-headline">
+      <Section>
+        <Container>
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6" data-reveal>
+            <h2 className="text-[length:clamp(34px,4.5vw,62px)] leading-[1.06] font-bold tracking-[-0.035em]">
               A clear process up front
               <br />
               <Em>no surprises later</Em>
             </h2>
             <div className="text-right">
-              <div className="mono-label text-white">HOW WE WORK — 2026</div>
-              <div className="mono-label">DISCOVER · BUILD · GROW</div>
+              <MonoLabel as="div" bright>
+                HOW WE WORK — 2026
+              </MonoLabel>
+              <MonoLabel as="div">DISCOVER · BUILD · GROW</MonoLabel>
             </div>
           </div>
 
-          <div className="rates-grid" data-reveal="stagger">
-            {processSteps.map((step, i) => (
-              <div className={`rate-card${i === 1 ? ' featured' : ''}`} key={step.index}>
-                <div>
-                  <div className="rate-card-head">
-                    <span className="rate-idx">{step.index}</span>
-                    <span className="rate-spec-badge">{step.spec}</span>
-                  </div>
-                  <h3 className="rate-title mt-6">{step.title}</h3>
-                  <p className="rate-desc">{step.description}</p>
-                </div>
-                <div className="rate-price-block">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" data-reveal="stagger">
+            {processSteps.map((step, i) => {
+              const featured = i === 1
+              return (
+                <div
+                  className={cn(
+                    'relative flex flex-col justify-between gap-7 rounded-[18px] border px-[22px] py-[26px] transition-[translate,border-color] duration-250 ease-[ease] hover:-translate-y-1 hover:border-line-strong sm:px-[30px] sm:py-[34px]',
+                    featured
+                      ? 'border-accent/55 bg-[linear-gradient(180deg,rgba(255,77,0,0.07)_0%,var(--color-bg-card)_45%)]'
+                      : 'border-line bg-bg-card',
+                  )}
+                  key={step.index}
+                >
                   <div>
-                    <span className="rate-from-label">{step.deliverableLabel}</span>
-                    <div className="rate-price text-[26px]! tracking-[-0.03em]!">
-                      {step.deliverable}
+                    <div className="flex items-center justify-between">
+                      <span className="font-sans text-[12px] font-semibold text-accent">
+                        {step.index}
+                      </span>
+                      <span className="rounded-md border border-line bg-white/5 px-2.5 py-[5px] font-sans text-[10.5px] tracking-[0.1em] text-ink-secondary">
+                        {step.spec}
+                      </span>
                     </div>
+                    <h3 className="mt-6 mb-2.5 text-[30px] font-bold tracking-[-0.03em]">
+                      {step.title}
+                    </h3>
+                    <p className="text-[15px] leading-[1.5] text-ink-secondary">
+                      {step.description}
+                    </p>
                   </div>
-                  <Link href="/contact" className="rate-book-btn">
-                    START →
-                  </Link>
+                  <div className="flex items-end justify-between border-t border-line pt-6">
+                    <div>
+                      <span className="mb-1.5 block font-sans text-[10.5px] tracking-[0.12em] text-ink-muted">
+                        {step.deliverableLabel}
+                      </span>
+                      <div className="text-[26px] leading-none font-extrabold tracking-[-0.03em]">
+                        {step.deliverable}
+                      </div>
+                    </div>
+                    <Link
+                      href="/contact"
+                      className={cn(
+                        'inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-3 font-sans text-[12px] font-semibold tracking-[0.1em] text-white transition-colors duration-200 ease-[ease] hover:border-accent hover:bg-accent',
+                        featured ? 'border-accent bg-accent' : 'border-white/14 bg-white/8',
+                      )}
+                    >
+                      START →
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   )
 }

@@ -6,8 +6,14 @@ import { notFound } from 'next/navigation'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
 import { PageHero } from '@/components/sections/shared/PageHero'
 import { Blocks } from '@/components/ui/Blocks'
+import { Container } from '@/components/ui/Container'
 import { DraftBanner } from '@/components/ui/DraftBanner'
 import { FilmStill } from '@/components/ui/FilmStill'
+import { Prose } from '@/components/ui/Prose'
+import { Section } from '@/components/ui/Section'
+
+const chapterClass =
+  'grid grid-cols-1 gap-4 border-b border-line py-12 first:border-t lg:grid-cols-[220px_1fr] lg:gap-10'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -54,18 +60,21 @@ export default async function CaseStudyPage({ params }: Props) {
         </DraftBanner>
       )}
 
-      <section className="page-section tight">
-        <div className="site-container">
-          <div className="gallery-frame aspect-[21/9]!" data-wipe>
+      <Section tight>
+        <Container>
+          <div
+            className="relative aspect-[21/9] overflow-hidden rounded-[14px] border border-line bg-bg-card"
+            data-wipe
+          >
             <FilmStill theme={study.theme} width={1600} height={686} />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <SectionHeaderBar num="01" label="OVERVIEW" />
-      <section className="page-section">
-        <div className="site-container overview-grid">
-          <dl className="spec-table" data-reveal>
+      <Section>
+        <Container className="grid grid-cols-1 gap-14 lg:grid-cols-[0.8fr_1.2fr]">
+          <dl className="border-t border-line" data-reveal>
             {[
               ['Client', study.client],
               ['Industry', study.industry],
@@ -73,82 +82,110 @@ export default async function CaseStudyPage({ params }: Props) {
               ['Stack', study.stack.join(', ')],
               ['Year', study.year],
             ].map(([k, v]) => (
-              <div className="spec-row" key={k}>
-                <dt className="k">{k}</dt>
-                <dd className="v">{v}</dd>
+              <div
+                className="flex justify-between gap-6 border-b border-line py-3.5 text-[14px]"
+                key={k}
+              >
+                <dt className="shrink-0 font-sans text-[11.5px] tracking-[0.14em] text-ink-secondary uppercase">
+                  {k}
+                </dt>
+                <dd className="text-right font-semibold">{v}</dd>
               </div>
             ))}
           </dl>
           <div>
-            <div className="chapter">
-              <h2 className="chapter-label">
-                <span className="num">01</span>The challenge
+            <div className={chapterClass}>
+              <h2 className="font-sans text-[11.5px] tracking-[0.14em] text-white uppercase">
+                <span className="mr-2 text-accent">01</span>The challenge
               </h2>
-              <div className="prose">
+              <Prose>
                 <Blocks blocks={study.challenge} />
-              </div>
+              </Prose>
             </div>
-            <div className="chapter">
-              <h2 className="chapter-label">
-                <span className="num">02</span>Our approach
+            <div className={chapterClass}>
+              <h2 className="font-sans text-[11.5px] tracking-[0.14em] text-white uppercase">
+                <span className="mr-2 text-accent">02</span>Our approach
               </h2>
-              <div className="prose">
+              <Prose>
                 <Blocks blocks={study.approach} />
-              </div>
+              </Prose>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <SectionHeaderBar num="02" label="THE RESULT" />
       <section>
-        <div className="metric-callouts" data-reveal="stagger">
+        <div
+          className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] border-y border-line"
+          data-reveal="stagger"
+        >
           {study.results.map((metric) => (
-            <div className="metric-callout" key={metric.label}>
-              <span className="label">{metric.label}</span>
-              <span className="value">{metric.value}</span>
-              {metric.description && <span className="desc">{metric.description}</span>}
+            <div
+              className="flex flex-col gap-3.5 border-b border-line px-7 py-9 md:border-r md:border-b-0 md:last:border-r-0"
+              key={metric.label}
+            >
+              <span className="font-sans text-[11.5px] tracking-[0.12em] text-accent uppercase">
+                {metric.label}
+              </span>
+              <span className="text-[length:clamp(56px,7vw,104px)] leading-[0.9] font-extrabold tracking-[-0.05em]">
+                {metric.value}
+              </span>
+              {metric.description && (
+                <span className="text-[14px] text-ink-secondary">{metric.description}</span>
+              )}
             </div>
           ))}
         </div>
-        <div className="site-container py-10">
-          <p className="prose">{study.resultSummary}</p>
-        </div>
+        <Container className="py-10">
+          <Prose as="p">{study.resultSummary}</Prose>
+        </Container>
       </section>
 
       <SectionHeaderBar num="03" label="VISUALS" />
-      <section className="page-section">
-        <div className="site-container gallery-grid">
+      <Section>
+        <Container className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {study.gallery.map((frame) => (
-            <div className="gallery-frame" key={frame.label} data-wipe>
+            <div
+              className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-line bg-bg-card first:col-span-full md:first:aspect-[21/9]"
+              key={frame.label}
+              data-wipe
+            >
               <FilmStill theme={frame} width={1280} height={800} />
             </div>
           ))}
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {study.quote && (
         <>
           <SectionHeaderBar num="04" label="CLIENT" />
-          <section className="site-container pull-quote" data-reveal>
-            <blockquote>{study.quote.text}</blockquote>
+          <Container as="section" className="px-0 py-14 text-center sm:px-0" data-reveal>
+            <blockquote className="mx-auto mb-7 max-w-[1040px] text-[length:clamp(30px,4.2vw,58px)] leading-[1.15] tracking-[-0.02em] text-white before:text-accent before:content-['“'] after:text-accent after:content-['”']">
+              {study.quote.text}
+            </blockquote>
             <MonoLabel bright>
               {study.quote.authorName} — {study.quote.authorTitle}, {study.quote.authorCompany}
             </MonoLabel>
-          </section>
+          </Container>
         </>
       )}
 
       {next && next.slug !== study.slug && (
-        <div className="site-container">
-          <Link href={`/work/${next.slug}`} className="next-project">
+        <Container>
+          <Link
+            href={`/work/${next.slug}`}
+            className="group flex flex-col items-start justify-between gap-6 border-t border-line py-14 md:flex-row md:items-end"
+          >
             <div>
               <MonoLabel>NEXT CASE STUDY →</MonoLabel>
-              <div className="title mt-4">{next.title}</div>
+              <div className="mt-4 font-display text-[length:clamp(44px,8vw,120px)] leading-[0.92] font-extrabold tracking-[-0.05em] group-hover:text-accent">
+                {next.title}
+              </div>
             </div>
             <Tag>{next.deliverable}</Tag>
           </Link>
-        </div>
+        </Container>
       )}
 
       <CtaBand />

@@ -5,23 +5,14 @@
   "line": "A cup on its saucer. Click to stir.",
   "shows": "A porcelain cup of coffee on its saucer: the glaze outside the cup in the accent, white porcelain inside and on the saucer.",
   "product": "A cup, a mug or a tableware set: the product of a ceramics or tableware maker.",
-  "suits": [
-    "product",
-    "software"
-  ],
+  "suits": ["product", "software"],
   "for": "Ceramics and tableware, kitchen and home goods; on a software page, a card about a break, a routine or a morning. A product page of site-kind other (a chair, a bike, a lamp, coffee) shows none: its photographs lead (MO-08); only a technical product (hardware) of that very kind may show it.",
   "never": "Never an object of another kind for a product, never on a place page or beside the client's own photographs, and never a print (halftone, engraving, dither, type) outside a software, tech, AI or games page. No caption under it: never call it a render, a drawing, an illustration, a model, a sample or made in code; the heading and text say what the product is. Its aria-label names the thing plainly (as label does).",
   "effect": "render",
   "motion": "Turns slowly on the saucer, one turn in 36 s.",
   "hover": "The light follows the pointer and the cup leans toward it.",
   "step": "Click or Enter: rings run out across the coffee and settle.",
-  "effects": [
-    "render",
-    "halftone",
-    "engrave",
-    "dither",
-    "ascii"
-  ],
+  "effects": ["render", "halftone", "engrave", "dither", "ascii"],
   "use": {
     "html": "<div class=\"panel\" data-fx=\"grain-gradient\" data-fx-params='{\"speed\":0,\"grainMotion\":0}'><div data-print=\"print-cup\" data-print-place=\"card\"></div></div>, then load assets/objects/_print-core/auto.js once (type=\"module\", after system.js). auto.js mounts every [data-print].",
     "js": "import obj from '<assets>/objects/print-cup/object.js'; const ctrl = obj.mount(el, { place: 'card' });",

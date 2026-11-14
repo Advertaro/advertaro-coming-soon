@@ -19,6 +19,10 @@
   },
   "never": "an accent on the dot; a claim of seven words or more; right after another type scene",
   "avoidWith": ["letter-physics", "letter-bar-floods-the-ground"],
-  "states": { "start": { "p": 0.12, "wait": 500 }, "middle": { "p": 0.5, "wait": 500 }, "end": { "p": 0.98, "wait": 600 } },
+  "states": {
+    "start": { "p": 0.12, "wait": 500 },
+    "middle": { "p": 0.5, "wait": 500 },
+    "end": { "p": 0.98, "wait": 600 }
+  },
   "avoidMoments": ["word-highlight", "counter-rolls"]
 }

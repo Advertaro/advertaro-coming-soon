@@ -1,3 +1,4 @@
+export { ArrowLink } from './ArrowLink'
 export { CtaPill } from './CtaPill'
 export { cn } from './cn'
 export { Em, MonoLabel } from './MonoLabel'

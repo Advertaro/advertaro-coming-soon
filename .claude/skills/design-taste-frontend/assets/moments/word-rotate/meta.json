@@ -2,9 +2,7 @@
   "id": "word-rotate",
   "name": "Word rotates",
   "kind": "text",
-  "fits": [
-    "hero"
-  ],
+  "fits": ["hero"],
   "trigger": "loop",
   "cost": "low",
   "webgl": 0,

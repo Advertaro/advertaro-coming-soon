@@ -2,11 +2,7 @@
   "about": "Ready specs for diagram.js (references/diagrams.md). Copy one into the page as data-diagram='{...}' or a <script type=\"application/json\"> inside the .dg, then rename every label, icon and number to the client's own tools and steps. types: the page kinds a preset suits (software, tech, gaming, product, service); a place page gets no diagram. Icons: a curated short name (gmail, google-docs, pdf) or logos:<name>, file:<name>, si:<slug> is the file icons.mjs fetched into assets/icons (icons.mjs scan <page.html> fetches every id a page names), in full colour (the Simple Icons mark in its brand hex where no colour mark exists); ui:<name> a line glyph in the ink; text:Ab the product's own letters.",
   "presets": {
     "hub-tools": {
-      "types": [
-        "software",
-        "product",
-        "service"
-      ],
+      "types": ["software", "product", "service"],
       "layout": "hub",
       "alt": "The agent connects Gmail, Slack, Notion, Google Drive, Salesforce and Zendesk.",
       "center": {
@@ -41,10 +37,7 @@
       ]
     },
     "hub-branches": {
-      "types": [
-        "software",
-        "tech"
-      ],
+      "types": ["software", "tech"],
       "layout": "hub",
       "alt": "Search reads Google Drive, Notion, GitHub and Gmail, down to single files.",
       "center": {
@@ -111,10 +104,7 @@
       ]
     },
     "hub-web": {
-      "types": [
-        "software",
-        "tech"
-      ],
+      "types": ["software", "tech"],
       "layout": "hub",
       "shape": "radial",
       "alt": "One knowledge base reads the tools of every team: HubSpot and Salesforce, Zendesk and Intercom, GitHub and Linear, QuickBooks and Xero.",
@@ -178,10 +168,7 @@
       ]
     },
     "ring-apps": {
-      "types": [
-        "software",
-        "product"
-      ],
+      "types": ["software", "product"],
       "layout": "ring",
       "alt": "Eight apps connected around one workspace: Gmail, Slack, Google Drive, Notion, HubSpot, GitHub, Zoom and Google Calendar.",
       "center": {
@@ -224,11 +211,7 @@
       ]
     },
     "tree-orders": {
-      "types": [
-        "product",
-        "service",
-        "software"
-      ],
+      "types": ["product", "service", "software"],
       "layout": "tree",
       "alt": "A new Shopify order branches into payment, stock and shipping, each finished in turn.",
       "root": {
@@ -277,10 +260,7 @@
       }
     },
     "lanes-agent": {
-      "types": [
-        "software",
-        "tech"
-      ],
+      "types": ["software", "tech"],
       "layout": "lanes",
       "alt": "Mail from the support inbox goes to the agent, which drafts a reply, updates the ticket and adds the lead at once.",
       "input": {
@@ -314,11 +294,7 @@
       ]
     },
     "lanes-media": {
-      "types": [
-        "software",
-        "tech",
-        "gaming"
-      ],
+      "types": ["software", "tech", "gaming"],
       "layout": "lanes",
       "alt": "One upload is encoded into a video, thumbnails and captions in parallel, then published.",
       "curve": "curve",
@@ -355,11 +331,7 @@
       }
     },
     "lanes-deploy": {
-      "types": [
-        "software",
-        "tech",
-        "gaming"
-      ],
+      "types": ["software", "tech", "gaming"],
       "layout": "lanes",
       "alt": "A push to GitHub is built once and goes live in Frankfurt, Virginia and Tokyo.",
       "curve": "curve",
@@ -394,11 +366,7 @@
       ]
     },
     "fanin-warehouse": {
-      "types": [
-        "software",
-        "tech",
-        "service"
-      ],
+      "types": ["software", "tech", "service"],
       "layout": "fanin",
       "alt": "Orders, payments, ads and support data flow into one warehouse and one dashboard.",
       "sources": [
@@ -444,10 +412,7 @@
       }
     },
     "bowtie-events": {
-      "types": [
-        "software",
-        "tech"
-      ],
+      "types": ["software", "tech"],
       "layout": "bowtie",
       "alt": "Events from the shop, the payments and the app are collected once and sent to Mailchimp, HubSpot, Snowflake and Intercom.",
       "sources": [
@@ -495,11 +460,7 @@
       ]
     },
     "ring-regions": {
-      "types": [
-        "software",
-        "tech",
-        "gaming"
-      ],
+      "types": ["software", "tech", "gaming"],
       "layout": "ring",
       "alt": "Six regions around the edge network, each answering in a few milliseconds.",
       "center": {
@@ -540,10 +501,7 @@
       ]
     },
     "sync-crm": {
-      "types": [
-        "software",
-        "service"
-      ],
+      "types": ["software", "service"],
       "layout": "sync",
       "alt": "Postgres and HubSpot keep contacts, companies and deals in sync both ways.",
       "left": {
@@ -590,11 +548,7 @@
       }
     },
     "timeline-onboarding": {
-      "types": [
-        "software",
-        "product",
-        "service"
-      ],
+      "types": ["software", "product", "service"],
       "layout": "timeline",
       "alt": "A new customer signs up, verifies their email, connects a bank, sends a first invoice and gets paid.",
       "steps": [
@@ -626,10 +580,7 @@
       ]
     },
     "grid-documents": {
-      "types": [
-        "software",
-        "service"
-      ],
+      "types": ["software", "service"],
       "layout": "grid",
       "alt": "Google Docs, Word, Excel, PDF, Notion and Gmail files are read, checked and reported on.",
       "group": "Your files",
@@ -676,11 +627,7 @@
       ]
     },
     "free-approval": {
-      "types": [
-        "software",
-        "service",
-        "product"
-      ],
+      "types": ["software", "service", "product"],
       "layout": "free",
       "alt": "A spending request goes to a manager and is approved; the rejected branch stays unused.",
       "nodes": [
@@ -689,54 +636,30 @@
           "label": "Request",
           "icon": "ui:file-text",
           "meta": "€1,240",
-          "at": [
-            0.17,
-            0.5
-          ],
-          "atCompact": [
-            0.5,
-            0.14
-          ]
+          "at": [0.17, 0.5],
+          "atCompact": [0.5, 0.14]
         },
         {
           "id": "mgr",
           "label": "Manager",
           "icon": "ui:user",
-          "at": [
-            0.47,
-            0.5
-          ],
-          "atCompact": [
-            0.5,
-            0.42
-          ]
+          "at": [0.47, 0.5],
+          "atCompact": [0.5, 0.42]
         },
         {
           "id": "ok",
           "label": "Approved",
           "icon": "ui:check",
           "done": true,
-          "at": [
-            0.8,
-            0.29
-          ],
-          "atCompact": [
-            0.27,
-            0.74
-          ]
+          "at": [0.8, 0.29],
+          "atCompact": [0.27, 0.74]
         },
         {
           "id": "no",
           "label": "Rejected",
           "icon": "ui:x",
-          "at": [
-            0.8,
-            0.71
-          ],
-          "atCompact": [
-            0.73,
-            0.74
-          ]
+          "at": [0.8, 0.71],
+          "atCompact": [0.73, 0.74]
         }
       ],
       "edges": [
@@ -758,11 +681,7 @@
       ]
     },
     "lanes-render": {
-      "types": [
-        "tech",
-        "gaming",
-        "software"
-      ],
+      "types": ["tech", "gaming", "software"],
       "layout": "lanes",
       "curve": "curve",
       "alt": "One render job is split by the scheduler over three GPUs and the frames are joined again.",
@@ -802,10 +721,7 @@
       }
     },
     "hub-stack": {
-      "types": [
-        "tech",
-        "software"
-      ],
+      "types": ["tech", "software"],
       "layout": "hub",
       "alt": "The API reads and writes Postgres, Redis, Kafka, Stripe, Sentry and Grafana.",
       "center": {
@@ -840,10 +756,7 @@
       ]
     },
     "bowtie-model": {
-      "types": [
-        "tech",
-        "software"
-      ],
+      "types": ["tech", "software"],
       "layout": "bowtie",
       "alt": "Docs, Slack and GitHub go into one model, which answers questions, writes summaries and raises alerts.",
       "sources": [
@@ -886,10 +799,7 @@
       ]
     },
     "fanin-telemetry": {
-      "types": [
-        "tech",
-        "software"
-      ],
+      "types": ["tech", "software"],
       "layout": "fanin",
       "alt": "Metrics, traces and errors from Prometheus, OpenTelemetry, Sentry and Docker flow into one collector and raise alerts.",
       "sources": [
@@ -925,10 +835,7 @@
       }
     },
     "tree-release": {
-      "types": [
-        "tech",
-        "software"
-      ],
+      "types": ["tech", "software"],
       "layout": "tree",
       "alt": "A pull request on GitHub starts the build, a preview on Vercel and a review.",
       "root": {
@@ -977,10 +884,7 @@
       }
     },
     "ring-edge": {
-      "types": [
-        "tech",
-        "software"
-      ],
+      "types": ["tech", "software"],
       "layout": "ring",
       "alt": "Cloudflare, AWS, Vercel, Docker, Kubernetes and Postgres around one platform.",
       "center": {
@@ -1015,9 +919,7 @@
       ]
     },
     "lanes-matchmaking": {
-      "types": [
-        "gaming"
-      ],
+      "types": ["gaming"],
       "layout": "lanes",
       "curve": "curve",
       "alt": "Players waiting in the queue are matched into lobbies in Europe, North America and Asia.",
@@ -1057,9 +959,7 @@
       }
     },
     "hub-stores": {
-      "types": [
-        "gaming"
-      ],
+      "types": ["gaming"],
       "layout": "hub",
       "alt": "One build ships to Steam, Epic Games, PlayStation, itch.io and Roblox.",
       "center": {
@@ -1090,10 +990,7 @@
       ]
     },
     "ring-servers": {
-      "types": [
-        "gaming",
-        "tech"
-      ],
+      "types": ["gaming", "tech"],
       "layout": "ring",
       "alt": "Six game server regions around the matchmaker, each with its ping.",
       "center": {
@@ -1134,9 +1031,7 @@
       ]
     },
     "sync-saves": {
-      "types": [
-        "gaming"
-      ],
+      "types": ["gaming"],
       "layout": "sync",
       "alt": "Saves and trophies stay in step between the console and the PC.",
       "left": {
@@ -1183,9 +1078,7 @@
       }
     },
     "timeline-season": {
-      "types": [
-        "gaming"
-      ],
+      "types": ["gaming"],
       "layout": "timeline",
       "alt": "A game goes from alpha through closed beta and early access to launch and the first season.",
       "steps": [
@@ -1217,10 +1110,7 @@
       ]
     },
     "grid-assets": {
-      "types": [
-        "gaming",
-        "tech"
-      ],
+      "types": ["gaming", "tech"],
       "layout": "grid",
       "alt": "Models, textures and sounds from Blender, Photoshop and the audio files are imported, compressed and packed into one build.",
       "group": "Your assets",

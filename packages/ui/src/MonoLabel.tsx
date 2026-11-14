@@ -10,10 +10,28 @@ type MonoLabelProps = {
 }
 
 export function MonoLabel({ children, as: Tag = 'span', bright, className }: MonoLabelProps) {
-  return <Tag className={cn('mono-label', bright && 'text-white', className)}>{children}</Tag>
+  return (
+    <Tag
+      className={cn(
+        'font-sans text-[11px] font-medium uppercase tracking-[0.12em]',
+        bright ? 'text-white' : 'text-ink-secondary',
+        className,
+      )}
+    >
+      {children}
+    </Tag>
+  )
 }
 
 /** Colour and weight emphasis used inside display headlines. */
 export function Em({ children, className }: { children: ReactNode; className?: string }) {
-  return <span className={cn('text-emphasis', className)}>{children}</span>
+  return (
+    // NOTE: data-emphasis lets a parent restyle emphasis without matching every span.
+    <span
+      data-emphasis
+      className={cn('font-bold tracking-[-0.01em] text-ink-editorial', className)}
+    >
+      {children}
+    </span>
+  )
 }

@@ -1,12 +1,17 @@
 'use client'
 
 import { testimonials } from '@advertaro/content'
-import { SectionHeaderBar } from '@advertaro/ui'
+import { cn, SectionHeaderBar } from '@advertaro/ui'
 import { useState } from 'react'
+import { Container } from '@/components/ui/Container'
 import { DraftBanner } from '@/components/ui/DraftBanner'
 import { FilmStill } from '@/components/ui/FilmStill'
+import { Section } from '@/components/ui/Section'
 
 const pad = (n: number) => String(n).padStart(2, '0')
+
+const arrowButton =
+  'inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-line-strong bg-bg-elevated text-white transition-colors duration-200 ease-[ease] hover:border-accent hover:bg-accent/15'
 
 /** Manual (never auto-rotating) testimonial carousel from the prototype. */
 export function Reviews() {
@@ -20,25 +25,24 @@ export function Reviews() {
   return (
     <>
       <SectionHeaderBar num="07" label="CLIENT REVIEWS" />
-      <section
-        className="reviews-section"
-        aria-roledescription="carousel"
-        aria-label="Client reviews"
-      >
-        <div className="site-container">
+      <Section aria-roledescription="carousel" aria-label="Client reviews">
+        <Container>
           {item.draft && (
             <DraftBanner>Draft quotes — pending client approval before launch</DraftBanner>
           )}
-          <div className="reviews-carousel mt-4" data-reveal>
+          <div
+            className="mt-4 grid grid-cols-1 items-center gap-11 rounded-[20px] border border-line bg-bg-card p-6 sm:p-11 lg:grid-cols-[1.05fr_0.95fr]"
+            data-reveal
+          >
             <div>
-              <div className="review-controls-row">
-                <span className="review-counter">
+              <div className="mb-7 flex items-center justify-between">
+                <span className="font-sans text-[12px] tracking-[0.14em] text-accent">
                   {pad(index + 1)} / {pad(count)}
                 </span>
-                <div className="review-nav-btns">
+                <div className="flex gap-2.5">
                   <button
                     type="button"
-                    className="review-arrow"
+                    className={arrowButton}
                     onClick={() => go(index - 1)}
                     aria-label="Previous review"
                   >
@@ -46,7 +50,7 @@ export function Reviews() {
                   </button>
                   <button
                     type="button"
-                    className="review-arrow"
+                    className={arrowButton}
                     onClick={() => go(index + 1)}
                     aria-label="Next review"
                   >
@@ -56,44 +60,57 @@ export function Reviews() {
               </div>
 
               <div aria-live="polite">
-                <blockquote className="review-quote">“{item.text}”</blockquote>
+                <blockquote className="mb-7 min-h-[138px] text-[length:clamp(24px,3vw,38px)] leading-[1.24] font-semibold tracking-[-0.025em]">
+                  “{item.text}”
+                </blockquote>
                 <div>
-                  <div className="review-author-name">{item.authorName}</div>
-                  <div className="review-author-role">
+                  <div className="text-[15px] font-bold tracking-[0.04em] uppercase">
+                    {item.authorName}
+                  </div>
+                  <div className="mt-1 font-sans text-[11.5px] tracking-[0.1em] text-ink-secondary">
                     {item.authorTitle.toUpperCase()} — {item.authorCompany.toUpperCase()}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="review-media-frame">
+            <div className="relative flex aspect-[3/2] items-end overflow-hidden rounded-[14px] border border-line bg-bg-elevated p-[18px]">
               <FilmStill theme={item.theme} width={720} height={480} />
-              <div className="review-media-bar">
+              <div className="relative z-2 flex w-full items-center justify-between rounded-lg border border-white/12 bg-bg/78 px-3.5 py-2.5 font-sans text-[11px] text-ink-editorial backdrop-blur-[8px]">
                 <span>{item.file}</span>
                 <span>LIVE · {item.authorCompany.toUpperCase()}</span>
               </div>
             </div>
           </div>
 
-          <div className="review-tabs" role="tablist" aria-label="Choose a review">
+          <div
+            className="mt-5 grid grid-cols-1 gap-3.5 lg:grid-cols-3"
+            role="tablist"
+            aria-label="Choose a review"
+          >
             {testimonials.map((t, i) => (
               <button
                 type="button"
                 role="tab"
                 aria-selected={i === index}
-                className={`review-tab-card text-left ${i === index ? 'active' : ''}`}
+                className={cn(
+                  'cursor-pointer rounded-xl border px-5 py-4 text-left transition-colors duration-200 ease-[ease]',
+                  i === index ? 'border-accent bg-accent/8' : 'border-line bg-bg-elevated',
+                )}
                 key={t.project}
                 onClick={() => setIndex(i)}
               >
-                <div className="t-name">
+                <div className="text-[12.5px] font-bold text-white">
                   {pad(i + 1)} · {t.authorCompany.toUpperCase()}
                 </div>
-                <div className="t-role">{t.authorTitle.toUpperCase()}</div>
+                <div className="mt-0.5 font-sans text-[10.5px] text-ink-secondary">
+                  {t.authorTitle.toUpperCase()}
+                </div>
               </button>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   )
 }

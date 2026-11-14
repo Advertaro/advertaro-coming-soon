@@ -1,7 +1,9 @@
 import { credits, site } from '@advertaro/content'
-import { Em, SectionHeaderBar, Tag } from '@advertaro/ui'
-import Link from 'next/link'
+import { ArrowLink, cn, Em, MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Container } from '@/components/ui/Container'
 import { FilmStill } from '@/components/ui/FilmStill'
+import { Section } from '@/components/ui/Section'
+import { SectionHeadline } from '@/components/ui/SectionHeadline'
 
 const portraitTheme = { base: '#172334', glow: '#ff4d00', label: 'ADVERTARO // STUDIO, COLOMBO' }
 
@@ -9,57 +11,73 @@ export function About() {
   return (
     <>
       <SectionHeaderBar id="about" num="05" label="ABOUT" />
-      <section className="about-section">
-        <div className="site-container">
-          <div className="about-grid">
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
             <div data-reveal>
-              <h2 className="about-headline">
+              <SectionHeadline className="mb-9">
                 Every pixel handled
                 <br />
                 <Em>by the same team</Em>
-              </h2>
+              </SectionHeadline>
 
-              <dl className="credits-table">
+              <dl className="mb-8 border-t border-line">
                 {credits.map((credit) => (
                   <div
-                    className={`credit-row${credit.highlight ? ' highlight' : ''}`}
+                    className="flex items-center justify-between border-b border-line py-3.5 text-[14px]"
                     key={credit.role}
                   >
-                    <dt className="credit-role">{credit.role}</dt>
-                    <dd className="credit-person">{credit.person}</dd>
+                    <dt className="font-sans text-[11.5px] tracking-[0.14em] text-ink-secondary">
+                      {credit.role}
+                    </dt>
+                    <dd
+                      className={cn(
+                        'font-semibold',
+                        credit.highlight ? 'text-accent' : 'text-white',
+                      )}
+                    >
+                      {credit.person}
+                    </dd>
                   </div>
                 ))}
               </dl>
 
-              <p className="about-bio">
-                <strong>Same name on every credit. That's just how we work.</strong>
+              <p className="max-w-[500px] text-[16px] leading-[1.6] text-ink-secondary">
+                <strong className="font-semibold text-white">
+                  Same name on every credit. That's just how we work.
+                </strong>
                 <br />
                 Designers, developers and strategists in Colombo, building for hospitality, real
                 estate and ambitious businesses since {site.founded}.
               </p>
-              <Link href="/about" className="arrow-link mt-8">
+              <ArrowLink href="/about" className="mt-8">
                 About us →
-              </Link>
+              </ArrowLink>
             </div>
 
-            <div className="about-portrait-card" data-wipe>
-              <FilmStill theme={portraitTheme} width={800} height={880} className="portrait-bg" />
-              <div className="about-portrait-shade" />
+            <div
+              className="relative flex aspect-[4/4.4] flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-bg-card p-6"
+              data-wipe
+            >
+              <FilmStill theme={portraitTheme} width={800} height={880} />
+              <div className="absolute inset-0 z-2 bg-[linear-gradient(180deg,rgba(10,10,11,0.5)_0%,transparent_40%,rgba(10,10,11,0.92)_100%)]" />
 
-              <div className="about-portrait-top">
+              <div className="relative z-3 flex items-end justify-between">
                 <Tag>advertaro_studio.mov</Tag>
                 <Tag>COLOMBO · LK</Tag>
               </div>
 
-              <div className="about-portrait-bottom">
+              <div className="relative z-3 flex items-end justify-between">
                 <div>
-                  <div className="mono-label text-white">ADVERTARO STUDIO</div>
-                  <div className="mono-label">DESIGN &amp; ENGINEERING</div>
+                  <MonoLabel as="div" bright>
+                    ADVERTARO STUDIO
+                  </MonoLabel>
+                  <MonoLabel as="div">DESIGN &amp; ENGINEERING</MonoLabel>
                 </div>
-                <div className="signature-wrap" aria-hidden="true">
+                <div className="relative flex items-center" aria-hidden="true">
                   <svg
                     aria-hidden="true"
-                    className="signature-svg-fallback"
+                    className="h-[52px] w-[140px]"
                     viewBox="0 0 180 64"
                     fill="none"
                   >
@@ -81,8 +99,8 @@ export function About() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   )
 }

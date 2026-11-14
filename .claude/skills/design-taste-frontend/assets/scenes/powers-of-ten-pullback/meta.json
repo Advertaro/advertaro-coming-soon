@@ -20,6 +20,10 @@
   },
   "never": "as the page's hero (the first screen would open with no headline and no action); a stock photograph of a room as the place; a drawn device with a notch, a keyboard or a stand (a thin bezel is enough); two devices",
   "avoidWith": ["product-assembles-into-its-action", "parts-lock-into-the-whole"],
-  "states": { "start": { "p": 0.02, "wait": 500 }, "middle": { "p": 0.5, "wait": 500 }, "end": { "p": 0.98, "wait": 600 } },
+  "states": {
+    "start": { "p": 0.02, "wait": 500 },
+    "middle": { "p": 0.5, "wait": 500 },
+    "end": { "p": 0.98, "wait": 600 }
+  },
   "avoidMoments": ["headline-arrives", "cursor-spotlight"]
 }

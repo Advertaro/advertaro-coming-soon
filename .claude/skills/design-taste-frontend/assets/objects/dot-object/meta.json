@@ -4,9 +4,7 @@
   "kind": "scene",
   "source": "photo",
   "shows": "A real object rebuilt from dots. It is cut out of a photograph taken on a seamless plain ground (the ground, even a graded one, is modelled from the border; an object running off the edge is not taken for ground), or out of a cut-out PNG by its alpha. Each dot takes the photograph's tone where it sits, so the dots draw the form, not only the outline.",
-  "suits": [
-    "software"
-  ],
+  "suits": ["software"],
   "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: a feature card about a real thing the product works with: a device the app runs or controls, the hardware a developer tool ships to, a product photographed for a shop builder or a photo app. Only with a plain-ground shot or a cut-out PNG; a busy or sunlit background does not cut out.",
   "never": "Never on a place, service, product or local-business page (a cafe, a shop, a hotel, a studio people visit, a maker of things): those show their photographs plain, or a product its object render, never printed in dots. No caption that explains the dots; the photograph's credit goes in the footer's one credit line.",
   "effect": "dots",

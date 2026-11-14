@@ -10,9 +10,7 @@
       "effect": "halftone",
       "src": "one photograph",
       "loops": false,
-      "suits": [
-        "software"
-      ],
+      "suits": ["software"],
       "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: a feature card or a wide frame: a real photograph of what the product works on (a photo or design app's picture, the device a tech company makes, a game's key art)."
     },
     {
@@ -22,9 +20,7 @@
       "effect": "dither",
       "src": "2 to 6 photographs",
       "loops": true,
-      "suits": [
-        "software"
-      ],
+      "suits": ["software"],
       "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: two to six real photographs that belong together (a device from several sides, the stages of what the software makes, a game's scenes), never a random set."
     },
     {
@@ -34,9 +30,7 @@
       "effect": "dots",
       "src": "one object shot on a seamless plain ground, or a cut-out PNG",
       "loops": false,
-      "suits": [
-        "software"
-      ],
+      "suits": ["software"],
       "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: a feature card about a real thing the product works with: a device the app runs or controls, the hardware a developer tool ships to, a product photographed for a shop builder or a photo app. Only with a plain-ground shot or a cut-out PNG; a busy or sunlit background does not cut out."
     },
     {
@@ -46,9 +40,7 @@
       "effect": "halftone, dither, contours",
       "src": "one photograph, or up to four (one per sheet)",
       "loops": false,
-      "suits": [
-        "software"
-      ],
+      "suits": ["software"],
       "for": "Software that works in layers or passes: imaging, design and print tools, maps, documents."
     },
     {
@@ -58,9 +50,7 @@
       "effect": "dither",
       "src": "none",
       "loops": true,
-      "suits": [
-        "software"
-      ],
+      "suits": ["software"],
       "for": "A feature card about a kind of thing the product handles (cameras in a rental platform, a chair in a furniture marketplace). Never the client's own product."
     }
   ]

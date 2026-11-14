@@ -9,44 +9,81 @@ type WorkCardProps = {
   /** Marquee direction alternates per card. */
   reverse?: boolean
   showOutcome?: boolean
+  /** Compact grid-cell sizing (4/3.4 card, smaller marquee). Defaults to `showOutcome`, which only the /work and service grids set. */
+  grid?: boolean
   className?: string
 }
 
 /** Large project card with a scrolling marquee title — the prototype's "Selected Work" card. */
-export function WorkCard({ study, index, reverse, showOutcome, className }: WorkCardProps) {
+export function WorkCard({
+  study,
+  index,
+  reverse,
+  showOutcome,
+  grid = showOutcome,
+  className,
+}: WorkCardProps) {
   const num = String(index + 1).padStart(2, '0')
   return (
-    <Link href={`/work/${study.slug}`} className={cn('work-card', className)} data-wipe>
-      <div className="work-card-media">
-        <FilmStill theme={study.theme} />
+    <Link
+      href={`/work/${study.slug}`}
+      className={cn(
+        'group relative flex max-h-[680px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-bg-card',
+        grid
+          ? 'aspect-[4/5] px-6 py-[22px] md:aspect-[4/3.4]'
+          : 'aspect-[4/5] p-5 sm:aspect-[16/9] sm:px-8 sm:py-7',
+        className,
+      )}
+      data-wipe
+    >
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <FilmStill
+          theme={study.theme}
+          className="transition-[scale] duration-[650ms] ease-out-expo group-hover:scale-[1.035]"
+        />
       </div>
-      <div className="work-card-shade" />
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(10,10,11,0.72)_0%,rgba(10,10,11,0.18)_45%,rgba(10,10,11,0.86)_100%)]" />
 
-      <div className="work-card-top">
+      <div className="relative z-[3] flex items-center justify-between gap-4">
         <Tag num={num}>{study.industry}</Tag>
         <Tag>{study.year}</Tag>
       </div>
 
-      <div className="work-card-center" aria-hidden="true">
+      <div
+        className="relative z-[3] flex items-center justify-center overflow-hidden py-4"
+        aria-hidden="true"
+      >
         <div
-          className="work-marquee-track"
-          style={reverse ? { animationDirection: 'reverse' } : undefined}
+          className={cn(
+            'flex animate-marquee items-center gap-12 whitespace-nowrap',
+            reverse && '[animation-direction:reverse]',
+          )}
         >
           {[0, 1, 2, 3].map((n) => (
-            <span className="work-title-word" key={n}>
+            <span
+              className={cn(
+                "inline-flex items-center gap-12 font-display font-extrabold tracking-[-0.04em] text-white [text-shadow:0_10px_30px_rgba(0,0,0,0.5)] after:text-[0.35em] after:text-accent after:content-['•']",
+                grid ? 'text-[length:clamp(36px,5vw,72px)]' : 'text-[length:clamp(44px,7vw,96px)]',
+              )}
+              key={n}
+            >
               {study.title}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="work-card-bottom">
-        <div className="work-meta-left">
+      <div className="relative z-[3] flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <div>
           <h3 className="sr-only">{study.client}</h3>
-          <h4>{study.deliverable}</h4>
-          {showOutcome && <p className="work-outcome">{study.outcome}</p>}
+          <h4 className="text-[20px] font-bold tracking-[-0.02em] text-white">
+            {study.deliverable}
+          </h4>
+          {showOutcome && (
+            <p className="mt-1.5 max-w-[420px] text-[14px] text-ink-editorial">{study.outcome}</p>
+          )}
         </div>
-        <div className="work-meta-right">
+        <div className="flex flex-wrap items-center gap-3 [&>:not(:first-child)]:hidden sm:[&>:not(:first-child)]:block">
           <Tag>{study.slug.replaceAll('-', '_')}_live · View case</Tag>
           {study.stack[0] && <Tag>{study.stack[0]}</Tag>}
           <Tag>{study.year}</Tag>

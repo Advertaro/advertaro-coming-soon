@@ -2,17 +2,11 @@
   "id": "cursor-spotlight",
   "name": "Cursor spotlight",
   "kind": "hover",
-  "fits": [
-    "hero"
-  ],
+  "fits": ["hero"],
   "trigger": "pointer",
   "cost": "low",
   "webgl": 0,
-  "pages": [
-    "tech",
-    "gaming",
-    "software"
-  ],
+  "pages": ["tech", "gaming", "software"],
   "look": "A soft light on the hero's ground follows the pointer with a short lag and shows a fine dot grid around it; it drifts back to its resting spot when the pointer leaves.",
   "reduced": "The light rests at its spot; also on touch screens.",
   "phone": "The light rests at its spot; there is no pointer.",
@@ -21,9 +15,7 @@
   "needs": {
     "words": "a hero frame on a lit ground holding the product"
   },
-  "avoidWith": [
-    "liquid-hover"
-  ],
+  "avoidWith": ["liquid-hover"],
   "states": {
     "start": {
       "see": true,
@@ -32,14 +24,8 @@
     "middle": {
       "see": true,
       "pointer": {
-        "from": [
-          0.72,
-          0.28
-        ],
-        "to": [
-          0.3,
-          0.6
-        ],
+        "from": [0.72, 0.28],
+        "to": [0.3, 0.6],
         "moves": 10,
         "step": 16
       },
@@ -48,14 +34,8 @@
     "end": {
       "see": true,
       "pointer": {
-        "from": [
-          0.72,
-          0.28
-        ],
-        "to": [
-          0.3,
-          0.6
-        ],
+        "from": [0.72, 0.28],
+        "to": [0.3, 0.6],
         "moves": 10,
         "step": 16
       },

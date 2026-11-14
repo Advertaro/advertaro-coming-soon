@@ -2,10 +2,7 @@
   "id": "lines-rise",
   "name": "Lines rise",
   "kind": "text",
-  "fits": [
-    "section",
-    "statement"
-  ],
+  "fits": ["section", "statement"],
   "trigger": "enter",
   "cost": "low",
   "webgl": 0,
@@ -19,9 +16,7 @@
   "needs": {
     "words": "a heading of 2 to 3 lines"
   },
-  "avoidWith": [
-    "headline-arrives"
-  ],
+  "avoidWith": ["headline-arrives"],
   "states": {
     "start": {
       "see": true,

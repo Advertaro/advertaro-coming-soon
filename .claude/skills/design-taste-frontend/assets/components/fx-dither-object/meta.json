@@ -3,12 +3,7 @@
   "name": "Objects in dither",
   "for": "The picture of a real thing when there is no photograph of it: headphones, an office chair, a camera or a drone, built in code as a lit 3D form and printed in ordered dither in the page tones (ground, shade, ink, accent and a deep accent). It sways slowly on its spot; pointed at, it turns to the pointer, the light comes from the pointer and the object answers: sound rings out of the cups, the seat swivels, the lens zooms, the rotors spin up and the drone lifts off.",
   "effects": [],
-  "objects": [
-    "headphones",
-    "chair",
-    "camera",
-    "drone"
-  ],
+  "objects": ["headphones", "chair", "camera", "drone"],
   "default": "headphones",
   "how": "data-cx-object on the figure names the object (headphones, chair, camera, drone); data-cx-label can replace the stage's spoken label. Each is a small signed-distance model in its own shader, mounted with fx.shader (lazy WebGL context, paused off screen and in a hidden tab). The shader runs once per dither cell, not per pixel: the canvas has one pixel per 3 CSS px cell (2 px on a stage under 420px) on every screen and is scaled up pixelated, rays that miss the object skip the march, and it draws 20 frames a second. Under reduced motion it is drawn once and kept as a picture (still: no context). The accent paints one part (the ear cups, the seat and back, the camera's body band, the drone's shell), its shaded side in a deep accent. The stage is the card tone with a 4:3 aspect; a pause button sits in its top-right corner. The print is the render to use. data-cx-render=\"studio\" (a smooth shaded render of the same form) exists but is not for pages yet: at one sample per CSS pixel its edges stair-step and the forms read as toys next to a real product shot. No caption under the stage, ever: the section copy says what it is.",
   "rules": [

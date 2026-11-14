@@ -4,9 +4,7 @@
   "kind": "scene",
   "source": "photo",
   "shows": "A real photograph split by a line: one side printed as an amplitude halftone screen in the page ink, the other the photograph itself. Dots near the seam take the photograph's own colour, so the print turns back into the picture as it reaches the line.",
-  "suits": [
-    "software"
-  ],
+  "suits": ["software"],
   "for": "In the kit's gallery only, never on a page (references/effects-objects.md): no page prints, dithers or grades a photograph. What it was made for: a feature card or a wide frame: a real photograph of what the product works on (a photo or design app's picture, the device a tech company makes, a game's key art).",
   "never": "Never on a place, service, product or local-business page (a cafe, a shop, a hotel, a studio people visit, a maker of things): those show their photographs plain, never printed as a halftone. No chips or caption that explain the print; the photograph's credit goes in the footer's one credit line.",
   "effect": "halftone",

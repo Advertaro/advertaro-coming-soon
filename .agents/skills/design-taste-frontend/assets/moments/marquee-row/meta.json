@@ -2,17 +2,11 @@
   "id": "marquee-row",
   "name": "Marquee row",
   "kind": "scroll",
-  "fits": [
-    "section"
-  ],
+  "fits": ["section"],
   "trigger": "loop",
   "cost": "low",
   "webgl": 0,
-  "pages": [
-    "tech",
-    "gaming",
-    "software"
-  ],
+  "pages": ["tech", "gaming", "software"],
   "look": "One row of client words, trades, cities or formats moves slowly sideways in a loop, fading at both edges; it pauses under the pointer and has a pause button.",
   "reduced": "The words stand in a wrapped row.",
   "phone": "The words stand in a wrapped row; nothing runs.",

@@ -2,9 +2,7 @@
   "id": "headline-arrives",
   "name": "Headline arrives",
   "kind": "text",
-  "fits": [
-    "hero"
-  ],
+  "fits": ["hero"],
   "trigger": "load",
   "cost": "low",
   "webgl": 0,
@@ -18,9 +16,7 @@
   "needs": {
     "words": "a headline of 3 to 9 words"
   },
-  "avoidWith": [
-    "lines-rise"
-  ],
+  "avoidWith": ["lines-rise"],
   "states": {
     "start": {
       "see": true,

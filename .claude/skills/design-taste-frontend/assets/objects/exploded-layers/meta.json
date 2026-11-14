@@ -4,9 +4,7 @@
   "kind": "scene",
   "source": "photo",
   "shows": "A real photograph taken apart into four sheets standing in perspective: the photograph on top, a halftone screen in the accent, an ordered dither in the ink and a plate of tone contours at the bottom; the halftone and the dither are printed on clear sheets. Up to four photographs can go in, one per sheet.",
-  "suits": [
-    "software"
-  ],
+  "suits": ["software"],
   "for": "The one moment of a software page that works in layers or passes: imaging, design and print software, a map or a document tool, named in the client's words (its layers, its passes).",
   "never": "Never on a place, service, product or local-business page. Never named after the techniques (halftone, dither) on a company page: without the client's names it opens without labels. No caption that explains the effect; the photograph's credit goes in the footer's one credit line.",
   "effect": "halftone, dither, contours",

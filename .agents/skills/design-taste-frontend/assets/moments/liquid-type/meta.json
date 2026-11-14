@@ -16,7 +16,27 @@
   "avoidWith": ["liquid-hover", "cursor-spotlight"],
   "states": {
     "start": { "see": true, "wait": 400 },
-    "middle": { "see": true, "pointer": { "target": ".mo-lt__type", "from": [0.1, 0.5], "to": [0.55, 0.5], "moves": 14, "step": 16 }, "wait": 40 },
-    "end": { "see": true, "pointer": { "target": ".mo-lt__type", "from": [0.1, 0.5], "to": [0.55, 0.5], "moves": 14, "step": 16 }, "wait": 2400 }
+    "middle": {
+      "see": true,
+      "pointer": {
+        "target": ".mo-lt__type",
+        "from": [0.1, 0.5],
+        "to": [0.55, 0.5],
+        "moves": 14,
+        "step": 16
+      },
+      "wait": 40
+    },
+    "end": {
+      "see": true,
+      "pointer": {
+        "target": ".mo-lt__type",
+        "from": [0.1, 0.5],
+        "to": [0.55, 0.5],
+        "moves": 14,
+        "step": 16
+      },
+      "wait": 2400
+    }
   }
 }

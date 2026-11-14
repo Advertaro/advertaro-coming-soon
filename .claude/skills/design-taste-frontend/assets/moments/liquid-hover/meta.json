@@ -2,18 +2,11 @@
   "id": "liquid-hover",
   "name": "Liquid hover",
   "kind": "liquid",
-  "fits": [
-    "hero",
-    "section"
-  ],
+  "fits": ["hero", "section"],
   "trigger": "hover",
   "cost": "mid",
   "webgl": 1,
-  "pages": [
-    "tech",
-    "gaming",
-    "software"
-  ],
+  "pages": ["tech", "gaming", "software"],
   "look": "The pointer pushes a photograph like the surface of water: the picture bends along the pointer's path with a wet shine and a hair of colour split, and the ripple diffuses away in a second or two, back to the plain picture.",
   "reduced": "The photograph stands; also on touch screens and without WebGL.",
   "phone": "The plain photograph, no canvas, no WebGL context.",
@@ -23,11 +16,7 @@
     "photo": true,
     "picture": "hard edges and detail (a coast, a building, a street); a flat sea or sky shows no ripple"
   },
-  "avoidWith": [
-    "picture-develops",
-    "cursor-spotlight",
-    "window-parallax"
-  ],
+  "avoidWith": ["picture-develops", "cursor-spotlight", "window-parallax"],
   "states": {
     "start": {
       "see": true,
@@ -36,14 +25,8 @@
     "middle": {
       "see": true,
       "pointer": {
-        "from": [
-          0.22,
-          0.3
-        ],
-        "to": [
-          0.64,
-          0.62
-        ],
+        "from": [0.22, 0.3],
+        "to": [0.64, 0.62],
         "moves": 18,
         "step": 20
       },
@@ -52,14 +35,8 @@
     "end": {
       "see": true,
       "pointer": {
-        "from": [
-          0.22,
-          0.3
-        ],
-        "to": [
-          0.64,
-          0.62
-        ],
+        "from": [0.22, 0.3],
+        "to": [0.64, 0.62],
         "moves": 18,
         "step": 20
       },

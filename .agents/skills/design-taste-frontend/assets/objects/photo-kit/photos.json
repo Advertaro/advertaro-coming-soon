@@ -12,14 +12,8 @@
       "licence": "CC BY-SA 4.0",
       "source": "Wikimedia Commons",
       "page": "https://commons.wikimedia.org/wiki/File:Lamp_with_a_lampshade_illuminated_by_sunlight.jpg",
-      "size": [
-        1280,
-        1757
-      ],
-      "focus": [
-        0.5,
-        0.42
-      ],
+      "size": [1280, 1757],
+      "focus": [0.5, 0.42],
       "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     {
@@ -33,14 +27,8 @@
       "licence": "Unsplash licence",
       "source": "Unsplash, via Lorem Picsum",
       "page": "https://unsplash.com/photos/DEdM9Vs6s8w",
-      "size": [
-        1920,
-        1280
-      ],
-      "focus": [
-        0.52,
-        0.55
-      ],
+      "size": [1920, 1280],
+      "focus": [0.52, 0.55],
       "licenceUrl": "https://unsplash.com/license"
     },
     {
@@ -54,14 +42,8 @@
       "licence": "Unsplash licence",
       "source": "Unsplash, via Lorem Picsum",
       "page": "https://unsplash.com/photos/2TlAsvhqiL0",
-      "size": [
-        1920,
-        1280
-      ],
-      "focus": [
-        0.5,
-        0.5
-      ],
+      "size": [1920, 1280],
+      "focus": [0.5, 0.5],
       "licenceUrl": "https://unsplash.com/license",
       "caution": "Her white top meets the white train: in halftone, engraving and dither the figure loses its outline. Use it only with clarity at 0.5 or more, or pick a figure against a darker ground."
     },
@@ -76,14 +58,8 @@
       "licence": "Unsplash licence",
       "source": "Unsplash, via Lorem Picsum",
       "page": "https://unsplash.com/photos/busqfOj6i80",
-      "size": [
-        1920,
-        1280
-      ],
-      "focus": [
-        0.5,
-        0.5
-      ],
+      "size": [1920, 1280],
+      "focus": [0.5, 0.5],
       "licenceUrl": "https://unsplash.com/license"
     }
   ]

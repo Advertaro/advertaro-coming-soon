@@ -21,6 +21,10 @@
   },
   "never": "an extruded, bevelled or shaded mark; a generic circle or square as the mark; a bright photograph; words on the photograph outside the band",
   "avoidWith": ["descend-through-weather", "shaped-window-over-fixed-world"],
-  "states": { "start": { "p": 0.02, "wait": 500 }, "middle": { "p": 0.6, "wait": 500 }, "end": { "p": 0.98, "wait": 600 } },
+  "states": {
+    "start": { "p": 0.02, "wait": 500 },
+    "middle": { "p": 0.6, "wait": 500 },
+    "end": { "p": 0.98, "wait": 600 }
+  },
   "avoidMoments": ["line-carries-colour", "closing-lift"]
 }

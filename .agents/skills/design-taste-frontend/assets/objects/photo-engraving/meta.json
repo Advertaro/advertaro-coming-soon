@@ -3,21 +3,12 @@
   "name": "Engraved photograph",
   "kind": "photo",
   "shows": "A photograph printed whole as an intaglio plate: engraved diagonal lines in the page's ink swell in the shadows, taper to hairlines in the light and bend over the forms, over a light wash of the photograph's own colour on the page's surface as paper. Parts lighter than the paper print as bare paper; a colour cast in the light parts is let go, so a white table stays white.",
-  "suits": [
-    "software",
-    "ai",
-    "design-tool",
-    "gaming"
-  ],
+  "suits": ["software", "ai", "design-tool", "gaming"],
   "bestWith": "One object or a building in strong light and shade (a product on a wall, a facade). Strongest on light paper; on a dark page pick a darker photograph, or a pale one turns into a large light plate. Weak on a busy interior: the lines fill every surface.",
   "motion": "None at rest and no entry (light > 0 adds a slow light passing over the plate, off by default).",
   "hover": "The lines part around the cursor as under a lens and the photograph shows through; the picture under them stays put.",
   "takes": "The <img> inside the frame (its largest srcset size, its alt, its object-position as the subject's place), else src, else data-src: the client's own photograph, or one from scripts/photos.mjs that prints well (\"prints\": true), credited in the footer with photos.mjs credits --adapted <id>.",
-  "palettes": [
-    "light",
-    "dark",
-    "colour"
-  ],
+  "palettes": ["light", "dark", "colour"],
   "touch": "A tap shows the hover state at the finger for 1.6 s; lifting the finger does not end it (checked at 390). Nothing moves on its own.",
   "reducedMotion": "The same still print; hover still answers, without easing.",
   "fallback": "The photograph itself, greyed into the palette (multiplied into light paper, screened on dark): shown under the canvas before the first frame and while the canvas is released off screen, and kept when WebGL is missing, the shader fails to compile or link, the shader uses a GLSL ES reserved word (refused by photo-kit's lint, so CPU WebGL shows what a GPU would), or the photograph's host sends no CORS headers. Checked with a broken shader and with a reserved word: the still shows, never an empty frame. With no photograph at all: the effects' palette ground.",

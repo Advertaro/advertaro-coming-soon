@@ -2,12 +2,7 @@
   "id": "fx-progress",
   "name": "Import progress with a light fill",
   "for": "An import, upload or setup step shown in a product card: the file being processed fills with a soft light of the effect from left to right, a 2px line under it gives the exact share.",
-  "effects": [
-    "grain-gradient",
-    "soft-light-bars",
-    "aurora-curtains",
-    "gradient-mesh"
-  ],
+  "effects": ["grain-gradient", "soft-light-bars", "aurora-curtains", "gradient-mesh"],
   "default": "grain-gradient",
   "how": "One effect host over the card, clipped (clip-path inset with a radius) to the busy row up to its progress; the row's text sits above it. A loop inside a still card: files finish one by one, then reset.",
   "rules": [

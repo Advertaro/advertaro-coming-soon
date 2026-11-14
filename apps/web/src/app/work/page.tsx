@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
 import { PageHero } from '@/components/sections/shared/PageHero'
 import { WorkIndex } from '@/components/sections/shared/WorkIndex'
+import { Container } from '@/components/ui/Container'
+import { Section } from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -26,11 +28,11 @@ export default function WorkPage() {
         meta={<Tag>{String(caseStudies.length).padStart(2, '0')} CASE STUDIES</Tag>}
       />
       <SectionHeaderBar num="02" label="SELECTED WORK" />
-      <section className="page-section">
-        <div className="site-container">
+      <Section>
+        <Container>
           <WorkIndex studies={caseStudies} />
-        </div>
-      </section>
+        </Container>
+      </Section>
       <CtaBand
         num="03"
         title={

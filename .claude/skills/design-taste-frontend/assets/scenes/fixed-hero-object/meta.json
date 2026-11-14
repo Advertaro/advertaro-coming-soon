@@ -3,13 +3,8 @@
   "name": "Fixed hero object",
   "family": "object-scrub",
   "look": "One product stays on its own layer and turns with the scroll while the page's first chapters pass beneath it: it opens as the hero with the title and the action in the clear half, glides to the other side as each chapter's copy and spec list rise where it was, and a chapter marked dark brings the inverse ground up behind it. The markup carries the object's still; the render draws over it only while the scene is live and near.",
-  "fits": [
-    "statement"
-  ],
-  "types": [
-    "tech",
-    "gaming"
-  ],
+  "fits": ["statement"],
+  "types": ["tech", "gaming"],
   "trigger": "scroll",
   "hold": 1,
   "restH": 2,
@@ -44,9 +39,5 @@
       "wait": 700
     }
   },
-  "avoidMoments": [
-    "headline-arrives",
-    "cursor-spotlight",
-    "liquid-hover"
-  ]
+  "avoidMoments": ["headline-arrives", "cursor-spotlight", "liquid-hover"]
 }
