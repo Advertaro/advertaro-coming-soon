@@ -160,7 +160,9 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Process num="05" />
+      <div className="grid grid-cols-shell">
+        <Process num="05" />
+      </div>
       <CtaBand num="06" />
     </>
   )

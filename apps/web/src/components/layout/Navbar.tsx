@@ -2,6 +2,7 @@
 
 import { navigation } from '@advertaro/content'
 import { CtaPill, cn } from '@advertaro/ui'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -31,56 +32,61 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 h-(--nav-height) top-0 z-100 flex items-center justify-between border-b  border-white/6 bg-[linear-gradient(180deg,rgba(10,10,11,0.88)_0%,rgba(10,10,11,0.45)_75%,transparent_100%)] px-5 py-3.5 backdrop-blur-[10px] sm:px-8 sm:py-4.5">
-        <Link
-          href="/"
-          className="inline-flex items-start font-display text-[1.1875rem] font-extrabold tracking-[-0.03em] text-ink"
-          aria-label="Advertaro — home"
-        >
-          Advertaro<sup className="ml-0.5 text-[10px] font-semibold text-ink-secondary">™</sup>
-        </Link>
+      <header className="fixed inset-x-0 top-0 z-100 grid h-(--nav-height) grid-cols-shell items-center border-b border-white/6 bg-[linear-gradient(180deg,rgba(10,10,11,0.88)_0%,rgba(10,10,11,0.45)_75%,transparent_100%)] backdrop-blur-[10px]">
+        <div className="col-content flex items-center justify-between">
+          <Link href="/" className="inline-flex items-center" aria-label="Advertaro — home">
+            <Image
+              src="/advertaro-logo-nav.svg"
+              alt=""
+              width={145}
+              height={20}
+              loading="eager"
+              className="h-5 w-auto"
+            />
+          </Link>
 
-        <nav className="hidden items-center gap-8.5 lg:flex" aria-label="Primary">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex items-baseline gap-1 text-[13px] font-medium text-white/84 transition-colors duration-200 ease-[ease] hover:text-accent aria-[current=page]:text-accent"
-              aria-current={isActive(item.href) ? 'page' : undefined}
-            >
-              {item.label} <sup className="font-sans text-[9px] text-ink-muted">{item.index}</sup>
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden items-center gap-8.5 lg:flex" aria-label="Primary">
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="inline-flex items-baseline gap-1 text-[13px] font-medium text-white/84 transition-colors duration-200 ease-[ease] hover:text-accent aria-[current=page]:text-accent"
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label} <sup className="font-sans text-[9px] text-ink-muted">{item.index}</sup>
+              </Link>
+            ))}
+          </nav>
 
-        <CtaPill
-          href="/contact"
-          label="Start a project"
-          rollLabel="Let's talk"
-          className="hidden lg:inline-flex"
-        />
-
-        <button
-          type="button"
-          className="group inline-flex size-10 flex-col items-center justify-center gap-1.25 rounded-full border border-white/14 bg-white/6 lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span
-            className={cn(
-              toggleBar,
-              'group-aria-expanded:translate-y-[3.25px] group-aria-expanded:rotate-45',
-            )}
+          <CtaPill
+            href="/contact"
+            label="Start a project"
+            rollLabel="Let's talk"
+            className="hidden lg:inline-flex"
           />
-          <span
-            className={cn(
-              toggleBar,
-              'group-aria-expanded:translate-y-[-3.25px] group-aria-expanded:-rotate-45',
-            )}
-          />
-        </button>
+
+          <button
+            type="button"
+            className="group inline-flex size-10 flex-col items-center justify-center gap-1.25 rounded-full border border-white/14 bg-white/6 lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span
+              className={cn(
+                toggleBar,
+                'group-aria-expanded:translate-y-[3.25px] group-aria-expanded:rotate-45',
+              )}
+            />
+            <span
+              className={cn(
+                toggleBar,
+                'group-aria-expanded:translate-y-[-3.25px] group-aria-expanded:-rotate-45',
+              )}
+            />
+          </button>
+        </div>
       </header>
 
       <div

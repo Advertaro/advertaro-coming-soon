@@ -1,12 +1,11 @@
 import { featuredCaseStudies } from '@advertaro/content'
 import { ArrowLink, MonoLabel } from '@advertaro/ui'
 import { WorkCard } from '@/components/sections/shared/WorkCard'
-import { Container } from '@/components/ui/Container'
 
 export function SelectedWork() {
   return (
-    <section id="work" className="pt-18 pb-24">
-      <Container>
+    <section id="work" className="col-full grid grid-cols-subgrid pt-18 pb-24">
+      <div className="col-content">
         <h2 className="sr-only">Selected work</h2>
         <div className="flex flex-col gap-11">
           {featuredCaseStudies.map((study, i) => (
@@ -17,7 +16,7 @@ export function SelectedWork() {
           <MonoLabel>A few things we're proud of.</MonoLabel>
           <ArrowLink href="/work">View all work →</ArrowLink>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

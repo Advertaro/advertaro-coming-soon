@@ -1,5 +1,6 @@
 import { site } from '@advertaro/content'
 import type { Metadata } from 'next'
+import { PageContainer } from '@/components/layout/page-container'
 import { About } from '@/components/sections/home/About'
 import { Clients } from '@/components/sections/home/Clients'
 import { Contact } from '@/components/sections/home/Contact'
@@ -41,7 +42,7 @@ const jsonLd = {
 
 export default function HomePage() {
   return (
-    <>
+    <PageContainer>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD
@@ -56,6 +57,6 @@ export default function HomePage() {
       <Process />
       <Reviews />
       <Contact />
-    </>
+    </PageContainer>
   )
 }

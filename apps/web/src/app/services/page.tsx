@@ -90,7 +90,9 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Process num="03" />
+      <div className="grid grid-cols-shell">
+        <Process num="03" />
+      </div>
       <CtaBand num="04" />
     </>
   )

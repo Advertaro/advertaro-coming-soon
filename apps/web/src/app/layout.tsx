@@ -28,14 +28,6 @@ export const metadata: Metadata = {
     creator: '@WeAreAdvertaro',
     site: '@WeAreAdvertaro',
   },
-  icons: {
-    icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {
@@ -46,7 +38,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${syne.variable} ${questrial.variable}`}>
-      <body id="top">
+      <body id="top" className="grid min-h-screen max-w-640 grid-cols-1 grid-rows-[1fr_auto]">
         <a
           href="#main"
           className="sr-only inline-flex items-center gap-2.25 rounded-full bg-accent text-[13px] font-semibold text-white shadow-glow transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px hover:bg-accent-hover hover:shadow-glow-lg focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-2000 focus:px-4.5 focus:py-2.5"
@@ -54,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <Navbar />
-        <main id="main">{children}</main>
+        {children}
         <Footer />
         <MotionProvider />
         {process.env.NODE_ENV === 'production' && <Analytics />}
