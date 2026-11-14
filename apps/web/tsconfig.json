@@ -1,5 +1,5 @@
 {
-  "extends": "@advertaro/config/typescript/nextjs",
+  "extends": "@advertaro/typescript-config/nextjs",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]

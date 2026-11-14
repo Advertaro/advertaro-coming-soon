@@ -5,7 +5,7 @@ import '@/styles/globals.css'
 import { Footer } from '@/components/layout/Footer'
 import { MotionProvider } from '@/components/layout/MotionProvider'
 import { Navbar } from '@/components/layout/Navbar'
-import { jetbrainsMono, questrial, syne } from '@/styles/fonts'
+import { questrial, syne } from '@/styles/fonts'
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -45,7 +45,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${questrial.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${questrial.variable}`}>
       <body id="top">
         <a
           href="#main"

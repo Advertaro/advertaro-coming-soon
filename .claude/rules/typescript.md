@@ -3,7 +3,7 @@ paths:
   - "apps/web/src/**/*.{ts,tsx}"
   - "packages/content/src/**/*.{ts,tsx}"
   - "packages/ui/src/**/*.{ts,tsx}"
-  - "packages/config/typescript/*.json"
+  - "tooling/typescript/*.json"
 ---
 
 # TypeScript Rules

@@ -22,7 +22,8 @@
     "zod": "^4.1.0"
   },
   "devDependencies": {
-    "@advertaro/config": "workspace:*",
+    "@advertaro/tailwind-config": "workspace:*",
+    "@advertaro/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/bun": "^1.4.2",
     "@types/node": "^24",

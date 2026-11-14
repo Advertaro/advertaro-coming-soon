@@ -10,6 +10,7 @@
     "includes": [
       "apps/*/src/**/*",
       "packages/*/src/**/*",
+      "tooling/*/*.css",
       "**/*.json",
       "apps/*/*.mjs",
       "!**/node_modules",
