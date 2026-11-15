@@ -41,12 +41,8 @@ export function ClientMarquee() {
   }, [])
 
   return (
-    <div
-      ref={containerRef}
-      className="group/clients col-full mb-18 min-w-0"
-      data-running={isActive}
-    >
-      <div className="overflow-hidden py-6 [mask-image:linear-gradient(to_right,transparent_8%,var(--color-ink)_25%,var(--color-ink)_75%,transparent_92%)] motion-reduce:[mask-image:none]">
+    <div ref={containerRef} className="group/clients col-full min-w-0" data-running={isActive}>
+      <div className="overflow-hidden py-6 mask-[linear-gradient(to_right,transparent_8%,var(--color-ink)_25%,var(--color-ink)_75%,transparent_92%)] motion-reduce:mask-none">
         <div className="flex w-max min-w-full animate-client-marquee group-hover/clients:[animation-play-state:paused] group-data-[running=false]/clients:[animation-play-state:paused] motion-reduce:block motion-reduce:w-full motion-reduce:animate-none">
           {[false, true].map((isDuplicate) => (
             <ul
@@ -54,7 +50,7 @@ export function ClientMarquee() {
               aria-label={isDuplicate ? undefined : 'Our clients'}
               aria-hidden={isDuplicate || undefined}
               className={cn(
-                'flex min-w-screen shrink-0 items-center justify-around gap-6 pr-6 motion-reduce:grid motion-reduce:min-w-0 motion-reduce:grid-cols-2 motion-reduce:gap-4 motion-reduce:px-shell sm:motion-reduce:grid-cols-4',
+                'flex min-w-screen shrink-0 items-center justify-around  motion-reduce:grid motion-reduce:min-w-0 motion-reduce:grid-cols-2 motion-reduce:gap-4 motion-reduce:px-shell sm:motion-reduce:grid-cols-4',
                 isDuplicate && 'motion-reduce:hidden',
               )}
             >

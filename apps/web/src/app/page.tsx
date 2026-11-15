@@ -10,6 +10,7 @@ import { Process } from '@/components/sections/home/Process'
 import { Reviews } from '@/components/sections/home/Reviews'
 import { SelectedWork } from '@/components/sections/home/SelectedWork'
 import { Services } from '@/components/sections/home/Services'
+import { WorkReel } from '@/components/sections/home/WorkReel'
 
 export const metadata: Metadata = {
   title: { absolute: 'Advertaro — Bespoke websites, apps & brands from Colombo, Sri Lanka' },
@@ -50,6 +51,7 @@ export default function HomePage() {
       />
       <Hero />
       <Clients />
+      <WorkReel />
       <SelectedWork />
       <MobileShowcase />
       <Services />
