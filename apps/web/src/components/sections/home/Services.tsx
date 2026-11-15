@@ -1,7 +1,15 @@
 import { services } from '@advertaro/content'
-import { ArrowLink, cn, MonoLabel, SectionHeaderBar, TertiaryHeading } from '@advertaro/ui'
+import {
+  ArrowLink,
+  cn,
+  Em,
+  MonoLabel,
+  SectionHeaderBar,
+  SectionHeadline,
+  TertiaryHeading,
+} from '@advertaro/ui'
 import Link from 'next/link'
-import { FilmStill } from '@/components/ui/FilmStill'
+import { ServiceIllustration } from '@/components/ui/ServiceIllustration'
 
 export function Services() {
   return (
@@ -13,7 +21,14 @@ export function Services() {
         label="SERVICES"
       />
       <div className="col-content pt-16 pb-24">
-        <h2 className="sr-only">Services</h2>
+        {/* NOTE: draft headline copy — confirm before launch. */}
+        <div className="mb-12" data-reveal>
+          <SectionHeadline>
+            What we build
+            <br />
+            <Em>end to end</Em>
+          </SectionHeadline>
+        </div>
         {services.map((service, i) => {
           const reverse = i % 2 === 1
           const num = (
@@ -34,7 +49,13 @@ export function Services() {
               )}
               data-wipe
             >
-              <FilmStill theme={service.theme} mode={service.visual} width={640} height={360} />
+              <ServiceIllustration slug={service.slug} />
+              <span
+                className="absolute bottom-3 left-4 bg-bg-card/80 px-1.5 py-0.5 font-sans text-[10px] tracking-[0.14em] text-ink-secondary uppercase"
+                aria-hidden="true"
+              >
+                {service.theme.label}
+              </span>
             </div>
           )
           const info = (
@@ -48,6 +69,13 @@ export function Services() {
               <div className="font-sans text-[11px] tracking-[0.12em] text-ink-editorial uppercase">
                 {service.tags.join(' · ')}
               </div>
+              <ArrowLink
+                href={`/services/${service.slug}`}
+                aria-label={`View ${service.title}`}
+                className="mt-6"
+              >
+                View service →
+              </ArrowLink>
             </div>
           )
           return (

@@ -57,6 +57,100 @@
     }
   }
 
+  /* Service illustrations (ServiceIllustration.tsx). Resting state is the final frame. */
+  --animate-illo-draw: illo-draw 5s var(--ease-out-expo) infinite backwards;
+  --animate-illo-grow: illo-grow 5s var(--ease-out-expo) infinite backwards;
+  --animate-illo-cursor: illo-cursor 5s var(--ease-out-expo) infinite backwards;
+  --animate-illo-pulse: illo-pulse 2.4s ease-in-out infinite;
+  --animate-illo-ping: illo-ping 2s ease-out infinite;
+  --animate-illo-travel: illo-travel 2.6s linear infinite;
+  --animate-illo-scroll: illo-scroll 5s linear infinite;
+  --animate-illo-spin: illo-spin 18s linear infinite;
+  --animate-illo-float: illo-float 4s ease-in-out infinite;
+
+  /* Needs pathLength="1" and stroke-dasharray="1" on the element. */
+  @keyframes illo-draw {
+    0%,
+    100% {
+      stroke-dashoffset: 1;
+    }
+    40%,
+    88% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes illo-grow {
+    0%,
+    100% {
+      transform: scaleY(0);
+    }
+    35%,
+    88% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes illo-cursor {
+    0%,
+    10%,
+    100% {
+      transform: translate(150px, 40px);
+    }
+    45%,
+    60% {
+      transform: translate(0, 0);
+    }
+    52% {
+      transform: translate(0, 0) scale(0.85);
+    }
+  }
+
+  @keyframes illo-pulse {
+    50% {
+      opacity: 0.55;
+      transform: scale(1.18);
+    }
+  }
+
+  @keyframes illo-ping {
+    from {
+      opacity: 0.9;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(3.2);
+    }
+  }
+
+  @keyframes illo-travel {
+    from {
+      offset-distance: 0%;
+    }
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  @keyframes illo-scroll {
+    to {
+      transform: translateY(-72px);
+    }
+  }
+
+  @keyframes illo-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes illo-float {
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
   --font-sans:
     var(--font-questrial), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display:
