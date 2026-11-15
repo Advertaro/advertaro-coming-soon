@@ -8,7 +8,6 @@ import { Hero } from '@/components/sections/home/Hero'
 import { MobileShowcase } from '@/components/sections/home/MobileShowcase'
 import { Process } from '@/components/sections/home/Process'
 import { Reviews } from '@/components/sections/home/Reviews'
-import { SelectedWork } from '@/components/sections/home/SelectedWork'
 import { Services } from '@/components/sections/home/Services'
 import { WorkReel } from '@/components/sections/home/WorkReel'
 
@@ -52,7 +51,6 @@ export default function HomePage() {
       <Hero />
       <Clients />
       <WorkReel />
-      <SelectedWork />
       <MobileShowcase />
       <Services />
       <About />
