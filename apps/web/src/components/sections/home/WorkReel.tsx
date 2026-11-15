@@ -1,5 +1,5 @@
 import { getCaseStudy } from '@advertaro/content'
-import { Em } from '@advertaro/ui'
+import { Em, SecondaryHeading } from '@advertaro/ui'
 import { type ReelProject, WorkReelStage } from './WorkReelStage'
 
 const slugs = ['ishq-villas', 'w15-collection', 'debug-auto-exclusives', 'global-housing']
@@ -23,11 +23,11 @@ export function WorkReel() {
   return (
     <WorkReelStage projects={projects}>
       {/* NOTE: draft copy — confirm before launch. */}
-      <h2 className="text-[clamp(32px,4.6vw,64px)] leading-[1] font-semibold tracking-[-0.035em]">
+      <SecondaryHeading className="text-[clamp(32px,4.6vw,64px)] leading-[1] font-semibold tracking-[-0.035em]">
         <Em className="font-semibold tracking-[-0.035em] text-ink">
           Built <span className="text-accent">properly</span>, not templated
         </Em>
-      </h2>
+      </SecondaryHeading>
     </WorkReelStage>
   )
 }

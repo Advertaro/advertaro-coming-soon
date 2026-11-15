@@ -1,5 +1,5 @@
 import type { StillTheme } from '@advertaro/content'
-import { Eyebrow } from '@advertaro/ui'
+import { Eyebrow, PrimaryHeading } from '@advertaro/ui'
 import type { ReactNode } from 'react'
 import { Container } from '@/components/ui/Container'
 import { FilmStill } from '@/components/ui/FilmStill'
@@ -29,9 +29,9 @@ export function PageHero({ eyebrow, title, intro, meta, theme = defaultTheme }: 
         >
           {eyebrow}
         </Eyebrow>
-        <h1 className="max-w-275 text-[length:clamp(48px,9vw,136px)] leading-[0.95] font-extrabold tracking-tighter [&_[data-emphasis]]:font-semibold [&_[data-emphasis]]:tracking-[-0.03em] motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
+        <PrimaryHeading className="max-w-275 text-[length:clamp(48px,9vw,136px)] leading-[0.95] font-extrabold tracking-tighter [&_[data-emphasis]]:font-semibold [&_[data-emphasis]]:tracking-[-0.03em] motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
           {title}
-        </h1>
+        </PrimaryHeading>
         {intro && (
           <p className="mt-8 max-w-155 text-[length:clamp(17px,1.6vw,21px)] leading-normal text-ink-secondary motion-safe:animate-hero-in motion-safe:[animation-delay:390ms]">
             {intro}

@@ -1,5 +1,5 @@
 import { studioStats } from '@advertaro/content'
-import { Em, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
+import { Em, SecondaryHeading, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
 import { ClientMarquee } from './ClientMarquee'
 
 export function Clients() {
@@ -11,7 +11,7 @@ export function Clients() {
         label="TRUSTED BY"
       />
       <div className="col-content flex flex-wrap items-end justify-between gap-8" data-reveal>
-        <h2 className="max-w-180 text-[clamp(30px,4.2vw,56px)] leading-[1.08] font-semibold tracking-[-0.035em]">
+        <SecondaryHeading className="max-w-180 text-[clamp(30px,4.2vw,56px)] leading-[1.08] font-semibold tracking-[-0.035em]">
           The brands that call when it{' '}
           <Em>
             has to be <span className="text-accent">built properly</span>, not{' '}
@@ -19,7 +19,7 @@ export function Clients() {
               templated
             </span>
           </Em>
-        </h2>
+        </SecondaryHeading>
       </div>
       <ClientMarquee />
 

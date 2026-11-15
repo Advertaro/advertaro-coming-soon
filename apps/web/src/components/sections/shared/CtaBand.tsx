@@ -1,5 +1,5 @@
 import { site } from '@advertaro/content'
-import { CtaPill, Em, SectionHeaderBar } from '@advertaro/ui'
+import { CtaPill, Em, SecondaryHeading, SectionHeaderBar } from '@advertaro/ui'
 import type { ReactNode } from 'react'
 import { Container } from '@/components/ui/Container'
 
@@ -23,9 +23,9 @@ export function CtaBand({
       <SectionHeaderBar num={num} label="START A PROJECT" />
       <section className="relative overflow-hidden py-26 text-center before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_50%_100%,rgba(255,77,0,0.16)_0%,transparent_60%)] before:content-['']">
         <Container data-reveal>
-          <h2 className="relative mx-auto mb-6 max-w-250 text-[length:clamp(40px,6vw,92px)] leading-[0.98] font-extrabold tracking-[-0.045em]">
+          <SecondaryHeading className="relative mx-auto mb-6 max-w-250 text-[length:clamp(40px,6vw,92px)] leading-[0.98] font-extrabold tracking-[-0.045em]">
             {title}
-          </h2>
+          </SecondaryHeading>
           <p className="relative mx-auto mb-8 max-w-130 text-[17px] text-ink-secondary">{body}</p>
           <div className="relative flex flex-wrap justify-center gap-3">
             <CtaPill href="/contact" label="Start a conversation" rollLabel="Let's talk" />

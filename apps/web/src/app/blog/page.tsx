@@ -1,5 +1,5 @@
 import { sortedPosts } from '@advertaro/content'
-import { Em, MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Em, MonoLabel, SecondaryHeading, SectionHeaderBar, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
@@ -47,9 +47,9 @@ export default function BlogPage() {
                   <MonoLabel>{featured.readingTime} MIN READ</MonoLabel>
                 </div>
                 <div>
-                  <h2 className="text-[length:clamp(26px,3vw,40px)] leading-[1.1] font-bold tracking-[-0.03em]">
+                  <SecondaryHeading className="text-[length:clamp(26px,3vw,40px)] leading-[1.1] font-bold tracking-[-0.03em]">
                     {featured.title}
-                  </h2>
+                  </SecondaryHeading>
                   <p className="mt-3.5 text-base leading-[1.55] text-ink-secondary">
                     {featured.excerpt}
                   </p>
@@ -75,9 +75,9 @@ export default function BlogPage() {
                   <MonoLabel>{formatDate(post.publishedAt)}</MonoLabel>
                   <MonoLabel>{post.readingTime} MIN READ</MonoLabel>
                 </div>
-                <h2 className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">
+                <SecondaryHeading className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">
                   {post.title}
-                </h2>
+                </SecondaryHeading>
               </Link>
             ))}
           </div>

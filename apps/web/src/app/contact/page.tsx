@@ -1,5 +1,5 @@
 import { contactStats, site } from '@advertaro/content'
-import { Em, MonoLabel, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
+import { Em, MonoLabel, SecondaryHeading, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import { BriefForm } from '@/components/sections/shared/BriefForm'
 import { PageHero } from '@/components/sections/shared/PageHero'
@@ -33,11 +33,11 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 gap-14 pb-21 lg:grid-cols-[0.95fr_1.05fr]">
             <div data-reveal>
-              <h2 className="mb-7 text-[length:clamp(36px,4.8vw,68px)] leading-[1.04] font-bold tracking-[-0.035em]">
+              <SecondaryHeading className="mb-7 text-[length:clamp(36px,4.8vw,68px)] leading-[1.04] font-bold tracking-[-0.035em]">
                 Tell us what you're
                 <br />
                 <Em>building</Em>
-              </h2>
+              </SecondaryHeading>
               <p className="max-w-125 text-base leading-[1.6] text-ink-secondary">
                 <strong className="font-semibold text-white">What happens next?</strong>
                 <br />

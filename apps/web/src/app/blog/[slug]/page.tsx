@@ -1,5 +1,5 @@
 import { getPost, posts, site, sortedPosts } from '@advertaro/content'
-import { Em, MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Em, MonoLabel, SecondaryHeading, SectionHeaderBar, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -94,7 +94,9 @@ export default async function PostPage({ params }: Props) {
                     <Tag>{p.category}</Tag>
                     <MonoLabel>{p.readingTime} MIN READ</MonoLabel>
                   </div>
-                  <h2 className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">{p.title}</h2>
+                  <SecondaryHeading className="text-2xl leading-[1.1] font-bold tracking-[-0.03em]">
+                    {p.title}
+                  </SecondaryHeading>
                 </Link>
               ))}
             </Container>

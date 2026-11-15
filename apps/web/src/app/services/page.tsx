@@ -1,5 +1,5 @@
 import { services } from '@advertaro/content'
-import { Em, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Em, SecondaryHeading, SectionHeaderBar, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Process } from '@/components/sections/home/Process'
@@ -53,9 +53,9 @@ export default function ServicesPage() {
                   </span>
                 </div>
                 <div>
-                  <h2 className="text-[28px] font-bold leading-[1.1] tracking-[-0.03em]">
+                  <SecondaryHeading className="text-[28px] font-bold leading-[1.1] tracking-[-0.03em]">
                     {service.title}
-                  </h2>
+                  </SecondaryHeading>
                   <p className="mt-3 text-[15px] leading-normal text-ink-secondary">
                     {service.summary}
                   </p>

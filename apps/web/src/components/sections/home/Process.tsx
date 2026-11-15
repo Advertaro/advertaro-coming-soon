@@ -1,5 +1,12 @@
 import { processSteps } from '@advertaro/content'
-import { cn, Em, MonoLabel, SectionHeaderBar } from '@advertaro/ui'
+import {
+  cn,
+  Em,
+  MonoLabel,
+  SecondaryHeading,
+  SectionHeaderBar,
+  TertiaryHeading,
+} from '@advertaro/ui'
 import Link from 'next/link'
 
 /** The prototype's rate-card section, used for the engagement process. */
@@ -14,11 +21,11 @@ export function Process({ num = '06' }: { num?: string }) {
       />
       <div className="col-content pt-22 pb-26">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6" data-reveal>
-          <h2 className="text-[length:clamp(34px,4.5vw,62px)] leading-[1.06] font-bold tracking-[-0.035em]">
+          <SecondaryHeading className="text-[length:clamp(34px,4.5vw,62px)] leading-[1.06] font-bold tracking-[-0.035em]">
             A clear process up front
             <br />
             <Em>no surprises later</Em>
-          </h2>
+          </SecondaryHeading>
           <div className="text-right">
             <MonoLabel as="div" bright>
               HOW WE WORK — 2026
@@ -49,9 +56,9 @@ export function Process({ num = '06' }: { num?: string }) {
                       {step.spec}
                     </span>
                   </div>
-                  <h3 className="mt-6 mb-2.5 text-3xl/[inherit] font-bold tracking-[-0.03em]">
+                  <TertiaryHeading className="mt-6 mb-2.5 text-3xl/[inherit] font-bold tracking-[-0.03em]">
                     {step.title}
-                  </h3>
+                  </TertiaryHeading>
                   <p className="text-[15px] leading-normal text-ink-secondary">
                     {step.description}
                   </p>

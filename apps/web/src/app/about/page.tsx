@@ -1,5 +1,5 @@
 import { beliefs, site, studioStats, team } from '@advertaro/content'
-import { cn, Em, MonoLabel, SectionHeaderBar, StatsGrid, Tag } from '@advertaro/ui'
+import { cn, Em, MonoLabel, SectionHeaderBar, StatsGrid, Tag, TertiaryHeading } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import { Process } from '@/components/sections/home/Process'
 import { CtaBand } from '@/components/sections/shared/CtaBand'
@@ -85,9 +85,9 @@ export default function AboutPage() {
                 <span className="font-sans text-xs/[inherit] font-semibold text-accent">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-4.5 mb-2.5 text-2xl/[inherit] font-bold tracking-tight">
+                <TertiaryHeading className="mt-4.5 mb-2.5 text-2xl/[inherit] font-bold tracking-tight">
                   {belief.title}
-                </h3>
+                </TertiaryHeading>
                 <p className="text-[15.5px] leading-[1.55] text-ink-secondary">{belief.text}</p>
               </div>
             ))}
@@ -114,9 +114,9 @@ export default function AboutPage() {
                 <div className="absolute inset-0 z-1 bg-[linear-gradient(180deg,rgba(10,10,11,0.5)_0%,transparent_40%,rgba(10,10,11,0.92)_100%)]" />
                 <div className="relative z-2">
                   <MonoLabel className="text-accent">{member.role}</MonoLabel>
-                  <h3 className="mt-2 text-xl/[inherit] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
+                  <TertiaryHeading className="mt-2 text-xl/[inherit] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
                     {member.name}
-                  </h3>
+                  </TertiaryHeading>
                   <p className="mt-2 text-[13.5px] leading-[1.45] text-ink-secondary">
                     {member.bio}
                   </p>
@@ -126,9 +126,9 @@ export default function AboutPage() {
             <article className={cn(teamCardClass, 'justify-between border-dashed')}>
               <MonoLabel>(+) — STUDIO</MonoLabel>
               <div className="relative z-2">
-                <h3 className="text-xl/[inherit] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
+                <TertiaryHeading className="text-xl/[inherit] font-bold tracking-[-0.02em] transition-colors duration-200 ease-[ease] group-hover:text-accent">
                   Designers, engineers &amp; strategists
-                </h3>
+                </TertiaryHeading>
                 <p className="mt-2 text-[13.5px] leading-[1.45] text-ink-secondary">
                   Full team profiles are on the way.
                 </p>

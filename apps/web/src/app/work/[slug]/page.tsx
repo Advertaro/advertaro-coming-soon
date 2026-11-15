@@ -1,5 +1,5 @@
 import { caseStudies, getCaseStudy, getNextCaseStudy, getServiceTitle } from '@advertaro/content'
-import { MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
+import { Eyebrow, MonoLabel, SectionHeaderBar, Tag } from '@advertaro/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -95,17 +95,23 @@ export default async function CaseStudyPage({ params }: Props) {
           </dl>
           <div>
             <div className={chapterClass}>
-              <h2 className="font-sans text-[11.5px] tracking-[0.14em] text-white uppercase">
+              <Eyebrow
+                as="h2"
+                className="font-normal font-sans text-[11.5px] tracking-[0.14em] text-white uppercase"
+              >
                 <span className="mr-2 text-accent">01</span>The challenge
-              </h2>
+              </Eyebrow>
               <Prose>
                 <Blocks blocks={study.challenge} />
               </Prose>
             </div>
             <div className={chapterClass}>
-              <h2 className="font-sans text-[11.5px] tracking-[0.14em] text-white uppercase">
+              <Eyebrow
+                as="h2"
+                className="font-normal font-sans text-[11.5px] tracking-[0.14em] text-white uppercase"
+              >
                 <span className="mr-2 text-accent">02</span>Our approach
-              </h2>
+              </Eyebrow>
               <Prose>
                 <Blocks blocks={study.approach} />
               </Prose>

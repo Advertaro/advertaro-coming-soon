@@ -1,5 +1,5 @@
 import { contactStats } from '@advertaro/content'
-import { Em, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
+import { Em, SecondaryHeading, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
 import { BriefForm } from '@/components/sections/shared/BriefForm'
 
 export function Contact() {
@@ -14,11 +14,11 @@ export function Contact() {
       <div className="col-content pt-22">
         <div className="grid grid-cols-1 gap-14 pb-21 lg:grid-cols-[0.95fr_1.05fr]">
           <div data-reveal>
-            <h2 className="mb-7 text-[length:clamp(36px,4.8vw,68px)] leading-[1.04] font-bold tracking-[-0.035em]">
+            <SecondaryHeading className="mb-7 text-[length:clamp(36px,4.8vw,68px)] leading-[1.04] font-bold tracking-[-0.035em]">
               Have a project in mind?
               <br />
               <Em>Let's build it properly</Em>
-            </h2>
+            </SecondaryHeading>
             <div className="inline-flex items-center gap-3 rounded-[10px] border border-line bg-bg-card px-4 py-2.5 font-sans text-[11.5px] tracking-widest">
               <span>REPLY WITHIN:</span>
               <span className="inline-flex gap-1" aria-hidden="true">
