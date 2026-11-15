@@ -1,5 +1,5 @@
 import { services } from '@advertaro/content'
-import { ArrowLink, cn, MonoLabel, SectionHeaderBar } from '@advertaro/ui'
+import { ArrowLink, cn, MonoLabel, SectionHeaderBar, TertiaryHeading } from '@advertaro/ui'
 import Link from 'next/link'
 import { FilmStill } from '@/components/ui/FilmStill'
 
@@ -39,9 +39,9 @@ export function Services() {
           )
           const info = (
             <div>
-              <h3 className="mb-3.5 text-[length:clamp(26px,3vw,40px)] font-bold tracking-[-0.03em] text-white">
+              <TertiaryHeading color="primary" className="mb-3.5">
                 <Link href={`/services/${service.slug}`}>{service.title}</Link>
-              </h3>
+              </TertiaryHeading>
               <p className="mb-5 max-w-120 text-base leading-[1.55] text-ink-secondary">
                 {service.summary}
               </p>

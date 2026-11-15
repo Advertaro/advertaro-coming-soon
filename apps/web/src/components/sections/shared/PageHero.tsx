@@ -1,4 +1,5 @@
 import type { StillTheme } from '@advertaro/content'
+import { Eyebrow } from '@advertaro/ui'
 import type { ReactNode } from 'react'
 import { Container } from '@/components/ui/Container'
 import { FilmStill } from '@/components/ui/FilmStill'
@@ -22,12 +23,13 @@ export function PageHero({ eyebrow, title, intro, meta, theme = defaultTheme }: 
         <FilmStill theme={theme} width={1600} height={900} />
       </div>
       <Container className="relative z-2 pt-18 pb-14">
-        <div
-          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-sans text-[11px] tracking-[0.16em] text-white/72 uppercase"
+        <Eyebrow
+          as="div"
+          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase"
           data-hero-in
         >
           {eyebrow}
-        </div>
+        </Eyebrow>
         <h1
           className="max-w-275 text-[length:clamp(48px,9vw,136px)] leading-[0.95] font-extrabold tracking-tighter [&_[data-emphasis]]:font-semibold [&_[data-emphasis]]:tracking-[-0.03em]"
           data-hero-in

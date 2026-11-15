@@ -1,5 +1,5 @@
 import type { CaseStudy } from '@advertaro/content'
-import { cn, Tag } from '@advertaro/ui'
+import { cn, QuaternaryHeading, Tag } from '@advertaro/ui'
 import Link from 'next/link'
 import { FilmStill } from '@/components/ui/FilmStill'
 
@@ -76,9 +76,7 @@ export function WorkCard({
       <div className="relative z-3 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h3 className="sr-only">{study.client}</h3>
-          <h4 className="text-xl/[inherit] font-bold tracking-[-0.02em] text-white">
-            {study.deliverable}
-          </h4>
+          <QuaternaryHeading color="primary">{study.deliverable}</QuaternaryHeading>
           {showOutcome && (
             <p className="mt-1.5 max-w-105 text-sm/[inherit] text-ink-editorial">{study.outcome}</p>
           )}
