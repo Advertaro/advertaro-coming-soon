@@ -40,6 +40,8 @@ export type Quote = {
   authorName: string
   authorTitle: string
   authorCompany: string
+  /** Public path to a square author photo, e.g. "/avatars/jane-doe.jpg". */
+  avatar?: string
 }
 
 export type CaseStudy = {

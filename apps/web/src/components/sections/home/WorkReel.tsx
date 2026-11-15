@@ -12,7 +12,8 @@ const projects: ReelProject[] = slugs.map((slug) => {
     slug,
     client: study.client,
     outcome: study.outcome,
-    deliverable: study.deliverable,
+    // NOTE: draft quotes — pending client approval before launch.
+    quote: study.quote,
     bg: `/video/reel/${slug}-bg`,
     fg: `/video/reel/${slug}-fg`,
   }
