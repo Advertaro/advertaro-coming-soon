@@ -5,6 +5,7 @@ import { About } from '@/components/sections/home/About'
 import { Clients } from '@/components/sections/home/Clients'
 import { Contact } from '@/components/sections/home/Contact'
 import { Hero } from '@/components/sections/home/Hero'
+import { Industries } from '@/components/sections/home/Industries'
 import { MobileShowcase } from '@/components/sections/home/MobileShowcase'
 import { Process } from '@/components/sections/home/Process'
 import { Reviews } from '@/components/sections/home/Reviews'
@@ -51,6 +52,7 @@ export default function HomePage() {
       <Hero />
       <Clients />
       <WorkReel />
+      <Industries />
       <MobileShowcase />
       <Services />
       <About />

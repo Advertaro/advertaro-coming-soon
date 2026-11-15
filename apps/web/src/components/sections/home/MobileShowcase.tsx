@@ -38,7 +38,7 @@ export function MobileShowcase() {
       <SectionHeaderBar
         id="mobile"
         className="col-full grid grid-cols-subgrid px-0 sm:px-0 *:col-content"
-        num="03"
+        num="04"
         label="MOBILE FIRST"
       />
       <div

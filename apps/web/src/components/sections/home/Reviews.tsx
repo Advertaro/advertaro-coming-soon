@@ -28,7 +28,7 @@ export function Reviews() {
     >
       <SectionHeaderBar
         className="col-full grid grid-cols-subgrid px-0 sm:px-0 *:col-content"
-        num="07"
+        num="08"
         label="CLIENT REVIEWS"
       />
       <div className="col-content pt-22 pb-26">

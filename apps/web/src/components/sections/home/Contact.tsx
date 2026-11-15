@@ -8,7 +8,7 @@ export function Contact() {
       <SectionHeaderBar
         id="contact"
         className="col-full grid grid-cols-subgrid px-0 sm:px-0 *:col-content"
-        num="08"
+        num="09"
         label="START A PROJECT"
       />
       <div className="col-content pt-22">

@@ -9,7 +9,7 @@ export function Services() {
       <SectionHeaderBar
         id="services"
         className="col-full grid grid-cols-subgrid px-0 sm:px-0 *:col-content"
-        num="04"
+        num="05"
         label="SERVICES"
       />
       <div className="col-content pt-16 pb-24">

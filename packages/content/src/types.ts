@@ -126,3 +126,11 @@ export type ProcessStep = {
   deliverableLabel: string
   deliverable: string
 }
+
+export type Sector = {
+  index: string
+  title: string
+  tagline: string
+  /** Three thumbnails rendered as procedural stills until real project imagery exists. */
+  stills: [StillTheme, StillTheme, StillTheme]
+}

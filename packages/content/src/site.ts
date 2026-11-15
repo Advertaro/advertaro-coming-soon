@@ -1,4 +1,4 @@
-import type { ProcessStep } from './types'
+import type { ProcessStep, Sector } from './types'
 
 export const site = {
   name: 'Advertaro',
@@ -61,6 +61,62 @@ export const contactStats = [
 ]
 
 export const budgets = ['Under $5K', '$5K–$15K', '$15K–$30K', '$30K+', 'Not sure'] as const
+
+// NOTE: draft copy — confirm sector list and taglines before launch.
+export const sectors: Sector[] = [
+  {
+    index: '01',
+    title: 'Hospitality',
+    tagline: 'Direct bookings for boutique hotels and villas.',
+    stills: [
+      { base: '#102a45', glow: '#ff5500', label: 'HOSPITALITY // 01' },
+      { base: '#1b2838', glow: '#f97316', label: 'HOSPITALITY // 02' },
+      { base: '#241917', glow: '#fb923c', label: 'HOSPITALITY // 03' },
+    ],
+  },
+  {
+    index: '02',
+    title: 'Real Estate',
+    tagline: 'Project sites that sell units before handover.',
+    stills: [
+      { base: '#172334', glow: '#ff4d00', label: 'REAL ESTATE // 01' },
+      { base: '#13292a', glow: '#f59e0b', label: 'REAL ESTATE // 02' },
+      { base: '#0f2547', glow: '#ff4d00', label: 'REAL ESTATE // 03' },
+    ],
+  },
+  {
+    index: '03',
+    title: 'Tourism & Travel',
+    tagline: 'Experiences people can book in a few taps.',
+    stills: [
+      { base: '#13292a', glow: '#f59e0b', label: 'TOURISM // 01' },
+      { base: '#0f1c2e', glow: '#38bdf8', label: 'TOURISM // 02' },
+      { base: '#2b1d14', glow: '#f97316', label: 'TOURISM // 03' },
+    ],
+  },
+  {
+    index: '04',
+    title: 'Automotive',
+    tagline: 'Inventory platforms that keep stock moving.',
+    stills: [
+      { base: '#0c223b', glow: '#38bdf8', label: 'AUTOMOTIVE // 01' },
+      { base: '#0c2448', glow: '#3b82f6', label: 'AUTOMOTIVE // 02' },
+      { base: '#162636', glow: '#60a5fa', label: 'AUTOMOTIVE // 03' },
+    ],
+  },
+]
+
+/** Sectors we have not worked in yet, scrolled in the Industries invite marquee. Draft list. */
+export const openSectors = [
+  'Healthcare',
+  'Education',
+  'Retail',
+  'Fintech',
+  'Food & Beverage',
+  'Logistics',
+  'Wellness',
+  'Manufacturing',
+] as const
 
 export const processSteps: ProcessStep[] = [
   {

@@ -11,7 +11,7 @@ export function About() {
       <SectionHeaderBar
         id="about"
         className="col-full grid grid-cols-subgrid px-0 sm:px-0 *:col-content"
-        num="05"
+        num="06"
         label="ABOUT"
       />
       <div className="col-content pt-22 pb-26">
