@@ -18,22 +18,15 @@ export function Hero() {
         <div className="mx-auto max-w-220 py-5 text-center lg:mx-0 lg:text-left">
           <Eyebrow
             as="div"
-            className="mb-4.5 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase"
-            data-hero-in
+            className="mb-4.5 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase motion-safe:animate-hero-in motion-safe:[animation-delay:150ms]"
           >
             ADVERTARO STUDIO — COLOMBO &amp; REMOTE
           </Eyebrow>
-          <PrimaryHeading
-            className="text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] **:data-emphasis:text-ink-bright"
-            data-hero-in
-          >
+          <PrimaryHeading className="text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] **:data-emphasis:text-ink-bright motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
             We build <Em>digital products worth showing</Em> — <Em>bespoke websites</Em>, mobile
             apps and brand systems for businesses that <Em>know the difference</Em>.
           </PrimaryHeading>
-          <div
-            className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start"
-            data-hero-in
-          >
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start motion-safe:animate-hero-in motion-safe:[animation-delay:390ms]">
             <CtaPill href="/contact" label="Book a call" className="min-h-11" />
             <CtaPill
               href="/work"

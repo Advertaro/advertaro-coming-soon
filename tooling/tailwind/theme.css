@@ -38,6 +38,15 @@
 
   --animate-marquee: marquee 18s linear infinite;
   --animate-client-marquee: marquee 40s linear infinite;
+  /* backwards, not both: a held fill would keep each element in its own stacking context. */
+  --animate-hero-in: hero-in 1s var(--ease-out-expo) backwards;
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+  }
 
   @keyframes marquee {
     0% {

@@ -25,27 +25,20 @@ export function PageHero({ eyebrow, title, intro, meta, theme = defaultTheme }: 
       <Container className="relative z-2 pt-18 pb-14">
         <Eyebrow
           as="div"
-          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase"
-          data-hero-in
+          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase motion-safe:animate-hero-in motion-safe:[animation-delay:150ms]"
         >
           {eyebrow}
         </Eyebrow>
-        <h1
-          className="max-w-275 text-[length:clamp(48px,9vw,136px)] leading-[0.95] font-extrabold tracking-tighter [&_[data-emphasis]]:font-semibold [&_[data-emphasis]]:tracking-[-0.03em]"
-          data-hero-in
-        >
+        <h1 className="max-w-275 text-[length:clamp(48px,9vw,136px)] leading-[0.95] font-extrabold tracking-tighter [&_[data-emphasis]]:font-semibold [&_[data-emphasis]]:tracking-[-0.03em] motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
           {title}
         </h1>
         {intro && (
-          <p
-            className="mt-8 max-w-155 text-[length:clamp(17px,1.6vw,21px)] leading-normal text-ink-secondary"
-            data-hero-in
-          >
+          <p className="mt-8 max-w-155 text-[length:clamp(17px,1.6vw,21px)] leading-normal text-ink-secondary motion-safe:animate-hero-in motion-safe:[animation-delay:390ms]">
             {intro}
           </p>
         )}
         {meta && (
-          <div className="mt-9 flex flex-wrap gap-2.5" data-hero-in>
+          <div className="mt-9 flex flex-wrap gap-2.5 motion-safe:animate-hero-in motion-safe:[animation-delay:510ms]">
             {meta}
           </div>
         )}

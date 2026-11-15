@@ -39,6 +39,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${syne.variable} ${questrial.variable}`}>
       <body id="top" className="grid min-h-screen max-w-640 grid-cols-1 grid-rows-[1fr_auto]">
+        {/* Must run before first paint: otherwise the browser restores the old scroll offset,
+            then ScrollTrigger's refresh on load snaps the page back to the top. */}
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static inline script
+          dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }}
+        />
         <a
           href="#main"
           className="sr-only inline-flex items-center gap-2.25 rounded-full bg-accent text-[13px] font-semibold text-white shadow-glow transition-[translate,box-shadow,background-color] duration-200 ease-[ease] hover:-translate-y-px hover:bg-accent-hover hover:shadow-glow-lg focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-2000 focus:px-4.5 focus:py-2.5"

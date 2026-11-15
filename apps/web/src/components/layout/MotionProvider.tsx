@@ -67,15 +67,6 @@ export function MotionProvider() {
           scrollTrigger: { trigger: el, start: 'top 85%', once: true },
         })
       }
-      gsap.from('[data-hero-in]', {
-        opacity: 0,
-        y: 28,
-        duration: 1,
-        ease: 'expo.out',
-        stagger: 0.12,
-        delay: 0.15,
-        clearProps: 'transform,opacity',
-      })
     })
     ScrollTrigger.refresh()
 
