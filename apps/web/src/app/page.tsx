@@ -55,8 +55,8 @@ export default function HomePage() {
       <Industries />
       <MobileShowcase />
       <Services />
-      <About />
       <Process />
+      <About />
       <Reviews />
       <Contact />
     </PageContainer>

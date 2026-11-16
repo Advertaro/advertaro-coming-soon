@@ -1,5 +1,6 @@
 import { footerNavigation, site } from '@advertaro/content'
 import { Em } from '@advertaro/ui'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 
@@ -70,11 +71,14 @@ export function Footer() {
         <div>+ WORLDWIDE</div>
       </div>
 
-      <div
-        className="select-none pt-7 pb-6 text-center font-display text-[13vw] leading-[0.88] font-extrabold tracking-[-0.055em] text-white/94 sm:text-[length:clamp(72px,13vw,195px)]"
-        aria-hidden="true"
-      >
-        Advertaro
+      <div className="select-none pt-7 text-center" aria-hidden="true">
+        <Image
+          src="/advertaro-logo-nav.svg"
+          alt=""
+          width={1000}
+          height={138}
+          className="mx-auto h-auto w-[min(85vw,1630px)] opacity-80 brightness-0 invert"
+        />
       </div>
 
       <div className="flex flex-col flex-wrap items-start justify-between gap-4 border-t border-line px-5 py-5 font-sans text-[11px] text-ink-muted sm:flex-row sm:items-center sm:px-8 [&_a]:text-ink-secondary [&_a]:hover:text-accent">

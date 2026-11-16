@@ -10,7 +10,7 @@ import {
 import Link from 'next/link'
 
 /** The prototype's rate-card section, used for the engagement process. */
-export function Process({ num = '07' }: { num?: string }) {
+export function Process({ num = '06' }: { num?: string }) {
   return (
     <section className="col-full grid grid-cols-subgrid">
       <SectionHeaderBar
@@ -30,7 +30,7 @@ export function Process({ num = '07' }: { num?: string }) {
             <MonoLabel as="div" bright>
               HOW WE WORK — 2026
             </MonoLabel>
-            <MonoLabel as="div">DISCOVER · BUILD · GROW</MonoLabel>
+            <MonoLabel as="div">DISCOVER · CREATE · GROW</MonoLabel>
           </div>
         </div>
 

@@ -118,6 +118,7 @@ export const openSectors = [
   'Manufacturing',
 ] as const
 
+// NOTE: draft copy — confirm process steps before launch.
 export const processSteps: ProcessStep[] = [
   {
     index: '01',
@@ -126,25 +127,24 @@ export const processSteps: ProcessStep[] = [
     description:
       'We start by asking why. Goals, audience, constraints and the one number that tells us it worked.',
     deliverableLabel: 'YOU GET',
-    deliverable: 'Brief & sitemap',
+    deliverable: 'A clear plan',
   },
   {
     index: '02',
-    title: 'Design & Build',
-    spec: 'WEEK 03 — 10',
+    title: 'Create',
+    spec: 'SCOPED PER PROJECT',
     description:
-      'Brand, interface and engineering run as one team. You see real work every week, not a big reveal at the end.',
+      'Brand, product or campaign, one team does the work. You review real progress every week, not a big reveal at the end.',
     deliverableLabel: 'YOU GET',
-    deliverable: 'Weekly builds',
+    deliverable: 'Weekly check-ins',
   },
   {
     index: '03',
     title: 'Launch & Grow',
     spec: 'LIVE — ONGOING',
-    description:
-      'We ship, measure and keep improving. Content editing, performance and new features stay in reach.',
+    description: 'We ship, measure against that number and keep improving what works.',
     deliverableLabel: 'YOU GET',
-    deliverable: 'A product that works',
+    deliverable: 'Results you can measure',
   },
 ]
 

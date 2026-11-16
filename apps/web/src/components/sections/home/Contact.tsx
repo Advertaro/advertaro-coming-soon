@@ -1,5 +1,4 @@
-import { contactStats } from '@advertaro/content'
-import { Em, SecondaryHeading, SectionHeaderBar, StatsGrid } from '@advertaro/ui'
+import { Em, SecondaryHeading, SectionHeaderBar } from '@advertaro/ui'
 import { BriefForm } from '@/components/sections/shared/BriefForm'
 
 export function Contact() {
@@ -36,8 +35,6 @@ export function Contact() {
           <BriefForm />
         </div>
       </div>
-
-      <StatsGrid className="col-full" stats={contactStats} />
     </section>
   )
 }
