@@ -38,10 +38,20 @@ export function HeroVideo() {
       />
       {canAnimate && !failed && (
         <video
+          ref={(video) => {
+            if (!video) return
+            // Plays only while any part is on screen, so an off-screen hero never decodes frames.
+            const observer = new IntersectionObserver(([entry]) => {
+              // play() rejects when autoplay is blocked; the poster stays, which is harmless.
+              if (entry?.isIntersecting) video.play().catch(() => {})
+              else video.pause()
+            })
+            observer.observe(video)
+            return () => observer.disconnect()
+          }}
           className="absolute inset-0 z-2 size-full object-cover"
           muted
           loop
-          autoPlay
           playsInline
           preload="metadata"
           poster={poster}

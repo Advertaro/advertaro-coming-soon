@@ -170,6 +170,9 @@ function measureReel(section: HTMLElement, last: number) {
     // 0.5 * h puts the first panel past the 40% threshold so its expansion has played.
     restOf: (index: number) => Math.round(top + (index === 0 ? 0.5 : index + 1) * h),
     active: h ? Math.min(Math.max(Math.floor((window.scrollY - top) / h - 0.5), 0), last) : 0,
+    // Panel k >= 1 slides in from k * h and is fully covered at (k + 2) * h, so only panels
+    // front - 1 and front are uncovered. Unclamped so the last panel alone counts once past it.
+    front: h ? Math.floor((window.scrollY - top) / h) : 0,
   }
 }
 
@@ -180,7 +183,7 @@ export function WorkReelStage({ projects, children }: WorkReelStageProps) {
   const lockToPanel = useRef<((index: number) => boolean) | null>(null)
   const [active, setActive] = useState(0)
   const [shouldLoad, setShouldLoad] = useState(false)
-  const [inView, setInView] = useState(false)
+  const [front, setFront] = useState(0)
   const last = projects.length - 1
 
   useEffect(() => {
@@ -261,9 +264,10 @@ export function WorkReelStage({ projects, children }: WorkReelStageProps) {
       // Runs past the last rest position so leaving the lock zone downwards is still observed.
       end: 'bottom top',
       onUpdate: () => {
-        const { h, restOf, active: current } = measureReel(el, last)
+        const { h, restOf, active: current, front } = measureReel(el, last)
         if (!h) return
         setActive(current)
+        setFront(front)
 
         // 1px tolerance: rest positions are rounded and scrollY can be fractional.
         const isInside = window.scrollY >= restOf(0) - 1 && window.scrollY <= restOf(last) + 1
@@ -327,30 +331,27 @@ export function WorkReelStage({ projects, children }: WorkReelStageProps) {
   }, [last])
 
   useEffect(() => {
-    const el = section.current
-    if (!el) return
-    // Off-screen video still decodes every frame; pause them all when the reel is not visible.
-    const observer = new IntersectionObserver(([entry]) =>
-      setInView(entry?.isIntersecting ?? false),
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
     if (!shouldLoad) return
-    // ponytail: previous panel shows a paused frame while still partly visible; widen to active - 1 if noticeable.
-    for (const video of section.current?.querySelectorAll<HTMLVideoElement>('video[data-index]') ??
-      []) {
-      const index = Number(video.dataset.index)
-      if (inView && (index === active || index === active + 1)) {
-        // play() rejects when autoplay is blocked; the poster stays, which is harmless.
-        video.play().catch(() => {})
-      } else {
-        video.pause()
+    // Off-screen video still decodes every frame. The observer catches videos outside the
+    // viewport (including the display:none phone box); stuck sticky panels still intersect
+    // while covered, so the front window catches those.
+    const observer = new IntersectionObserver((entries) => {
+      for (const { target, isIntersecting } of entries) {
+        if (!(target instanceof HTMLVideoElement)) continue
+        const index = Number(target.dataset.index)
+        if (isIntersecting && (index === front || index === front - 1)) {
+          // play() rejects when autoplay is blocked; the poster stays, which is harmless.
+          target.play().catch(() => {})
+        } else {
+          target.pause()
+        }
       }
+    })
+    for (const video of section.current?.querySelectorAll('video[data-index]') ?? []) {
+      observer.observe(video)
     }
-  }, [active, shouldLoad, inView])
+    return () => observer.disconnect()
+  }, [front, shouldLoad])
 
   const scrollToPanel = (index: number) => {
     const el = section.current
