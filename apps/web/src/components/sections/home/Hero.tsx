@@ -1,4 +1,5 @@
-import { CtaPill, Em, Eyebrow, PrimaryHeading } from '@advertaro/ui'
+import { heroStats } from '@advertaro/content'
+import { ArrowLink, CtaPill, cn, Em, MonoLabel, PrimaryHeading } from '@advertaro/ui'
 import Image from 'next/image'
 import { HeroVideo } from '@/components/ui/HeroVideo'
 
@@ -13,27 +14,49 @@ export function Hero() {
       </div>
 
       {/*Text*/}
-      <div className="relative z-5 col-content grid grid-cols-1 items-center gap-6 py-8 text-center sm:py-20 lg:text-left">
+      <div className="relative z-5 col-content grid grid-cols-1 items-center gap-10 py-8 text-center sm:py-20 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-end lg:gap-x-[clamp(64px,9vw,180px)] lg:text-left">
         {/* Studio value proposition */}
-        <div className="mx-auto max-w-220 py-5 text-center lg:mx-0 lg:text-left">
-          <Eyebrow
-            as="div"
-            className="mb-4.5 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-normal tracking-[0.16em] text-white/72 uppercase motion-safe:animate-hero-in motion-safe:[animation-delay:150ms]"
-          >
-            ADVERTARO STUDIO — COLOMBO &amp; REMOTE
-          </Eyebrow>
-          <PrimaryHeading className="text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] **:data-emphasis:text-ink-bright motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
-            We build <Em>digital products worth showing</Em> — <Em>bespoke websites</Em>, mobile
-            apps and brand systems for businesses that <Em>know the difference</Em>.
-          </PrimaryHeading>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start motion-safe:animate-hero-in motion-safe:[animation-delay:390ms]">
-            <CtaPill href="/contact" label="Book a call" className="min-h-11" />
+        <PrimaryHeading className="mx-auto max-w-220 text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] **:data-emphasis:text-ink-bright lg:mx-0 motion-safe:animate-hero-in motion-safe:[animation-delay:150ms]">
+          We build <Em>digital products worth showing</Em> — <Em>bespoke websites</Em>, mobile apps
+          and brand systems for businesses that <Em>know the difference</Em>.
+        </PrimaryHeading>
+
+        {/* Client results and CTAs */}
+        <div className="mx-auto flex w-full max-w-95 flex-col gap-8 text-left lg:mx-0 lg:max-w-none">
+          <div className="motion-safe:animate-hero-in motion-safe:[animation-delay:270ms]">
+            <MonoLabel
+              as="p"
+              className="mb-4.5 flex items-center gap-3 before:h-px before:w-7 before:bg-accent"
+            >
+              Client experience
+            </MonoLabel>
+            <ul className="flex flex-col gap-3.5">
+              {heroStats.map((stat, i) => (
+                <li key={stat.label} className="grid grid-cols-[76px_1fr] items-baseline gap-3.5">
+                  <span
+                    className={cn(
+                      'font-sans text-[28px] leading-none tracking-[-0.02em] text-white',
+                      i === 0 && 'text-accent',
+                    )}
+                  >
+                    {stat.value}
+                  </span>
+                  <span className="text-[13px] leading-[1.45] text-ink-secondary">
+                    {stat.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col items-start gap-4.5 motion-safe:animate-hero-in motion-safe:[animation-delay:390ms]">
             <CtaPill
-              href="/work"
-              label="See our case studies"
-              variant="ghost"
-              className="min-h-11"
+              href="/contact"
+              label="Book a call"
+              className="min-h-11 w-full justify-center"
             />
+            <ArrowLink href="/work">
+              See our case studies <span aria-hidden="true">↗</span>
+            </ArrowLink>
           </div>
         </div>
       </div>

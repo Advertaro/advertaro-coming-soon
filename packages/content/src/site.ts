@@ -60,6 +60,13 @@ export const contactStats = [
   { value: '0', label: 'Templates Used' },
 ]
 
+// NOTE: draft copy — client-average metrics; confirm the source data before launch.
+export const heroStats = [
+  { value: '+52%', label: 'Average increase in conversion rate' },
+  { value: '+63%', label: 'Average increase in leads' },
+  { value: '+48%', label: 'Average increase in organic traffic' },
+]
+
 export const budgets = ['Under $5K', '$5K–$15K', '$15K–$30K', '$30K+', 'Not sure'] as const
 
 // NOTE: draft copy — confirm sector list and taglines before launch.
