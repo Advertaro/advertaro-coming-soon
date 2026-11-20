@@ -100,7 +100,9 @@ export type TeamMember = {
 
 export type Testimonial = Quote & {
   project: string
-  file: string
+  industry: string
+  /** Headline result shown with the quote, taken from the case study's first metric. */
+  result: Metric
   theme: StillTheme
   draft: boolean
 }

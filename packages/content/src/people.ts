@@ -12,14 +12,18 @@ export const team: TeamMember[] = [
   },
 ]
 
-/** Featured testimonials, derived from case-study quotes. Drafts until approved. */
-export const testimonials: Testimonial[] = caseStudies
-  .filter((study) => study.featured && study.quote)
-  .map((study) => ({
-    // biome-ignore lint/style/noNonNullAssertion: filtered above
-    ...study.quote!,
-    project: study.slug,
-    file: `${study.slug.replaceAll('-', '_')}_live · ${study.year}`,
-    theme: study.theme,
-    draft: study.draft,
-  }))
+/** Featured testimonials, derived from case-study quotes and results. Drafts until approved. */
+export const testimonials: Testimonial[] = caseStudies.flatMap((study) => {
+  const result = study.results[0]
+  if (!study.featured || !study.quote || !result) return []
+  return [
+    {
+      ...study.quote,
+      project: study.slug,
+      industry: study.industry,
+      result,
+      theme: study.theme,
+      draft: study.draft,
+    },
+  ]
+})
