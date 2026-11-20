@@ -67,6 +67,13 @@ export const heroStats = [
   { value: '+48%', label: 'Average increase in organic traffic' },
 ]
 
+export const heroRotatingWords = [
+  'websites',
+  'mobile apps',
+  'brand identities',
+  'web systems',
+] as const
+
 export const budgets = ['Under $5K', '$5K–$15K', '$15K–$30K', '$30K+', 'Not sure'] as const
 
 // NOTE: draft copy — confirm sector list and taglines before launch.

@@ -1,7 +1,8 @@
-import { heroStats } from '@advertaro/content'
-import { ArrowLink, CtaPill, cn, Em, MonoLabel, PrimaryHeading } from '@advertaro/ui'
-import Image from 'next/image'
+import { heroRotatingWords, heroStats } from '@advertaro/content'
+import { CtaPill, cn, Em, MonoLabel, PrimaryHeading } from '@advertaro/ui'
+import { HeroMorphFilter } from '@/components/ui/HeroMorphFilter'
 import { HeroVideo } from '@/components/ui/HeroVideo'
+import { HeroWordmark } from '@/components/ui/HeroWordmark'
 
 export function Hero() {
   return (
@@ -17,9 +18,30 @@ export function Hero() {
       <div className="relative z-5 col-content grid grid-cols-1 items-center gap-10 py-8 text-center sm:py-20 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-end lg:gap-x-[clamp(64px,9vw,180px)] lg:text-left">
         {/* Studio value proposition */}
         <PrimaryHeading className="mx-auto max-w-220 text-white text-shadow-[0_12px_36px_rgba(0,0,0,0.65)] **:data-emphasis:text-ink-bright lg:mx-0 motion-safe:animate-hero-in motion-safe:[animation-delay:150ms]">
-          We build <Em>digital products worth showing</Em> — <Em>bespoke websites</Em>, mobile apps
-          and brand systems for businesses that <Em>know the difference</Em>.
+          Bespoke{' '}
+          <span className="sr-only">
+            {new Intl.ListFormat('en', { type: 'conjunction' }).format(heroRotatingWords)}{' '}
+          </span>
+          <span
+            aria-hidden="true"
+            className="grid justify-items-center text-shadow-none motion-safe:animate-hero-morph-filter lg:inline-grid lg:justify-items-start"
+          >
+            {heroRotatingWords.map((word, i) => (
+              <span
+                key={word}
+                className="opacity-0 [grid-area:1/1] motion-safe:animate-hero-morph motion-reduce:first:opacity-100"
+                style={{ animationDelay: `${i * 2.5}s` }}
+              >
+                {/* NOTE: `!` beats the heading's `**:data-emphasis:text-ink-bright`, which is more specific. */}
+                <Em className="text-accent!">{word}</Em>
+              </span>
+            ))}
+          </span>
+          <span className="block">
+            for businesses that <Em>know the difference</Em>.
+          </span>
         </PrimaryHeading>
+        <HeroMorphFilter />
 
         {/* Client results and CTAs */}
         <div className="mx-auto flex w-full max-w-95 flex-col gap-8 text-left lg:mx-0 lg:max-w-none">
@@ -54,23 +76,19 @@ export function Hero() {
               label="Book a call"
               className="min-h-11 w-full justify-center"
             />
-            <ArrowLink href="/work">
-              See our case studies <span aria-hidden="true">↗</span>
-            </ArrowLink>
+            <CtaPill
+              href="/work"
+              label="See our case studies"
+              variant="ghost"
+              className="min-h-11 w-full justify-center"
+            />
           </div>
         </div>
       </div>
 
       {/* Giant full-width wordmark */}
       <div className="relative z-5 col-content select-none pb-6.5 text-center" aria-hidden="true">
-        <Image
-          src="/advertaro-logo-outline.svg"
-          alt=""
-          width={1000}
-          height={138}
-          loading="eager"
-          className="mx-auto h-auto w-[min(85vw,1630px)] opacity-20"
-        />
+        <HeroWordmark />
       </div>
     </section>
   )

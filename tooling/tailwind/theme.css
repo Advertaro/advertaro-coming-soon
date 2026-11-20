@@ -48,6 +48,53 @@
     }
   }
 
+  /* 4 words x 2.5s. Out-morph (25-33%) overlaps the next word's in-morph so the #hero-morph threshold filter melts them together. */
+  --animate-hero-morph: hero-morph 10s linear infinite backwards;
+
+  /* Sampled from opacity = f^0.4, blur = (8/f - 8) / 2 (halved for ~52px type): both words stay dense enough mid-morph to cross the threshold, so they melt instead of vanishing. */
+  @keyframes hero-morph {
+    0%,
+    33%,
+    100% {
+      opacity: 0;
+      filter: blur(12px);
+    }
+    2%,
+    31% {
+      opacity: 0.57;
+      filter: blur(12px);
+    }
+    4%,
+    29% {
+      opacity: 0.76;
+      filter: blur(4px);
+    }
+    6%,
+    27% {
+      opacity: 0.89;
+      filter: blur(1.3px);
+    }
+    8%,
+    25% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  /* The threshold strips anti-aliasing, so it is on only during each 0.8s morph and resting words stay crisp. */
+  --animate-hero-morph-filter: hero-morph-filter 2.5s linear infinite;
+
+  @keyframes hero-morph-filter {
+    0%,
+    31% {
+      filter: url(#hero-morph) blur(0.6px);
+    }
+    33%,
+    100% {
+      filter: none;
+    }
+  }
+
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -67,6 +114,14 @@
   --animate-illo-scroll: illo-scroll 5s linear infinite;
   --animate-illo-spin: illo-spin 18s linear infinite;
   --animate-illo-float: illo-float 4s ease-in-out infinite;
+  /* Hero wordmark stroke draw-in on load (HeroWordmark.tsx). Needs pathLength="1" and stroke-dasharray="1". */
+  --animate-wordmark-draw: wordmark-draw 1.6s var(--ease-out-expo) both;
+
+  @keyframes wordmark-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+  }
 
   /* Needs pathLength="1" and stroke-dasharray="1" on the element. */
   @keyframes illo-draw {
