@@ -1,4 +1,4 @@
-import type { ProcessStep, Sector } from './types'
+import type { Faq, ProcessStep, Sector } from './types'
 
 export const site = {
   name: 'Advertaro',
@@ -189,3 +189,40 @@ export const beliefs = [
     text: 'The people who scope your project are the people who design, build and support it. Nothing gets lost in a handover.',
   },
 ]
+
+/** Home FAQ (section 09). Draft answers grounded in site and services copy — confirm before launch. */
+export const homeFaqs: Faq[] = [
+  {
+    question: 'What does Advertaro build?',
+    answer:
+      'Brand identities, bespoke websites, mobile apps and the automation that runs behind them. Every project is designed and built from scratch. We never start from a template.',
+  },
+  {
+    question: 'How long does a typical project take?',
+    answer:
+      'A brand identity usually takes four to six weeks from workshop to final asset kit. Website and app timelines depend on scope, and we fix the schedule in the proposal before work starts.',
+  },
+  {
+    question: 'Do you work with clients outside Sri Lanka?',
+    answer:
+      'Yes. We are based in Colombo and work with clients worldwide, with calls arranged around your time zone.',
+  },
+  {
+    question: 'Do we own the final files and code?',
+    answer: 'Yes. You own the full rights to the final identity, the source files and the code.',
+  },
+  {
+    question: 'What do you need from me to get started?',
+    answer:
+      'A short brief: what you are building, who it is for, your timeline and a rough budget range. Send it through the form below and a real person replies within one business day.',
+  },
+]
+
+/** Example questions rotated through the FAQ ask field's placeholder. */
+export const faqAskExamples = [
+  'What budget do we need?',
+  'Do you work with startups?',
+  'Can our team edit the site later?',
+  'Can you redesign our existing website?',
+  'Do you build apps for iOS and Android?',
+] as const

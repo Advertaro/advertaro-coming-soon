@@ -4,6 +4,7 @@ import { PageContainer } from '@/components/layout/page-container'
 import { About } from '@/components/sections/home/About'
 import { Clients } from '@/components/sections/home/Clients'
 import { Contact } from '@/components/sections/home/Contact'
+import { Faq } from '@/components/sections/home/Faq'
 import { Hero } from '@/components/sections/home/Hero'
 import { Industries } from '@/components/sections/home/Industries'
 import { MobileShowcase } from '@/components/sections/home/MobileShowcase'
@@ -58,6 +59,7 @@ export default function HomePage() {
       <Process />
       <About />
       <Reviews />
+      <Faq />
       <Contact />
     </PageContainer>
   )
